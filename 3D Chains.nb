@@ -1,0 +1,387 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15980,        378]
+NotebookOptionsPosition[     15234,        348]
+NotebookOutlinePosition[     15588,        364]
+CellTagsIndexPosition[     15545,        361]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"chain", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"3", ",", "3", ",", "3"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "3", ",", "4"}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.677250686830159*^9, 3.677250721248186*^9}, 
+   3.67725171816404*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dimMap", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"1", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], ",", 
+    RowBox[{"2", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], ",", 
+    RowBox[{"3", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", " ", "1"}], "}"}]}]}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"1", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], ",", 
+   RowBox[{"2", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], ",", 
+   RowBox[{"3", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1"}], "}"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6772511852738667`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"addPoint", "[", 
+   RowBox[{"chain_", ",", "box_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lastLink", ",", " ", "newLink"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"lastLink", "=", 
+      RowBox[{"Last", "[", "chain", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"newLink", "=", 
+      RowBox[{"lastLink", "+", 
+       RowBox[{
+        RowBox[{"Sign", "[", 
+         RowBox[{
+          RowBox[{"Random", "[", "]"}], "-", "0.5"}], "]"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"chooseDimension", "[", "]"}], "/.", "dimMap"}], 
+         ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"newLink", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "\[LessEqual]", "box"}], " ", "&&", 
+        " ", 
+        RowBox[{
+         RowBox[{"newLink", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "\[GreaterEqual]", "1"}], " ", "&&",
+         " ", 
+        RowBox[{
+         RowBox[{"newLink", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "\[LessEqual]", "box"}], " ", "&&", 
+        " ", 
+        RowBox[{
+         RowBox[{"newLink", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "\[GreaterEqual]", "1"}], " ", "&&",
+         " ", 
+        RowBox[{
+         RowBox[{"newLink", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], "\[LessEqual]", "box"}], " ", "&&", 
+        " ", 
+        RowBox[{
+         RowBox[{"newLink", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], "\[GreaterEqual]", "1"}]}], " ", 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"MemberQ", "[", 
+          RowBox[{"chain", ",", " ", "newLink"}], "]"}], ",", " ", "chain", 
+         ",", " ", 
+         RowBox[{"Append", "[", 
+          RowBox[{"chain", ",", " ", "newLink"}], "]"}]}], "]"}], ",", " ", 
+       "chain"}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.677250651355072*^9, 3.677250685989477*^9}, {
+  3.677250745066949*^9, 3.67725075958286*^9}, {3.677250801146756*^9, 
+  3.677250808701928*^9}, {3.677250982273573*^9, 3.677250988298313*^9}, {
+  3.67725106488405*^9, 3.677251246207654*^9}, {3.677251626066828*^9, 
+  3.6772517097650433`*^9}, {3.677251755877043*^9, 3.677251755938272*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"For", " ", "some", " ", "reason", " ", "this", " ", 
+    RowBox[{"isn", "'"}], "t", " ", "working", " ", "now"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"generateChain", "[", "box_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "1"}], ",", " ", 
+        RowBox[{"i", "<", "500"}], ",", 
+        RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"chain", "=", 
+          RowBox[{"addPoint", "[", 
+           RowBox[{"chain", ",", " ", "box"}], "]"}]}], ";"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Length", "[", "chain", "]"}], ";"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.677251233383176*^9, 3.677251239684601*^9}, {
+  3.677251458053585*^9, 3.677251459518469*^9}, {3.6772517258538837`*^9, 
+  3.677251739926491*^9}, {3.677251828206798*^9, 3.677251828276038*^9}, {
+  3.677251881058325*^9, 3.6772519041594667`*^9}, {3.677252036414435*^9, 
+  3.677252100585929*^9}, {3.677252297781013*^9, 3.6772523112140713`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"chainLengths", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "<", "100"}], ",", " ", 
+   RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"chain", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"3", ",", "3", ",", "3"}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "3", ",", "4"}], "}"}]}], "}"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"chain", "=", 
+     RowBox[{"generateChain", "[", "5", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"chainLengths", "=", 
+     RowBox[{"Append", "[", 
+      RowBox[{"chainLengths", ",", 
+       RowBox[{"Length", "[", "chain", "]"}]}], "]"}]}], ";"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.677251812516552*^9, 3.67725181653551*^9}, {
+  3.677251910703043*^9, 3.6772519695341053`*^9}, {3.6772520211271133`*^9, 
+  3.677252022736702*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"generateChain", "[", "5", "]"}]], "Input",
+ CellChangeTimes->{{3.677251975302442*^9, 3.677251977392749*^9}, 
+   3.677252090677421*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Last", "::", "normal"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Nonatomic expression expected at position \
+\[NoBreak]\\!\\(1\\)\[NoBreak] in \[NoBreak]\\!\\(Last[Null]\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/normal\\\", \
+ButtonNote -> \\\"Last::normal\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.677252091429191*^9}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{{3.6772519783634233`*^9, 3.6772519937774553`*^9}, {
+   3.677252027876606*^9, 3.677252044942918*^9}, 3.6772521139046497`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Sphere", "[", 
+        RowBox[{"#", ",", " ", "0.2"}], "]"}], "&"}], "/@", "chain"}], ",", 
+     " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Line", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"chain", "[", 
+           RowBox[{"[", "#", "]"}], "]"}], ",", " ", 
+          RowBox[{"chain", "[", 
+           RowBox[{"[", 
+            RowBox[{"#", "+", "1"}], "]"}], "]"}]}], "}"}], "]"}], "&"}], "/@", 
+      RowBox[{"Range", "[", 
+       RowBox[{
+        RowBox[{"Length", "[", "chain", "]"}], "-", "1"}], "]"}]}]}], "}"}], 
+   "]"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.6772514927307463`*^9, 3.677251574700284*^9}, {
+  3.6772517739831247`*^9, 3.677251786915101*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{{SphereBox[{3, 3, 3}, 0.2], SphereBox[{3, 3, 4}, 0.2], 
+    SphereBox[{2, 3, 4}, 0.2], SphereBox[{2, 3, 5}, 0.2], 
+    SphereBox[{2, 2, 5}, 0.2], SphereBox[{2, 1, 5}, 0.2], 
+    SphereBox[{1, 1, 5}, 0.2], SphereBox[{1, 2, 5}, 0.2], 
+    SphereBox[{1, 3, 5}, 0.2], SphereBox[{1, 3, 4}, 0.2], 
+    SphereBox[{1, 3, 3}, 0.2], SphereBox[{1, 3, 2}, 0.2], 
+    SphereBox[{1, 2, 2}, 0.2], SphereBox[{1, 2, 3}, 0.2], 
+    SphereBox[{2, 2, 3}, 0.2], SphereBox[{2, 2, 2}, 0.2], 
+    SphereBox[{2, 3, 2}, 0.2], SphereBox[{2, 4, 2}, 0.2], 
+    SphereBox[{2, 4, 3}, 0.2], SphereBox[{2, 4, 4}, 0.2], 
+    SphereBox[{2, 4, 5}, 0.2], SphereBox[{3, 4, 5}, 0.2], 
+    SphereBox[{3, 5, 5}, 0.2], SphereBox[{2, 5, 5}, 0.2], 
+    SphereBox[{1, 5, 5}, 0.2], SphereBox[{1, 4, 5}, 0.2], 
+    SphereBox[{1, 4, 4}, 0.2], SphereBox[{1, 4, 3}, 0.2], 
+    SphereBox[{1, 5, 3}, 0.2], SphereBox[{1, 5, 2}, 0.2], 
+    SphereBox[{1, 5, 1}, 0.2], SphereBox[{2, 5, 1}, 0.2], 
+    SphereBox[{3, 5, 1}, 0.2], SphereBox[{3, 5, 2}, 0.2], 
+    SphereBox[{3, 5, 3}, 0.2], SphereBox[{3, 4, 3}, 0.2], 
+    SphereBox[{3, 4, 2}, 0.2], SphereBox[{3, 4, 1}, 0.2], 
+    SphereBox[{2, 4, 1}, 0.2], SphereBox[{1, 4, 1}, 0.2], 
+    SphereBox[{1, 3, 1}, 0.2], SphereBox[{2, 3, 1}, 0.2], 
+    SphereBox[{2, 2, 1}, 0.2], SphereBox[{3, 2, 1}, 0.2], 
+    SphereBox[{3, 1, 1}, 0.2], SphereBox[{2, 1, 1}, 0.2], 
+    SphereBox[{1, 1, 1}, 0.2], SphereBox[{1, 1, 2}, 0.2], 
+    SphereBox[{1, 1, 3}, 0.2], SphereBox[{1, 1, 4}, 0.2], 
+    SphereBox[{1, 2, 4}, 0.2], SphereBox[{2, 2, 4}, 0.2], 
+    SphereBox[{3, 2, 4}, 0.2], SphereBox[{3, 2, 3}, 0.2], 
+    SphereBox[{4, 2, 3}, 0.2], SphereBox[{4, 2, 2}, 0.2], 
+    SphereBox[{4, 2, 1}, 0.2], SphereBox[{4, 3, 1}, 0.2], 
+    SphereBox[{4, 4, 1}, 0.2], SphereBox[{4, 5, 1}, 0.2], 
+    SphereBox[{4, 5, 2}, 0.2], SphereBox[{4, 4, 2}, 0.2], 
+    SphereBox[{5, 4, 2}, 0.2], SphereBox[{5, 3, 2}, 0.2], 
+    SphereBox[{5, 3, 1}, 0.2], SphereBox[{5, 4, 1}, 0.2], 
+    SphereBox[{5, 5, 1}, 0.2], SphereBox[{5, 5, 2}, 0.2], 
+    SphereBox[{5, 5, 3}, 0.2], SphereBox[{5, 5, 4}, 0.2], 
+    SphereBox[{5, 5, 5}, 0.2], SphereBox[{5, 4, 5}, 0.2], 
+    SphereBox[{4, 4, 5}, 0.2], SphereBox[{4, 5, 5}, 0.2], 
+    SphereBox[{4, 5, 4}, 0.2], SphereBox[{4, 5, 3}, 0.2], 
+    SphereBox[{4, 4, 3}, 0.2], SphereBox[{4, 3, 3}, 0.2], 
+    SphereBox[{4, 3, 4}, 0.2], SphereBox[{4, 4, 4}, 0.2], 
+    SphereBox[{5, 4, 4}, 0.2], SphereBox[{5, 4, 3}, 0.2], 
+    SphereBox[{5, 3, 3}, 0.2], SphereBox[{5, 3, 4}, 0.2], 
+    SphereBox[{5, 2, 4}, 0.2], SphereBox[{5, 2, 5}, 0.2], 
+    SphereBox[{5, 1, 5}, 0.2], SphereBox[{5, 1, 4}, 0.2], 
+    SphereBox[{4, 1, 4}, 0.2], SphereBox[{4, 2, 4}, 0.2], 
+    SphereBox[{4, 2, 5}, 0.2], SphereBox[{3, 2, 5}, 0.2], 
+    SphereBox[{3, 1, 5}, 0.2], SphereBox[{3, 1, 4}, 0.2], 
+    SphereBox[{3, 1, 3}, 0.2], SphereBox[{2, 1, 3}, 0.2], 
+    SphereBox[{2, 1, 2}, 0.2], SphereBox[{3, 1, 2}, 0.2], 
+    SphereBox[{3, 2, 2}, 0.2], SphereBox[{3, 3, 2}, 0.2], 
+    SphereBox[{3, 3, 1}, 0.2]}, {Line3DBox[{{3, 3, 3}, {3, 3, 4}}], 
+    Line3DBox[{{3, 3, 4}, {2, 3, 4}}], Line3DBox[{{2, 3, 4}, {2, 3, 5}}], 
+    Line3DBox[{{2, 3, 5}, {2, 2, 5}}], Line3DBox[{{2, 2, 5}, {2, 1, 5}}], 
+    Line3DBox[{{2, 1, 5}, {1, 1, 5}}], Line3DBox[{{1, 1, 5}, {1, 2, 5}}], 
+    Line3DBox[{{1, 2, 5}, {1, 3, 5}}], Line3DBox[{{1, 3, 5}, {1, 3, 4}}], 
+    Line3DBox[{{1, 3, 4}, {1, 3, 3}}], Line3DBox[{{1, 3, 3}, {1, 3, 2}}], 
+    Line3DBox[{{1, 3, 2}, {1, 2, 2}}], Line3DBox[{{1, 2, 2}, {1, 2, 3}}], 
+    Line3DBox[{{1, 2, 3}, {2, 2, 3}}], Line3DBox[{{2, 2, 3}, {2, 2, 2}}], 
+    Line3DBox[{{2, 2, 2}, {2, 3, 2}}], Line3DBox[{{2, 3, 2}, {2, 4, 2}}], 
+    Line3DBox[{{2, 4, 2}, {2, 4, 3}}], Line3DBox[{{2, 4, 3}, {2, 4, 4}}], 
+    Line3DBox[{{2, 4, 4}, {2, 4, 5}}], Line3DBox[{{2, 4, 5}, {3, 4, 5}}], 
+    Line3DBox[{{3, 4, 5}, {3, 5, 5}}], Line3DBox[{{3, 5, 5}, {2, 5, 5}}], 
+    Line3DBox[{{2, 5, 5}, {1, 5, 5}}], Line3DBox[{{1, 5, 5}, {1, 4, 5}}], 
+    Line3DBox[{{1, 4, 5}, {1, 4, 4}}], Line3DBox[{{1, 4, 4}, {1, 4, 3}}], 
+    Line3DBox[{{1, 4, 3}, {1, 5, 3}}], Line3DBox[{{1, 5, 3}, {1, 5, 2}}], 
+    Line3DBox[{{1, 5, 2}, {1, 5, 1}}], Line3DBox[{{1, 5, 1}, {2, 5, 1}}], 
+    Line3DBox[{{2, 5, 1}, {3, 5, 1}}], Line3DBox[{{3, 5, 1}, {3, 5, 2}}], 
+    Line3DBox[{{3, 5, 2}, {3, 5, 3}}], Line3DBox[{{3, 5, 3}, {3, 4, 3}}], 
+    Line3DBox[{{3, 4, 3}, {3, 4, 2}}], Line3DBox[{{3, 4, 2}, {3, 4, 1}}], 
+    Line3DBox[{{3, 4, 1}, {2, 4, 1}}], Line3DBox[{{2, 4, 1}, {1, 4, 1}}], 
+    Line3DBox[{{1, 4, 1}, {1, 3, 1}}], Line3DBox[{{1, 3, 1}, {2, 3, 1}}], 
+    Line3DBox[{{2, 3, 1}, {2, 2, 1}}], Line3DBox[{{2, 2, 1}, {3, 2, 1}}], 
+    Line3DBox[{{3, 2, 1}, {3, 1, 1}}], Line3DBox[{{3, 1, 1}, {2, 1, 1}}], 
+    Line3DBox[{{2, 1, 1}, {1, 1, 1}}], Line3DBox[{{1, 1, 1}, {1, 1, 2}}], 
+    Line3DBox[{{1, 1, 2}, {1, 1, 3}}], Line3DBox[{{1, 1, 3}, {1, 1, 4}}], 
+    Line3DBox[{{1, 1, 4}, {1, 2, 4}}], Line3DBox[{{1, 2, 4}, {2, 2, 4}}], 
+    Line3DBox[{{2, 2, 4}, {3, 2, 4}}], Line3DBox[{{3, 2, 4}, {3, 2, 3}}], 
+    Line3DBox[{{3, 2, 3}, {4, 2, 3}}], Line3DBox[{{4, 2, 3}, {4, 2, 2}}], 
+    Line3DBox[{{4, 2, 2}, {4, 2, 1}}], Line3DBox[{{4, 2, 1}, {4, 3, 1}}], 
+    Line3DBox[{{4, 3, 1}, {4, 4, 1}}], Line3DBox[{{4, 4, 1}, {4, 5, 1}}], 
+    Line3DBox[{{4, 5, 1}, {4, 5, 2}}], Line3DBox[{{4, 5, 2}, {4, 4, 2}}], 
+    Line3DBox[{{4, 4, 2}, {5, 4, 2}}], Line3DBox[{{5, 4, 2}, {5, 3, 2}}], 
+    Line3DBox[{{5, 3, 2}, {5, 3, 1}}], Line3DBox[{{5, 3, 1}, {5, 4, 1}}], 
+    Line3DBox[{{5, 4, 1}, {5, 5, 1}}], Line3DBox[{{5, 5, 1}, {5, 5, 2}}], 
+    Line3DBox[{{5, 5, 2}, {5, 5, 3}}], Line3DBox[{{5, 5, 3}, {5, 5, 4}}], 
+    Line3DBox[{{5, 5, 4}, {5, 5, 5}}], Line3DBox[{{5, 5, 5}, {5, 4, 5}}], 
+    Line3DBox[{{5, 4, 5}, {4, 4, 5}}], Line3DBox[{{4, 4, 5}, {4, 5, 5}}], 
+    Line3DBox[{{4, 5, 5}, {4, 5, 4}}], Line3DBox[{{4, 5, 4}, {4, 5, 3}}], 
+    Line3DBox[{{4, 5, 3}, {4, 4, 3}}], Line3DBox[{{4, 4, 3}, {4, 3, 3}}], 
+    Line3DBox[{{4, 3, 3}, {4, 3, 4}}], Line3DBox[{{4, 3, 4}, {4, 4, 4}}], 
+    Line3DBox[{{4, 4, 4}, {5, 4, 4}}], Line3DBox[{{5, 4, 4}, {5, 4, 3}}], 
+    Line3DBox[{{5, 4, 3}, {5, 3, 3}}], Line3DBox[{{5, 3, 3}, {5, 3, 4}}], 
+    Line3DBox[{{5, 3, 4}, {5, 2, 4}}], Line3DBox[{{5, 2, 4}, {5, 2, 5}}], 
+    Line3DBox[{{5, 2, 5}, {5, 1, 5}}], Line3DBox[{{5, 1, 5}, {5, 1, 4}}], 
+    Line3DBox[{{5, 1, 4}, {4, 1, 4}}], Line3DBox[{{4, 1, 4}, {4, 2, 4}}], 
+    Line3DBox[{{4, 2, 4}, {4, 2, 5}}], Line3DBox[{{4, 2, 5}, {3, 2, 5}}], 
+    Line3DBox[{{3, 2, 5}, {3, 1, 5}}], Line3DBox[{{3, 1, 5}, {3, 1, 4}}], 
+    Line3DBox[{{3, 1, 4}, {3, 1, 3}}], Line3DBox[{{3, 1, 3}, {2, 1, 3}}], 
+    Line3DBox[{{2, 1, 3}, {2, 1, 2}}], Line3DBox[{{2, 1, 2}, {3, 1, 2}}], 
+    Line3DBox[{{3, 1, 2}, {3, 2, 2}}], Line3DBox[{{3, 2, 2}, {3, 3, 2}}], 
+    Line3DBox[{{3, 3, 2}, {3, 3, 1}}]}},
+  AutomaticImageSize->True,
+  ImageSize->{414.4337849697737, 404.1220190874729},
+  ViewPoint->{-2.860668103251948, 1.2496663753099402`, -1.3057227705208438`},
+  ViewVertical->{-0.168323343978668, 
+   0.3231438502518108, -0.9312600624510183}]], "Output",
+ CellChangeTimes->{{3.677251557389841*^9, 3.677251575333008*^9}, {
+   3.6772517423063927`*^9, 3.677251788142619*^9}, 3.677251831896201*^9}]
+}, Open  ]]
+},
+WindowSize->{1058, 811},
+WindowMargins->{{45, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 342, 10, 28, "Input"],
+Cell[CellGroupData[{
+Cell[925, 34, 398, 12, 28, "Input"],
+Cell[1326, 48, 400, 12, 28, "Output"]
+}, Open  ]],
+Cell[1741, 63, 2344, 61, 114, "Input"],
+Cell[4088, 126, 1222, 27, 114, "Input"],
+Cell[5313, 155, 1002, 27, 97, "Input"],
+Cell[CellGroupData[{
+Cell[6340, 186, 158, 3, 28, "Input"],
+Cell[6501, 191, 498, 10, 24, "Message"],
+Cell[7002, 203, 179, 2, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7218, 210, 842, 25, 46, "Input"],
+Cell[8063, 237, 7155, 108, 419, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
