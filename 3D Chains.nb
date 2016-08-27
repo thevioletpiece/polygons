@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     18855,        454]
-NotebookOptionsPosition[     18066,        423]
-NotebookOutlinePosition[     18420,        439]
-CellTagsIndexPosition[     18377,        436]
+NotebookDataLength[    133050,       2492]
+NotebookOptionsPosition[    131488,       2435]
+NotebookOutlinePosition[    131999,       2457]
+CellTagsIndexPosition[    131912,       2452]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -58,7 +58,37 @@ Cell[BoxData[
    RowBox[{"3", "\[Rule]", 
     RowBox[{"{", 
      RowBox[{"0", ",", "0", ",", "1"}], "}"}]}]}], "}"}]], "Output",
- CellChangeTimes->{3.6772511852738667`*^9}]
+ CellChangeTimes->{3.6772511852738667`*^9, 3.680773599697873*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"chooseDimension", "[", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", "=", 
+      RowBox[{"Random", "[", "]"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"b", "=", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"a", "<", "0.333"}], ",", " ", "1", ",", " ", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"a", ">", "0.67"}], ",", " ", "3", ",", " ", "2"}], "]"}]}],
+        "]"}]}], ";", "\[IndentingNewLine]", "b"}]}], "]"}], " "}]], "Input",
+ CellChangeTimes->{{3.68077363632553*^9, 3.680773679514318*^9}, {
+  3.6807737153706083`*^9, 3.680773817086515*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"chooseDimension", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.680773778707206*^9, 3.680773781059298*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{{3.680773818652636*^9, 3.680773871956871*^9}}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -160,37 +190,6 @@ Cell[BoxData[
   3.6772528059599857`*^9, 3.6772528083718452`*^9}, {3.6772528439961023`*^9, 
   3.677252867571786*^9}}],
 
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"chainLengths", "=", 
-   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"For", "[", 
-  RowBox[{
-   RowBox[{"j", "=", "1"}], ",", 
-   RowBox[{"j", "<", "5000"}], ",", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"chainLengths", "=", 
-     RowBox[{"Append", "[", 
-      RowBox[{"chainLengths", ",", 
-       RowBox[{"Length", "[", 
-        RowBox[{"generateChain", "[", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{"3", ",", "3", ",", "3"}], "}"}], ",", " ", 
-            RowBox[{"{", 
-             RowBox[{"3", ",", "3", ",", "4"}], "}"}]}], "}"}], ",", " ", "5",
-           ",", " ", "500"}], "]"}], "]"}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"j", "++"}]}]}], "]"}]}], "Input",
- CellChangeTimes->{{3.677251812516552*^9, 3.67725181653551*^9}, {
-   3.677251910703043*^9, 3.6772519695341053`*^9}, {3.6772520211271133`*^9, 
-   3.677252022736702*^9}, {3.677252542616829*^9, 3.677252548819448*^9}, 
-   3.677252613095026*^9, {3.677252655212118*^9, 3.677252668881686*^9}, {
-   3.6772527002526493`*^9, 3.6772527638853073`*^9}, {3.6772528258794813`*^9, 
-   3.677252887269927*^9}, {3.67725298170245*^9, 3.677252981771645*^9}}],
-
 Cell[BoxData[
  RowBox[{
   RowBox[{"countItems", "[", 
@@ -203,9 +202,61 @@ Cell[BoxData[
 
  CellChangeTimes->{{3.677252901673856*^9, 3.677252935739244*^9}}],
 
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"L", "=", " ", "9"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mid", "=", 
+   RowBox[{"Round", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"L", "+", "1"}], ")"}], "/", "2"}], ",", " ", "1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"chainLengths", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"j", "=", "1"}], ",", 
+    RowBox[{"j", "<", "5000"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"chainLengths", "=", 
+      RowBox[{"Append", "[", 
+       RowBox[{"chainLengths", ",", 
+        RowBox[{"Length", "[", 
+         RowBox[{"generateChain", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"mid", ",", "mid", ",", "mid"}], "}"}], ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"mid", ",", "mid", ",", 
+               RowBox[{"mid", "+", "1"}]}], "}"}]}], "}"}], ",", " ", "L", 
+           ",", " ", 
+           RowBox[{"L", "^", "3"}]}], "]"}], "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"j", "++"}]}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"chainLengths9", "=", "chainLengths"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.677251812516552*^9, 3.67725181653551*^9}, {
+   3.677251910703043*^9, 3.6772519695341053`*^9}, {3.6772520211271133`*^9, 
+   3.677252022736702*^9}, {3.677252542616829*^9, 3.677252548819448*^9}, 
+   3.677252613095026*^9, {3.677252655212118*^9, 3.677252668881686*^9}, {
+   3.6772527002526493`*^9, 3.6772527638853073`*^9}, {3.6772528258794813`*^9, 
+   3.677252887269927*^9}, {3.67725298170245*^9, 3.677252981771645*^9}, {
+   3.680774604130698*^9, 3.680774659983631*^9}, {3.680774788897994*^9, 
+   3.68077479486031*^9}, {3.680774866756144*^9, 3.680774868105192*^9}, {
+   3.680775008634787*^9, 3.6807750097549963`*^9}, {3.6807750571124487`*^9, 
+   3.680775060813097*^9}, {3.680775508605085*^9, 3.6807755123538017`*^9}, {
+   3.6807757222022*^9, 3.680775726324668*^9}, {3.680775840735112*^9, 
+   3.6807758448658457`*^9}}],
+
 Cell[BoxData[
  RowBox[{
-  RowBox[{"data", "=", 
+  RowBox[{"data9", "=", 
    RowBox[{
     RowBox[{
      RowBox[{"{", 
@@ -215,12 +266,669 @@ Cell[BoxData[
          RowBox[{
           RowBox[{
            RowBox[{"Floor", "[", 
-            RowBox[{"#", "/", "2"}], "]"}], "&"}], "/@", "chainLengths"}], 
+            RowBox[{"#", "/", "2"}], "]"}], "&"}], "/@", "chainLengths9"}], 
          ",", " ", "#"}], "]"}]}], "}"}], "&"}], "/@", 
-    RowBox[{"Range", "[", "63", "]"}]}]}], ";"}]], "Input",
+    RowBox[{"Range", "[", "220", "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{
+  3.68077553530692*^9, {3.6807755671806717`*^9, 3.680775567569194*^9}, {
+   3.6807756985000687`*^9, 3.680775698813892*^9}, {3.680775739939473*^9, 
+   3.6807757422457314`*^9}, {3.680775846952284*^9, 3.680775850487102*^9}, {
+   3.680777801602281*^9, 3.6807778020823307`*^9}, {3.680778197534793*^9, 
+   3.6807781980276327`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Legended"}]], "Input",
+ CellChangeTimes->{{3.680778097955965*^9, 3.680778098151063*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"Legended\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"leg\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\) displays \!\(\*StyleBox[\\\"expr\\\", \
+\\\"TI\\\"]\) with legend \!\(\*StyleBox[\\\"leg\\\", \\\"TI\\\"]\). \
+\\n\!\(\*RowBox[{\\\"Legended\\\", \\\"[\\\", RowBox[{StyleBox[\\\"expr\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"lbl\\\", \\\"TI\\\"]}], \\\"]\\\"}]\) \
+indicates in plotting and charting functions that a legend entry for \
+\!\(\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\) should be created, with label \!\(\
+\*StyleBox[\\\"lbl\\\", \\\"TI\\\"]\).\"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Legended"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.680778098376087*^9},
+ CellTags->"Info3680752898-7238675"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"ListPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "data5", ",", "data6", ",", "  ", "data7", ",", " ", "data8", ",", " ", 
+      "data9"}], "}"}], ",", " ", 
+    RowBox[{"Joined", "\[Rule]", "True"}], ",", " ", 
+    RowBox[{"PlotRange", "\[Rule]", "All"}], ",", " ", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", " ", 
+    RowBox[{"ImageSize", "\[Rule]", "600"}], ",", " ", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"Directive", "[", "18", "]"}]}], ",", " ", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Chain Length\>\"", ",", " ", "\"\<Length Count\>\""}], 
+      "}"}]}], ",", " ", 
+    RowBox[{"PlotLegends", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "6", ",", "7", ",", "8", ",", "9"}], "}"}]}]}], 
+   "]"}]}]], "Input",
  CellChangeTimes->{{3.677252939829802*^9, 3.6772529655916777`*^9}, {
   3.677253256042778*^9, 3.677253275234877*^9}, {3.6772533191388683`*^9, 
-  3.677253326157065*^9}}],
+  3.677253326157065*^9}, {3.68077472739915*^9, 3.680774739739141*^9}, {
+  3.6807748046468763`*^9, 3.680774808184339*^9}, {3.680774964855152*^9, 
+  3.680774989010578*^9}, {3.680775065933278*^9, 3.6807750728518333`*^9}, {
+  3.680775456987661*^9, 3.680775489431769*^9}, {3.680775523364482*^9, 
+  3.680775537198688*^9}, {3.680775576370792*^9, 3.6807755843506517`*^9}, {
+  3.680775732102841*^9, 3.680775734697515*^9}, {3.680775853187251*^9, 
+  3.680775855337265*^9}, {3.6807778168312473`*^9, 3.680777982383048*^9}, {
+  3.680778061362157*^9, 3.6807781746319857`*^9}, {3.6807783724919157`*^9, 
+  3.680778390865364*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{GraphicsBox[{{}, {
+      Hue[0.67, 0.6, 0.6], 
+      Directive[
+       PointSize[0.008333333333333333], 
+       RGBColor[0.368417, 0.506779, 0.709798], 
+       AbsoluteThickness[1.6]], 
+      LineBox[CompressedData["
+1:eJxdkttKQkEUhhddedmFF114sZOQiJBOZgfN6aCVJyiEhETC0lICX2EexUfx
+UfYj9AgV860NswY2H9/+Z8/MXrO2J8vn6YaI1P6ef4bx05B4uFhzxjeN5/ES
+3IJHsBDor/EEOliETbgDdT7r+nt8F/bhHnkb38c1Lwe6J/yAfIAf4sP43OsX
+/Jh8hJ+Qv+KVwOQNPyWf4FX2H+Nnganm5+RT/AJ/xy+heo18htdZT/3K7N8g
+1/Wpe/rFf+k9zCF1X32S4475csN75nt8pd/f4t/keLogv4vP6/H1B7n2AfXy
+uNN6t2CHXJ06iPYJ95L1jfbxA6SPvbqOx9i9cWmb3LieK8uNS9fkxqVncuNZ
+34v8AivUUCQ=
+       "]], 
+      Hue[0.9060679774997897, 0.6, 0.6], 
+      Directive[
+       PointSize[0.008333333333333333], 
+       RGBColor[0.880722, 0.611041, 0.142051], 
+       AbsoluteThickness[1.6]], 
+      LineBox[CompressedData["
+1:eJxd1E9OFUEQx/EKK5csXLhw8STEGGIIiiCiSAsqICh/BEEBGRASwQVXqFO4
+fkepo3AEjqBmftWmv5OQXz5dU6+HedXvwdn1zsWImf3++/cv++t20dqrtLwD
+j8J3S5v3lAPlfeVTrE8px5TzyvE+fVl+qHylfKRcUk7g/sfK18pJ1d+2+/qa
+/ES5gef8qJxG/zP0z8h5/6z8QX6O++fkbflFn2VLzveQ9Zd9xq6s91DSC7D+
+78j+ReVnZWk/z2XbV75RXfb0d9WXtH6klE22/B4OVJddNr1HP1bC9k4+UcqW
++79X/lBd9nOtr+h5f2pdLrKt9jm8Ul22rK+hLpdfquf3eqm63F1ofb3PgZ7H
+ZTtUas5iT/WNdp+cu/recq40d/ZJqbn1dJ7LTaUuhy3nTOe+zl3eDwdc51JX
+gR0O2HbQDzsccJ3j7IcdDth2WxfY4YBtD/2wwwHbF/TDDgdcz2n2ww4HnOey
+9sMOB2xf0Q87HLB9Qz/scMD1HGU/7HDA9Xcq+2GHA7bj1gV2OOD6O5b9sMMB
+2wn6YYcDtq71AC5wBzs8hAO+ge0U+8MF7mCHh3DAN7CdYX+4wB3s8BCO//4D
+TEqxLw==
+       "]], 
+      Hue[0.1421359549995791, 0.6, 0.6], 
+      Directive[
+       PointSize[0.008333333333333333], 
+       RGBColor[0.560181, 0.691569, 0.194885], 
+       AbsoluteThickness[1.6]], 
+      LineBox[CompressedData["
+1:eJx1lEluk0EQhUusWLJgwYJFQAghhFAGpjClceYEsJ0JM5tIrLlCnSJrH6WO
+kiPkCIDynlF/Er8UPX1VXWPHfev018HPKxFx9ufvr15+F2vRf63Hq+Br4Ovg
+G63Pe7P1eRZab78tfSC9I12U3pU+lt6TPpLelz5BnjXpQ+lL5H0tXbrUbOJl
++Fekb1B3gL420IfrP1V+xz8T+/yqdEf6XLonfSHd7udI+19Jt9C366mPtF9z
+5r7Uc7/v43IXfY+kA/gHiF+XXZzmI/k99zvZxXUg+6Z0KL+4xrJ7jnE/V7Nf
+e0r1m9vIrz2X+knv3f1rrjiWfxf595BfXIfya6/tRP599P+27yfF3pf3EvaL
+2zH6HPZxOeztMfmP3feo+duon89zheapEeLGvX2+F/drVn7PPb9/nWtU79Ps
++mbHe88TnPN92S/2vczre27Ho6/5Ocf7/AnsUt+L507bR+jL+/f/xQB59TtI
+s96lMvtd+yDVu9bMek/TrHe5zH6PJz17D/4SXOD42HMDJ7jA8Qnx4AQXOD4j
+HpzgAscXxIMTXOD4inhwggsc3xAPTnCB4zviwQkucEx7XgA38BSc4Bm4wOfg
++IH64AaeghM8Axf4HBynqA9u4Ck4wTNw/ePf1KvFXw==
+       "]], 
+      Hue[0.37820393249936934`, 0.6, 0.6], 
+      Directive[
+       PointSize[0.008333333333333333], 
+       RGBColor[0.922526, 0.385626, 0.209179], 
+       AbsoluteThickness[1.6]], 
+      LineBox[CompressedData["
+1:eJx1lktuE0EURUuMGDJgwICBQQghhBB/wjfPDgk2kBCcQADjYCwxZgu1CsZe
+Si0lS2AJgHxPoXdFWmpdnfep96q6u6ovLX9Mv58ppfz8c//V9fVrs+QrMp41
+Pmd83viC8UXjQeS6lyPnXYlsv2p6zfi66Q3z35RuSG9Jb5+id6SPpXelz6T3
+pA+k96WPzE7ew7XWkfXB+MqrW2YfSp9IN6VPFY+fvsbS5/LH//MK9o0c1/sb
+5vF7nW3pyPzkvZBumZ95DS2OccT1Za5DXt3O9rKT4+uOjcs4Y4sbZ3txO31O
+zD/JWl5ZH+K6K/vrPE41Lm9kN2U9yu4p4xK3J2Wd9mweb3PdCjPO/lqbNPYt
+Dp7kuD7vd1KtT4h5Dyp+8mHWYZr7iGnur+LXfBus/sqB4qgPs97mbwe533Io
+v/qJw1yvwppvg6n/PnOI+/PCr+fR8FP/g5T6MO+TmPe+4af+kfzqN45yfBX3
+9cfP+/cx1wvjCo+UL+7f+SexvreAWX9Y4zVx33c+W31x/05h+iee/WMm1Xxj
+lv11lvtrMPvHF7HiQ8y+W2Htu414+p9b/jz7q3Gb537Lce43ji0f5vkTz/79
+VTpSvrh/f/g1nwaTv5DqHBvAOvcC1vm1gHVuVljn7ArWud1gnb8nxuWbVP8N
+A1j/BQHrP2MB63+hGq+MG6zrxLgsc/xgmf1hvDCuxivj9o9/AwUE30s=
+       "]], 
+      Hue[0.6142719099991583, 0.6, 0.6], 
+      Directive[
+       PointSize[0.008333333333333333], 
+       RGBColor[0.528488, 0.470624, 0.701351], 
+       AbsoluteThickness[1.6]], 
+      LineBox[CompressedData["
+1:eJxd10tOFUEUxvGOI4cOHDhw0BJjjDFGfD/heFERxRcoIgiUKOJj4BbOUnop
+tRAHvQSXoIbv36a+m5CT3z1dXacefbs4s/9z7eBY13W//v79i0ef34td+4mW
+x80nzCfNp6K972lzb56jveLZaNudi7af89He54K1u6g4r3jJ7nPZ2s9bvGLt
+ripes3hL8brFG+abines3YLibYtcRz93zfcs3re4YPlFc7R1JmacD9r7JOa6
+mbXH1L3Ufp9L1v6houYhMeN/1NaRmHE9tvow41tW1Lhz2cbxxOrEzPNKW1eu
+WP1PrT2mvmdWH6afVUXGt2r9PJdnivK0vi+sPnmat5f6nnHL07q9UlR/ITPP
+SV71VvKs42tZ8xGYes1VntZlTVHjDkz/mPbytH7riqon1tvrc936J88+edM6
+sPZPYs1Plad9+FbW/IfMvk6s+1fM+m0oaj5io80n1vgq5jl5Z/XLrEdavmLq
+31TU+samtccztcfM33tZ6xFYz0HKPC8V035L16me2GrrS/IabyXP+m8rqr7Y
+bvOJ9XtSMc/nh7a+wKyf5Stm/+/oOvbfjvVPnvox+3+3zceutcesH2b/7LXj
+C8z+xfo9q5j3QGndY9YTz45isesTq//B8hXr933E1P9RUe+LHuv9Fljvl4I1
+nrT8gPW+rXa/EfPe3W/r77He+4HpH+tckVj1D1jvz4pVz4g5d3xq6+ux6gus
+9gXrfJJY/Q1Y559qHjHnnc+KGl+Pda4KrPNSwXPqH+vcNVi+2v1GzHnoQFHz
+2WONJzD9m9M8YMaPVd9o+e6Louazx6ovsM6xBWs8aR6w6qlY59XR7tcdKup8
+2x+2+cA6dxesc3fa9YPlK9Z5ejR3X1v35ph89CnmtOsHy1fzaO6+te7NgfX/
+QbF8mgdzNY/m7rv1bw5zMad5MFfzaO5+WP/mMBdz/vcfMnIzzQ==
+       "]]}, {}}, {
+    DisplayFunction -> Identity, PlotRangePadding -> {{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.02], 
+        Scaled[0.05]}}, AxesOrigin -> {0, 0}, 
+     PlotRange -> {{0, 220.}, {0, 229.}}, DisplayFunction -> Identity, 
+     AspectRatio -> NCache[GoldenRatio^(-1), 0.6180339887498948], 
+     Axes -> {True, True}, AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, 
+     DisplayFunction :> Identity, Frame -> {{True, True}, {True, True}}, 
+     FrameLabel -> {{
+        FormBox["\"Length Count\"", TraditionalForm], None}, {
+        FormBox["\"Chain Length\"", TraditionalForm], None}}, 
+     FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, 
+     GridLines -> {Automatic, Automatic}, GridLinesStyle -> Directive[
+       GrayLevel[0.5, 0.4]], ImageSize -> 600, Method -> {}, 
+     PlotRange -> {{0, 220.}, {0, 229.}}, PlotRangeClipping -> True, 
+     PlotRangePadding -> {{
+        Scaled[0.02], 
+        Scaled[0.02]}, {
+        Scaled[0.02], 
+        Scaled[0.05]}}, Ticks -> {Automatic, Automatic}}],FormBox[
+    FormBox[
+     TemplateBox[{"5", "6", "7", "8", "9"}, "PointLegend", 
+      DisplayFunction -> (FormBox[
+        StyleBox[
+         StyleBox[
+          PaneBox[
+           TagBox[
+            GridBox[{{
+               TagBox[
+                GridBox[{{
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.15], 
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.15], 
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.15], 
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.15], 
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.15], 
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.15], 
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #3}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.15], 
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.15], 
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #4}, {
+                   GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.15], 
+                    RGBColor[0.528488, 0.470624, 0.701351], 
+                    AbsoluteThickness[1.6]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.15], 
+                    RGBColor[0.528488, 0.470624, 0.701351], 
+                    AbsoluteThickness[1.6]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #5}}, 
+                 GridBoxAlignment -> {
+                  "Columns" -> {Center, Left}, "Rows" -> {{Baseline}}}, 
+                 AutoDelete -> False, 
+                 GridBoxDividers -> {
+                  "Columns" -> {{False}}, "Rows" -> {{False}}}, 
+                 GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}},
+                  GridBoxSpacings -> {
+                  "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+             GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+             AutoDelete -> False, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0}}}], 
+            "Grid"], Alignment -> Left, AppearanceElements -> None, 
+           ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
+           "ResizeToFit"], LineIndent -> 0, StripOnInput -> False], {
+         FontFamily -> "Arial"}, Background -> Automatic, StripOnInput -> 
+         False], TraditionalForm]& ), 
+      InterpretationFunction :> (RowBox[{"PointLegend", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.008333333333333333`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    RowBox[{
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.24561133333333335`, 0.3378526666666667, 
+                    0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
+                    None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "\[InvisibleSpace]"}], 
+                    "RGBColor[0.368417, 0.506779, 0.709798]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.368417, 0.506779, 0.709798]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.368417, 0.506779, 0.709798], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.008333333333333333`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    RowBox[{
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.587148, 0.40736066666666665`, 0.09470066666666668], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "\[InvisibleSpace]"}], 
+                    "RGBColor[0.880722, 0.611041, 0.142051]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.880722, 0.611041, 0.142051]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.880722, 0.611041, 0.142051], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.008333333333333333`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    RowBox[{
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.37345400000000006`, 0.461046, 0.12992333333333334`], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "\[InvisibleSpace]"}], 
+                    "RGBColor[0.560181, 0.691569, 0.194885]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.560181, 0.691569, 0.194885]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.560181, 0.691569, 0.194885], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.008333333333333333`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    RowBox[{
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.922526, 0.385626, 0.209179], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.6150173333333333, 0.25708400000000003`, 
+                    0.13945266666666667`], FrameTicks -> None, 
+                    PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "\[InvisibleSpace]"}], 
+                    "RGBColor[0.922526, 0.385626, 0.209179]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.922526, 0.385626, 0.209179]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.922526, 0.385626, 0.209179], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}], 
+               ",", 
+               RowBox[{"Directive", "[", 
+                 RowBox[{
+                   RowBox[{"PointSize", "[", "0.008333333333333333`", "]"}], 
+                   ",", 
+                   InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    RowBox[{
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.528488, 0.470624, 0.701351], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, AspectRatio -> 1, Frame -> 
+                    True, FrameStyle -> 
+                    RGBColor[
+                    0.3523253333333333, 0.3137493333333333, 
+                    0.46756733333333333`], FrameTicks -> None, 
+                    PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    "\[InvisibleSpace]"}], 
+                    "RGBColor[0.528488, 0.470624, 0.701351]"], Appearance -> 
+                    None, BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.528488, 0.470624, 0.701351]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.528488, 0.470624, 0.701351], Editable -> False,
+                     Selectable -> False], ",", 
+                   RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}]}], "]"}]}],
+              "}"}], ",", 
+           RowBox[{"{", 
+             RowBox[{#, ",", #2, ",", #3, ",", #4, ",", #5}], "}"}], ",", 
+           RowBox[{"Joined", "\[Rule]", 
+             RowBox[{"{", 
+               
+               RowBox[{
+                "True", ",", "True", ",", "True", ",", "True", ",", "True"}], 
+               "}"}]}], ",", 
+           RowBox[{"LabelStyle", "\[Rule]", 
+             RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}], ",", 
+           RowBox[{"LegendMarkers", "\[Rule]", 
+             RowBox[{"{", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}], ",", 
+                 RowBox[{"{", 
+                   RowBox[{"False", ",", "Automatic"}], "}"}]}], "}"}]}]}], 
+         "]"}]& ), Editable -> True], TraditionalForm], TraditionalForm]},
+  "Legended",
+  DisplayFunction->(GridBox[{{
+      TagBox[
+       ItemBox[
+        PaneBox[
+         TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+         BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+       "SkipImageSizeLevel"], 
+      ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+    GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+    AutoDelete -> False, GridBoxItemSize -> Automatic, 
+    BaselinePosition -> {1, 1}]& ),
+  Editable->True,
+  InterpretationFunction->(RowBox[{"Legended", "[", 
+     RowBox[{#, ",", 
+       RowBox[{"Placed", "[", 
+         RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
+ CellChangeTimes->{{3.680777952230516*^9, 3.680777963131238*^9}, 
+   3.680778038441345*^9, 3.680778086386639*^9, {3.680778130190032*^9, 
+   3.680778201162335*^9}, {3.680778384173172*^9, 3.680778391594748*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"data9", ",", " ", 
+   RowBox[{"Joined", "\[Rule]", "True"}], ",", " ", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.680775867958206*^9, 3.6807758722089252`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+    AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxd10tOFUEUxvGOI4cOHDhw0BJjjDFGfD/heFERxRcoIgiUKOJj4BbOUnop
+tRAHvQSXoIbv36a+m5CT3z1dXacefbs4s/9z7eBY13W//v79i0ef34td+4mW
+x80nzCfNp6K972lzb56jveLZaNudi7af89He54K1u6g4r3jJ7nPZ2s9bvGLt
+ripes3hL8brFG+abines3YLibYtcRz93zfcs3re4YPlFc7R1JmacD9r7JOa6
+mbXH1L3Ufp9L1v6houYhMeN/1NaRmHE9tvow41tW1Lhz2cbxxOrEzPNKW1eu
+WP1PrT2mvmdWH6afVUXGt2r9PJdnivK0vi+sPnmat5f6nnHL07q9UlR/ITPP
+SV71VvKs42tZ8xGYes1VntZlTVHjDkz/mPbytH7riqon1tvrc936J88+edM6
+sPZPYs1Plad9+FbW/IfMvk6s+1fM+m0oaj5io80n1vgq5jl5Z/XLrEdavmLq
+31TU+samtccztcfM33tZ6xFYz0HKPC8V035L16me2GrrS/IabyXP+m8rqr7Y
+bvOJ9XtSMc/nh7a+wKyf5Stm/+/oOvbfjvVPnvox+3+3zceutcesH2b/7LXj
+C8z+xfo9q5j3QGndY9YTz45isesTq//B8hXr933E1P9RUe+LHuv9Fljvl4I1
+nrT8gPW+rXa/EfPe3W/r77He+4HpH+tckVj1D1jvz4pVz4g5d3xq6+ux6gus
+9gXrfJJY/Q1Y559qHjHnnc+KGl+Pda4KrPNSwXPqH+vcNVi+2v1GzHnoQFHz
+2WONJzD9m9M8YMaPVd9o+e6Louazx6ovsM6xBWs8aR6w6qlY59XR7tcdKup8
+2x+2+cA6dxesc3fa9YPlK9Z5ejR3X1v35ph89CnmtOsHy1fzaO6+te7NgfX/
+QbF8mgdzNY/m7rv1bw5zMad5MFfzaO5+WP/mMBdz/vcfMnIzzQ==
+     "]]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{},
+  PlotRange->{{0, 220.}, {0, 56.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.6807760350124207`*^9, {3.680778190606358*^9, 3.680778205869928*^9}}]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -238,23 +946,24 @@ Cell[BoxData[
     RowBox[{"another", " ", "one", " ", "going", " ", "down"}]}], " ", "*)"}],
    "\[IndentingNewLine]", 
   RowBox[{"ListPlot", "[", 
-   RowBox[{"data", ",", " ", 
+   RowBox[{"data5", ",", " ", 
     RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.67725296681149*^9, 3.677252974577331*^9}, {
-  3.6772531579956303`*^9, 3.677253169917158*^9}, {3.677253282907675*^9, 
-  3.677253309687196*^9}}],
+   3.6772531579956303`*^9, 3.677253169917158*^9}, {3.677253282907675*^9, 
+   3.677253309687196*^9}, 3.680774744584405*^9, {3.680774862610848*^9, 
+   3.68077486268016*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{}, 
    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.016666666666666666`], 
     AbsoluteThickness[1.6], LineBox[CompressedData["
-1:eJxdk8tKA0EQRRtXLl24cOEiikgQEd9vnU6MGk1UfIsvxsS49RfqU/Ip+SQ/
-IUqfG+lqGA6HO11dPdTMdL5vemMhhOL3+WNaP0XIV8x13PmE80l8Dk7BFTgN
-D2AFNuBsop24Ok04T36OV2ELLiTGO3yR97V/Cb/Hl/En1+cDXE0cvOBr8B2u
-wxJuUO8V36Qf5VuwA7d5X76T2O/hu3gX30ssVW+f/R8437X/iR86L+jnC4+J
-A84zufIaTn3Do/qpQ+obXmr/UX6+4aZ+Gq4+bm/kx4kV7mt4eIbMSXwk19zc
-wlPya3I8XEHNRZu8mfcZzvJzDR/NpeZQcybXXLdyN7n+q3bu5jxcyNMy5+HS
-5c5H91T+70MUB1VL
+1:eJxdkttKQkEUhhddedmFF114sZOQiJBOZgfN6aCVJyiEhETC0lICX2EexUfx
+UfYj9AgV860NswY2H9/+Z8/MXrO2J8vn6YaI1P6ef4bx05B4uFhzxjeN5/ES
+3IJHsBDor/EEOliETbgDdT7r+nt8F/bhHnkb38c1Lwe6J/yAfIAf4sP43OsX
+/Jh8hJ+Qv+KVwOQNPyWf4FX2H+Nnganm5+RT/AJ/xy+heo18htdZT/3K7N8g
+1/Wpe/rFf+k9zCF1X32S4475csN75nt8pd/f4t/keLogv4vP6/H1B7n2AfXy
+uNN6t2CHXJ06iPYJ95L1jfbxA6SPvbqOx9i9cWmb3LieK8uNS9fkxqVncuNZ
+34v8AivUUCQ=
      "]]}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{True, True},
@@ -268,7 +977,7 @@ wlPya3I8XEHNRZu8mfcZzvJzDR/NpeZQcybXXLdyN7n+q3bu5jxcyNMy5+HS
   GridLinesStyle->Directive[
     GrayLevel[0.5, 0.4]],
   Method->{},
-  PlotRange->{{0, 63.}, {0, 182.}},
+  PlotRange->{{0, 60.}, {0, 229.}},
   PlotRangeClipping->True,
   PlotRangePadding->{{
      Scaled[0.02], 
@@ -278,151 +987,1454 @@ wlPya3I8XEHNRZu8mfcZzvJzDR/NpeZQcybXXLdyN7n+q3bu5jxcyNMy5+HS
   Ticks->{Automatic, Automatic}]], "Output",
  CellChangeTimes->{
   3.677252975326136*^9, 3.6772530720716047`*^9, {3.677253311120331*^9, 
-   3.677253330191782*^9}}]
+   3.677253330191782*^9}, 3.680774745649211*^9, {3.6807748582420197`*^9, 
+   3.680774863275838*^9}, {3.680774960597013*^9, 3.68077496909374*^9}}]
 }, Open  ]],
+
+Cell[BoxData[";"], "Input",
+ CellChangeTimes->{{3.6807739077861443`*^9, 3.680773912178479*^9}, 
+   3.680773972710504*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"visualizeChain", "[", "L_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"mid", "=", 
+       RowBox[{"Round", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"L", "+", "1"}], ")"}], "/", "2"}], ",", " ", "1"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"chain", "=", 
+       RowBox[{"generateChain", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"mid", ",", "mid", ",", "mid"}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"mid", ",", "mid", ",", 
+             RowBox[{"mid", "+", "1"}]}], "}"}]}], "}"}], ",", " ", "L", ",", 
+         " ", "2000"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Graphics3D", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"Sphere", "[", 
+            RowBox[{"#", ",", " ", "0.02"}], "]"}], "&"}], "/@", "chain"}], 
+         ",", " ", "Thick", ",", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Line", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"chain", "[", 
+               RowBox[{"[", "#", "]"}], "]"}], ",", " ", 
+              RowBox[{"chain", "[", 
+               RowBox[{"[", 
+                RowBox[{"#", "+", "1"}], "]"}], "]"}]}], "}"}], "]"}], "&"}], 
+          "/@", 
+          RowBox[{"Range", "[", 
+           RowBox[{
+            RowBox[{"Length", "[", "chain", "]"}], "-", "1"}], "]"}]}], ",", 
+         " ", "Red", ",", " ", 
+         RowBox[{"Sphere", "[", 
+          RowBox[{
+           RowBox[{"Last", "[", "chain", "]"}], ",", " ", 
+           RowBox[{"L", "/", "20"}]}], "]"}], ",", " ", "Blue", ",", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Sphere", "[", 
+            RowBox[{"#", ",", " ", 
+             RowBox[{"L", "/", "20"}]}], "]"}], "&"}], "/@", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", " ", "0", ",", " ", "0"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"L", ",", " ", "0", ",", "0"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"L", ",", "L", ",", " ", "0"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"L", ",", " ", "0", ",", " ", "L"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"L", ",", " ", "L", ",", "L"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", " ", "0", ",", " ", "L"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", " ", "L", ",", " ", "0"}], "}"}], ",", " ", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", " ", "L", ",", " ", "L"}], "}"}]}], "}"}]}]}], 
+        "}"}], "]"}]}]}], "]"}]}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.6772514927307463`*^9, 3.677251574700284*^9}, {
+   3.6772517739831247`*^9, 3.677251786915101*^9}, {3.680773578081757*^9, 
+   3.680773583284906*^9}, {3.6807739741107273`*^9, 3.6807739748669033`*^9}, {
+   3.680774008848112*^9, 3.680774160865499*^9}, {3.680774199183977*^9, 
+   3.68077428706594*^9}, {3.680774364428073*^9, 3.680774502428331*^9}, 
+   3.680774532847653*^9, {3.680779149693424*^9, 3.680779179833866*^9}, {
+   3.680779243226946*^9, 3.680779249135951*^9}}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"Graphics3D", "[", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{
-      RowBox[{
-       RowBox[{"Sphere", "[", 
-        RowBox[{"#", ",", " ", "0.2"}], "]"}], "&"}], "/@", "chain"}], ",", 
-     " ", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"Line", "[", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"chain", "[", 
-           RowBox[{"[", "#", "]"}], "]"}], ",", " ", 
-          RowBox[{"chain", "[", 
-           RowBox[{"[", 
-            RowBox[{"#", "+", "1"}], "]"}], "]"}]}], "}"}], "]"}], "&"}], "/@", 
-      RowBox[{"Range", "[", 
-       RowBox[{
-        RowBox[{"Length", "[", "chain", "]"}], "-", "1"}], "]"}]}]}], "}"}], 
-   "]"}], "\[IndentingNewLine]"}]], "Input",
- CellChangeTimes->{{3.6772514927307463`*^9, 3.677251574700284*^9}, {
-  3.6772517739831247`*^9, 3.677251786915101*^9}}],
+  RowBox[{
+   RowBox[{"visualizeChain", "[", "#", "]"}], "&"}], "/@", 
+  RowBox[{"{", 
+   RowBox[{
+   "4", ",", "5", ",", "6", ",", "7", ",", "8", ",", "9", ",", " ", "10", ",",
+     " ", "11"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.680774335119464*^9, 3.680774350665574*^9}, {
+  3.68077919793005*^9, 3.6807792208685913`*^9}, {3.680779256521007*^9, 
+  3.6807792617123137`*^9}}],
 
 Cell[BoxData[
- Graphics3DBox[{{SphereBox[{3, 3, 3}, 0.2], SphereBox[{3, 3, 4}, 0.2], 
-    SphereBox[{2, 3, 4}, 0.2], SphereBox[{2, 3, 5}, 0.2], 
-    SphereBox[{2, 2, 5}, 0.2], SphereBox[{2, 1, 5}, 0.2], 
-    SphereBox[{1, 1, 5}, 0.2], SphereBox[{1, 2, 5}, 0.2], 
-    SphereBox[{1, 3, 5}, 0.2], SphereBox[{1, 3, 4}, 0.2], 
-    SphereBox[{1, 3, 3}, 0.2], SphereBox[{1, 3, 2}, 0.2], 
-    SphereBox[{1, 2, 2}, 0.2], SphereBox[{1, 2, 3}, 0.2], 
-    SphereBox[{2, 2, 3}, 0.2], SphereBox[{2, 2, 2}, 0.2], 
-    SphereBox[{2, 3, 2}, 0.2], SphereBox[{2, 4, 2}, 0.2], 
-    SphereBox[{2, 4, 3}, 0.2], SphereBox[{2, 4, 4}, 0.2], 
-    SphereBox[{2, 4, 5}, 0.2], SphereBox[{3, 4, 5}, 0.2], 
-    SphereBox[{3, 5, 5}, 0.2], SphereBox[{2, 5, 5}, 0.2], 
-    SphereBox[{1, 5, 5}, 0.2], SphereBox[{1, 4, 5}, 0.2], 
-    SphereBox[{1, 4, 4}, 0.2], SphereBox[{1, 4, 3}, 0.2], 
-    SphereBox[{1, 5, 3}, 0.2], SphereBox[{1, 5, 2}, 0.2], 
-    SphereBox[{1, 5, 1}, 0.2], SphereBox[{2, 5, 1}, 0.2], 
-    SphereBox[{3, 5, 1}, 0.2], SphereBox[{3, 5, 2}, 0.2], 
-    SphereBox[{3, 5, 3}, 0.2], SphereBox[{3, 4, 3}, 0.2], 
-    SphereBox[{3, 4, 2}, 0.2], SphereBox[{3, 4, 1}, 0.2], 
-    SphereBox[{2, 4, 1}, 0.2], SphereBox[{1, 4, 1}, 0.2], 
-    SphereBox[{1, 3, 1}, 0.2], SphereBox[{2, 3, 1}, 0.2], 
-    SphereBox[{2, 2, 1}, 0.2], SphereBox[{3, 2, 1}, 0.2], 
-    SphereBox[{3, 1, 1}, 0.2], SphereBox[{2, 1, 1}, 0.2], 
-    SphereBox[{1, 1, 1}, 0.2], SphereBox[{1, 1, 2}, 0.2], 
-    SphereBox[{1, 1, 3}, 0.2], SphereBox[{1, 1, 4}, 0.2], 
-    SphereBox[{1, 2, 4}, 0.2], SphereBox[{2, 2, 4}, 0.2], 
-    SphereBox[{3, 2, 4}, 0.2], SphereBox[{3, 2, 3}, 0.2], 
-    SphereBox[{4, 2, 3}, 0.2], SphereBox[{4, 2, 2}, 0.2], 
-    SphereBox[{4, 2, 1}, 0.2], SphereBox[{4, 3, 1}, 0.2], 
-    SphereBox[{4, 4, 1}, 0.2], SphereBox[{4, 5, 1}, 0.2], 
-    SphereBox[{4, 5, 2}, 0.2], SphereBox[{4, 4, 2}, 0.2], 
-    SphereBox[{5, 4, 2}, 0.2], SphereBox[{5, 3, 2}, 0.2], 
-    SphereBox[{5, 3, 1}, 0.2], SphereBox[{5, 4, 1}, 0.2], 
-    SphereBox[{5, 5, 1}, 0.2], SphereBox[{5, 5, 2}, 0.2], 
-    SphereBox[{5, 5, 3}, 0.2], SphereBox[{5, 5, 4}, 0.2], 
-    SphereBox[{5, 5, 5}, 0.2], SphereBox[{5, 4, 5}, 0.2], 
-    SphereBox[{4, 4, 5}, 0.2], SphereBox[{4, 5, 5}, 0.2], 
-    SphereBox[{4, 5, 4}, 0.2], SphereBox[{4, 5, 3}, 0.2], 
-    SphereBox[{4, 4, 3}, 0.2], SphereBox[{4, 3, 3}, 0.2], 
-    SphereBox[{4, 3, 4}, 0.2], SphereBox[{4, 4, 4}, 0.2], 
-    SphereBox[{5, 4, 4}, 0.2], SphereBox[{5, 4, 3}, 0.2], 
-    SphereBox[{5, 3, 3}, 0.2], SphereBox[{5, 3, 4}, 0.2], 
-    SphereBox[{5, 2, 4}, 0.2], SphereBox[{5, 2, 5}, 0.2], 
-    SphereBox[{5, 1, 5}, 0.2], SphereBox[{5, 1, 4}, 0.2], 
-    SphereBox[{4, 1, 4}, 0.2], SphereBox[{4, 2, 4}, 0.2], 
-    SphereBox[{4, 2, 5}, 0.2], SphereBox[{3, 2, 5}, 0.2], 
-    SphereBox[{3, 1, 5}, 0.2], SphereBox[{3, 1, 4}, 0.2], 
-    SphereBox[{3, 1, 3}, 0.2], SphereBox[{2, 1, 3}, 0.2], 
-    SphereBox[{2, 1, 2}, 0.2], SphereBox[{3, 1, 2}, 0.2], 
-    SphereBox[{3, 2, 2}, 0.2], SphereBox[{3, 3, 2}, 0.2], 
-    SphereBox[{3, 3, 1}, 0.2]}, {Line3DBox[{{3, 3, 3}, {3, 3, 4}}], 
-    Line3DBox[{{3, 3, 4}, {2, 3, 4}}], Line3DBox[{{2, 3, 4}, {2, 3, 5}}], 
-    Line3DBox[{{2, 3, 5}, {2, 2, 5}}], Line3DBox[{{2, 2, 5}, {2, 1, 5}}], 
-    Line3DBox[{{2, 1, 5}, {1, 1, 5}}], Line3DBox[{{1, 1, 5}, {1, 2, 5}}], 
-    Line3DBox[{{1, 2, 5}, {1, 3, 5}}], Line3DBox[{{1, 3, 5}, {1, 3, 4}}], 
-    Line3DBox[{{1, 3, 4}, {1, 3, 3}}], Line3DBox[{{1, 3, 3}, {1, 3, 2}}], 
-    Line3DBox[{{1, 3, 2}, {1, 2, 2}}], Line3DBox[{{1, 2, 2}, {1, 2, 3}}], 
-    Line3DBox[{{1, 2, 3}, {2, 2, 3}}], Line3DBox[{{2, 2, 3}, {2, 2, 2}}], 
-    Line3DBox[{{2, 2, 2}, {2, 3, 2}}], Line3DBox[{{2, 3, 2}, {2, 4, 2}}], 
-    Line3DBox[{{2, 4, 2}, {2, 4, 3}}], Line3DBox[{{2, 4, 3}, {2, 4, 4}}], 
-    Line3DBox[{{2, 4, 4}, {2, 4, 5}}], Line3DBox[{{2, 4, 5}, {3, 4, 5}}], 
-    Line3DBox[{{3, 4, 5}, {3, 5, 5}}], Line3DBox[{{3, 5, 5}, {2, 5, 5}}], 
-    Line3DBox[{{2, 5, 5}, {1, 5, 5}}], Line3DBox[{{1, 5, 5}, {1, 4, 5}}], 
-    Line3DBox[{{1, 4, 5}, {1, 4, 4}}], Line3DBox[{{1, 4, 4}, {1, 4, 3}}], 
-    Line3DBox[{{1, 4, 3}, {1, 5, 3}}], Line3DBox[{{1, 5, 3}, {1, 5, 2}}], 
-    Line3DBox[{{1, 5, 2}, {1, 5, 1}}], Line3DBox[{{1, 5, 1}, {2, 5, 1}}], 
-    Line3DBox[{{2, 5, 1}, {3, 5, 1}}], Line3DBox[{{3, 5, 1}, {3, 5, 2}}], 
-    Line3DBox[{{3, 5, 2}, {3, 5, 3}}], Line3DBox[{{3, 5, 3}, {3, 4, 3}}], 
-    Line3DBox[{{3, 4, 3}, {3, 4, 2}}], Line3DBox[{{3, 4, 2}, {3, 4, 1}}], 
-    Line3DBox[{{3, 4, 1}, {2, 4, 1}}], Line3DBox[{{2, 4, 1}, {1, 4, 1}}], 
-    Line3DBox[{{1, 4, 1}, {1, 3, 1}}], Line3DBox[{{1, 3, 1}, {2, 3, 1}}], 
-    Line3DBox[{{2, 3, 1}, {2, 2, 1}}], Line3DBox[{{2, 2, 1}, {3, 2, 1}}], 
-    Line3DBox[{{3, 2, 1}, {3, 1, 1}}], Line3DBox[{{3, 1, 1}, {2, 1, 1}}], 
-    Line3DBox[{{2, 1, 1}, {1, 1, 1}}], Line3DBox[{{1, 1, 1}, {1, 1, 2}}], 
-    Line3DBox[{{1, 1, 2}, {1, 1, 3}}], Line3DBox[{{1, 1, 3}, {1, 1, 4}}], 
-    Line3DBox[{{1, 1, 4}, {1, 2, 4}}], Line3DBox[{{1, 2, 4}, {2, 2, 4}}], 
-    Line3DBox[{{2, 2, 4}, {3, 2, 4}}], Line3DBox[{{3, 2, 4}, {3, 2, 3}}], 
-    Line3DBox[{{3, 2, 3}, {4, 2, 3}}], Line3DBox[{{4, 2, 3}, {4, 2, 2}}], 
-    Line3DBox[{{4, 2, 2}, {4, 2, 1}}], Line3DBox[{{4, 2, 1}, {4, 3, 1}}], 
-    Line3DBox[{{4, 3, 1}, {4, 4, 1}}], Line3DBox[{{4, 4, 1}, {4, 5, 1}}], 
-    Line3DBox[{{4, 5, 1}, {4, 5, 2}}], Line3DBox[{{4, 5, 2}, {4, 4, 2}}], 
-    Line3DBox[{{4, 4, 2}, {5, 4, 2}}], Line3DBox[{{5, 4, 2}, {5, 3, 2}}], 
-    Line3DBox[{{5, 3, 2}, {5, 3, 1}}], Line3DBox[{{5, 3, 1}, {5, 4, 1}}], 
-    Line3DBox[{{5, 4, 1}, {5, 5, 1}}], Line3DBox[{{5, 5, 1}, {5, 5, 2}}], 
-    Line3DBox[{{5, 5, 2}, {5, 5, 3}}], Line3DBox[{{5, 5, 3}, {5, 5, 4}}], 
-    Line3DBox[{{5, 5, 4}, {5, 5, 5}}], Line3DBox[{{5, 5, 5}, {5, 4, 5}}], 
-    Line3DBox[{{5, 4, 5}, {4, 4, 5}}], Line3DBox[{{4, 4, 5}, {4, 5, 5}}], 
-    Line3DBox[{{4, 5, 5}, {4, 5, 4}}], Line3DBox[{{4, 5, 4}, {4, 5, 3}}], 
-    Line3DBox[{{4, 5, 3}, {4, 4, 3}}], Line3DBox[{{4, 4, 3}, {4, 3, 3}}], 
-    Line3DBox[{{4, 3, 3}, {4, 3, 4}}], Line3DBox[{{4, 3, 4}, {4, 4, 4}}], 
-    Line3DBox[{{4, 4, 4}, {5, 4, 4}}], Line3DBox[{{5, 4, 4}, {5, 4, 3}}], 
-    Line3DBox[{{5, 4, 3}, {5, 3, 3}}], Line3DBox[{{5, 3, 3}, {5, 3, 4}}], 
-    Line3DBox[{{5, 3, 4}, {5, 2, 4}}], Line3DBox[{{5, 2, 4}, {5, 2, 5}}], 
-    Line3DBox[{{5, 2, 5}, {5, 1, 5}}], Line3DBox[{{5, 1, 5}, {5, 1, 4}}], 
-    Line3DBox[{{5, 1, 4}, {4, 1, 4}}], Line3DBox[{{4, 1, 4}, {4, 2, 4}}], 
-    Line3DBox[{{4, 2, 4}, {4, 2, 5}}], Line3DBox[{{4, 2, 5}, {3, 2, 5}}], 
-    Line3DBox[{{3, 2, 5}, {3, 1, 5}}], Line3DBox[{{3, 1, 5}, {3, 1, 4}}], 
-    Line3DBox[{{3, 1, 4}, {3, 1, 3}}], Line3DBox[{{3, 1, 3}, {2, 1, 3}}], 
-    Line3DBox[{{2, 1, 3}, {2, 1, 2}}], Line3DBox[{{2, 1, 2}, {3, 1, 2}}], 
-    Line3DBox[{{3, 1, 2}, {3, 2, 2}}], Line3DBox[{{3, 2, 2}, {3, 3, 2}}], 
-    Line3DBox[{{3, 3, 2}, {3, 3, 1}}]}},
-  AutomaticImageSize->True,
-  ImageSize->{445.6257296589641, 406.88750318840994`},
-  ViewPoint->{-2.645561910487651, 1.0197951385443351`, -1.8468947054930562`},
-  ViewVertical->{-0.49260885883102556`, -0.5032382330880945, \
--0.7099914034406104}]], "Output",
- CellChangeTimes->{{3.677251557389841*^9, 3.677251575333008*^9}, {
-   3.6772517423063927`*^9, 3.677251788142619*^9}, 3.677251831896201*^9}]
+ RowBox[{"{", 
+  RowBox[{
+   Graphics3DBox[{{SphereBox[{2, 2, 2}, 0.02], SphereBox[{2, 2, 3}, 0.02], 
+      SphereBox[{3, 2, 3}, 0.02], SphereBox[{3, 3, 3}, 0.02], 
+      SphereBox[{2, 3, 3}, 0.02], SphereBox[{1, 3, 3}, 0.02], 
+      SphereBox[{1, 3, 2}, 0.02], SphereBox[{2, 3, 2}, 0.02], 
+      SphereBox[{3, 3, 2}, 0.02], SphereBox[{3, 2, 2}, 0.02], 
+      SphereBox[{3, 1, 2}, 0.02], SphereBox[{2, 1, 2}, 0.02], 
+      SphereBox[{1, 1, 2}, 0.02], SphereBox[{1, 1, 3}, 0.02], 
+      SphereBox[{1, 1, 4}, 0.02], SphereBox[{1, 2, 4}, 0.02], 
+      SphereBox[{2, 2, 4}, 0.02], SphereBox[{2, 3, 4}, 0.02], 
+      SphereBox[{3, 3, 4}, 0.02], SphereBox[{3, 4, 4}, 0.02], 
+      SphereBox[{4, 4, 4}, 0.02], SphereBox[{4, 3, 4}, 0.02], 
+      SphereBox[{4, 2, 4}, 0.02], SphereBox[{4, 1, 4}, 0.02], 
+      SphereBox[{4, 1, 3}, 0.02], SphereBox[{3, 1, 3}, 0.02], 
+      SphereBox[{2, 1, 3}, 0.02], SphereBox[{2, 1, 4}, 0.02], 
+      SphereBox[{3, 1, 4}, 0.02], SphereBox[{3, 2, 4}, 0.02]}, 
+     {Thickness[
+      Large], {Line3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+       Line3DBox[{{2, 2, 3}, {3, 2, 3}}], Line3DBox[{{3, 2, 3}, {3, 3, 3}}], 
+       Line3DBox[{{3, 3, 3}, {2, 3, 3}}], Line3DBox[{{2, 3, 3}, {1, 3, 3}}], 
+       Line3DBox[{{1, 3, 3}, {1, 3, 2}}], Line3DBox[{{1, 3, 2}, {2, 3, 2}}], 
+       Line3DBox[{{2, 3, 2}, {3, 3, 2}}], Line3DBox[{{3, 3, 2}, {3, 2, 2}}], 
+       Line3DBox[{{3, 2, 2}, {3, 1, 2}}], Line3DBox[{{3, 1, 2}, {2, 1, 2}}], 
+       Line3DBox[{{2, 1, 2}, {1, 1, 2}}], Line3DBox[{{1, 1, 2}, {1, 1, 3}}], 
+       Line3DBox[{{1, 1, 3}, {1, 1, 4}}], Line3DBox[{{1, 1, 4}, {1, 2, 4}}], 
+       Line3DBox[{{1, 2, 4}, {2, 2, 4}}], Line3DBox[{{2, 2, 4}, {2, 3, 4}}], 
+       Line3DBox[{{2, 3, 4}, {3, 3, 4}}], Line3DBox[{{3, 3, 4}, {3, 4, 4}}], 
+       Line3DBox[{{3, 4, 4}, {4, 4, 4}}], Line3DBox[{{4, 4, 4}, {4, 3, 4}}], 
+       Line3DBox[{{4, 3, 4}, {4, 2, 4}}], Line3DBox[{{4, 2, 4}, {4, 1, 4}}], 
+       Line3DBox[{{4, 1, 4}, {4, 1, 3}}], Line3DBox[{{4, 1, 3}, {3, 1, 3}}], 
+       Line3DBox[{{3, 1, 3}, {2, 1, 3}}], Line3DBox[{{2, 1, 3}, {2, 1, 4}}], 
+       Line3DBox[{{2, 1, 4}, {3, 1, 4}}], 
+       Line3DBox[{{3, 1, 4}, {3, 2, 4}}]}, 
+      {RGBColor[1, 0, 0], 
+       SphereBox[{3, 2, 4}, NCache[Rational[1, 5], 0.2]]}, 
+      {RGBColor[0, 0, 1], SphereBox[{0, 0, 0}, NCache[Rational[1, 5], 0.2]], 
+       SphereBox[{4, 0, 0}, NCache[Rational[1, 5], 0.2]], 
+       SphereBox[{4, 4, 0}, NCache[Rational[1, 5], 0.2]], 
+       SphereBox[{4, 0, 4}, NCache[Rational[1, 5], 0.2]], 
+       SphereBox[{4, 4, 4}, NCache[Rational[1, 5], 0.2]], 
+       SphereBox[{0, 0, 4}, NCache[Rational[1, 5], 0.2]], 
+       SphereBox[{0, 4, 0}, NCache[Rational[1, 5], 0.2]], 
+       SphereBox[{0, 4, 4}, NCache[Rational[1, 5], 0.2]]}}},
+    AutomaticImageSize->True,
+    ImageSize->{173.47705199997208`, 190.88417270304313`},
+    ViewPoint->{1.1042305689167136`, -2.6779756144383247`, 
+     1.7490344362371906`},
+    ViewVertical->{-0.021239514849981555`, -0.10632277377242923`, 
+     0.9941047986939174}], ",", 
+   Graphics3DBox[{{SphereBox[{3, 3, 3}, 0.02], SphereBox[{3, 3, 4}, 0.02], 
+      SphereBox[{3, 2, 4}, 0.02], SphereBox[{3, 2, 5}, 0.02], 
+      SphereBox[{4, 2, 5}, 0.02], SphereBox[{4, 3, 5}, 0.02], 
+      SphereBox[{4, 4, 5}, 0.02], SphereBox[{4, 4, 4}, 0.02], 
+      SphereBox[{3, 4, 4}, 0.02], SphereBox[{3, 4, 3}, 0.02], 
+      SphereBox[{3, 5, 3}, 0.02], SphereBox[{4, 5, 3}, 0.02], 
+      SphereBox[{4, 5, 4}, 0.02], SphereBox[{4, 5, 5}, 0.02], 
+      SphereBox[{5, 5, 5}, 0.02], SphereBox[{5, 4, 5}, 0.02], 
+      SphereBox[{5, 4, 4}, 0.02], SphereBox[{5, 4, 3}, 0.02], 
+      SphereBox[{5, 4, 2}, 0.02], SphereBox[{5, 4, 1}, 0.02], 
+      SphereBox[{4, 4, 1}, 0.02], SphereBox[{3, 4, 1}, 0.02], 
+      SphereBox[{2, 4, 1}, 0.02], SphereBox[{2, 3, 1}, 0.02], 
+      SphereBox[{3, 3, 1}, 0.02], SphereBox[{4, 3, 1}, 0.02], 
+      SphereBox[{4, 2, 1}, 0.02], SphereBox[{5, 2, 1}, 0.02], 
+      SphereBox[{5, 3, 1}, 0.02], SphereBox[{5, 3, 2}, 0.02], 
+      SphereBox[{4, 3, 2}, 0.02], SphereBox[{4, 4, 2}, 0.02], 
+      SphereBox[{3, 4, 2}, 0.02], SphereBox[{3, 5, 2}, 0.02], 
+      SphereBox[{4, 5, 2}, 0.02], SphereBox[{4, 5, 1}, 0.02], 
+      SphereBox[{3, 5, 1}, 0.02], SphereBox[{2, 5, 1}, 0.02], 
+      SphereBox[{1, 5, 1}, 0.02], SphereBox[{1, 4, 1}, 0.02], 
+      SphereBox[{1, 3, 1}, 0.02], SphereBox[{1, 3, 2}, 0.02], 
+      SphereBox[{1, 2, 2}, 0.02], SphereBox[{1, 2, 3}, 0.02], 
+      SphereBox[{1, 3, 3}, 0.02], SphereBox[{1, 4, 3}, 0.02], 
+      SphereBox[{1, 5, 3}, 0.02], SphereBox[{2, 5, 3}, 0.02], 
+      SphereBox[{2, 5, 2}, 0.02], SphereBox[{2, 4, 2}, 0.02], 
+      SphereBox[{2, 4, 3}, 0.02], SphereBox[{2, 3, 3}, 0.02], 
+      SphereBox[{2, 2, 3}, 0.02], SphereBox[{2, 2, 2}, 0.02], 
+      SphereBox[{3, 2, 2}, 0.02], SphereBox[{3, 3, 2}, 0.02], 
+      SphereBox[{2, 3, 2}, 0.02]}, 
+     {Thickness[
+      Large], {Line3DBox[{{3, 3, 3}, {3, 3, 4}}], 
+       Line3DBox[{{3, 3, 4}, {3, 2, 4}}], Line3DBox[{{3, 2, 4}, {3, 2, 5}}], 
+       Line3DBox[{{3, 2, 5}, {4, 2, 5}}], Line3DBox[{{4, 2, 5}, {4, 3, 5}}], 
+       Line3DBox[{{4, 3, 5}, {4, 4, 5}}], Line3DBox[{{4, 4, 5}, {4, 4, 4}}], 
+       Line3DBox[{{4, 4, 4}, {3, 4, 4}}], Line3DBox[{{3, 4, 4}, {3, 4, 3}}], 
+       Line3DBox[{{3, 4, 3}, {3, 5, 3}}], Line3DBox[{{3, 5, 3}, {4, 5, 3}}], 
+       Line3DBox[{{4, 5, 3}, {4, 5, 4}}], Line3DBox[{{4, 5, 4}, {4, 5, 5}}], 
+       Line3DBox[{{4, 5, 5}, {5, 5, 5}}], Line3DBox[{{5, 5, 5}, {5, 4, 5}}], 
+       Line3DBox[{{5, 4, 5}, {5, 4, 4}}], Line3DBox[{{5, 4, 4}, {5, 4, 3}}], 
+       Line3DBox[{{5, 4, 3}, {5, 4, 2}}], Line3DBox[{{5, 4, 2}, {5, 4, 1}}], 
+       Line3DBox[{{5, 4, 1}, {4, 4, 1}}], Line3DBox[{{4, 4, 1}, {3, 4, 1}}], 
+       Line3DBox[{{3, 4, 1}, {2, 4, 1}}], Line3DBox[{{2, 4, 1}, {2, 3, 1}}], 
+       Line3DBox[{{2, 3, 1}, {3, 3, 1}}], Line3DBox[{{3, 3, 1}, {4, 3, 1}}], 
+       Line3DBox[{{4, 3, 1}, {4, 2, 1}}], Line3DBox[{{4, 2, 1}, {5, 2, 1}}], 
+       Line3DBox[{{5, 2, 1}, {5, 3, 1}}], Line3DBox[{{5, 3, 1}, {5, 3, 2}}], 
+       Line3DBox[{{5, 3, 2}, {4, 3, 2}}], Line3DBox[{{4, 3, 2}, {4, 4, 2}}], 
+       Line3DBox[{{4, 4, 2}, {3, 4, 2}}], Line3DBox[{{3, 4, 2}, {3, 5, 2}}], 
+       Line3DBox[{{3, 5, 2}, {4, 5, 2}}], Line3DBox[{{4, 5, 2}, {4, 5, 1}}], 
+       Line3DBox[{{4, 5, 1}, {3, 5, 1}}], Line3DBox[{{3, 5, 1}, {2, 5, 1}}], 
+       Line3DBox[{{2, 5, 1}, {1, 5, 1}}], Line3DBox[{{1, 5, 1}, {1, 4, 1}}], 
+       Line3DBox[{{1, 4, 1}, {1, 3, 1}}], Line3DBox[{{1, 3, 1}, {1, 3, 2}}], 
+       Line3DBox[{{1, 3, 2}, {1, 2, 2}}], Line3DBox[{{1, 2, 2}, {1, 2, 3}}], 
+       Line3DBox[{{1, 2, 3}, {1, 3, 3}}], Line3DBox[{{1, 3, 3}, {1, 4, 3}}], 
+       Line3DBox[{{1, 4, 3}, {1, 5, 3}}], Line3DBox[{{1, 5, 3}, {2, 5, 3}}], 
+       Line3DBox[{{2, 5, 3}, {2, 5, 2}}], Line3DBox[{{2, 5, 2}, {2, 4, 2}}], 
+       Line3DBox[{{2, 4, 2}, {2, 4, 3}}], Line3DBox[{{2, 4, 3}, {2, 3, 3}}], 
+       Line3DBox[{{2, 3, 3}, {2, 2, 3}}], Line3DBox[{{2, 2, 3}, {2, 2, 2}}], 
+       Line3DBox[{{2, 2, 2}, {3, 2, 2}}], Line3DBox[{{3, 2, 2}, {3, 3, 2}}], 
+       Line3DBox[{{3, 3, 2}, {2, 3, 2}}]}, 
+      {RGBColor[1, 0, 0], SphereBox[{2, 3, 2}, NCache[Rational[1, 4], 0.25]]}, 
+      {RGBColor[0, 0, 1], SphereBox[{0, 0, 0}, NCache[Rational[1, 4], 0.25]], 
+       SphereBox[{5, 0, 0}, NCache[Rational[1, 4], 0.25]], 
+       SphereBox[{5, 5, 0}, NCache[Rational[1, 4], 0.25]], 
+       SphereBox[{5, 0, 5}, NCache[Rational[1, 4], 0.25]], 
+       SphereBox[{5, 5, 5}, NCache[Rational[1, 4], 0.25]], 
+       SphereBox[{0, 0, 5}, NCache[Rational[1, 4], 0.25]], 
+       SphereBox[{0, 5, 0}, NCache[Rational[1, 4], 0.25]], 
+       SphereBox[{0, 5, 5}, NCache[Rational[1, 4], 0.25]]}}}], ",", 
+   Graphics3DBox[{{SphereBox[{4, 4, 4}, 0.02], SphereBox[{4, 4, 5}, 0.02], 
+      SphereBox[{4, 4, 6}, 0.02], SphereBox[{5, 4, 6}, 0.02], 
+      SphereBox[{5, 3, 6}, 0.02], SphereBox[{4, 3, 6}, 0.02], 
+      SphereBox[{4, 3, 5}, 0.02], SphereBox[{4, 2, 5}, 0.02], 
+      SphereBox[{3, 2, 5}, 0.02], SphereBox[{3, 3, 5}, 0.02], 
+      SphereBox[{3, 3, 4}, 0.02], SphereBox[{4, 3, 4}, 0.02], 
+      SphereBox[{4, 2, 4}, 0.02], SphereBox[{4, 1, 4}, 0.02], 
+      SphereBox[{4, 1, 5}, 0.02], SphereBox[{3, 1, 5}, 0.02], 
+      SphereBox[{3, 1, 6}, 0.02], SphereBox[{4, 1, 6}, 0.02], 
+      SphereBox[{4, 2, 6}, 0.02], SphereBox[{5, 2, 6}, 0.02], 
+      SphereBox[{6, 2, 6}, 0.02], SphereBox[{6, 3, 6}, 0.02], 
+      SphereBox[{6, 4, 6}, 0.02], SphereBox[{6, 5, 6}, 0.02], 
+      SphereBox[{6, 6, 6}, 0.02], SphereBox[{6, 6, 5}, 0.02], 
+      SphereBox[{5, 6, 5}, 0.02], SphereBox[{4, 6, 5}, 0.02], 
+      SphereBox[{4, 5, 5}, 0.02], SphereBox[{4, 5, 4}, 0.02], 
+      SphereBox[{5, 5, 4}, 0.02], SphereBox[{6, 5, 4}, 0.02], 
+      SphereBox[{6, 5, 5}, 0.02], SphereBox[{5, 5, 5}, 0.02], 
+      SphereBox[{5, 4, 5}, 0.02], SphereBox[{6, 4, 5}, 0.02], 
+      SphereBox[{6, 4, 4}, 0.02], SphereBox[{5, 4, 4}, 0.02], 
+      SphereBox[{5, 3, 4}, 0.02], SphereBox[{5, 3, 3}, 0.02], 
+      SphereBox[{6, 3, 3}, 0.02], SphereBox[{6, 3, 2}, 0.02], 
+      SphereBox[{6, 3, 1}, 0.02], SphereBox[{6, 2, 1}, 0.02], 
+      SphereBox[{5, 2, 1}, 0.02], SphereBox[{5, 1, 1}, 0.02], 
+      SphereBox[{5, 1, 2}, 0.02], SphereBox[{5, 1, 3}, 0.02], 
+      SphereBox[{5, 1, 4}, 0.02], SphereBox[{6, 1, 4}, 0.02], 
+      SphereBox[{6, 1, 3}, 0.02], SphereBox[{6, 2, 3}, 0.02], 
+      SphereBox[{5, 2, 3}, 0.02], SphereBox[{4, 2, 3}, 0.02], 
+      SphereBox[{3, 2, 3}, 0.02], SphereBox[{3, 3, 3}, 0.02], 
+      SphereBox[{3, 3, 2}, 0.02], SphereBox[{3, 2, 2}, 0.02], 
+      SphereBox[{2, 2, 2}, 0.02], SphereBox[{2, 2, 1}, 0.02], 
+      SphereBox[{2, 3, 1}, 0.02], SphereBox[{1, 3, 1}, 0.02], 
+      SphereBox[{1, 4, 1}, 0.02], SphereBox[{2, 4, 1}, 0.02], 
+      SphereBox[{2, 5, 1}, 0.02], SphereBox[{1, 5, 1}, 0.02], 
+      SphereBox[{1, 6, 1}, 0.02], SphereBox[{1, 6, 2}, 0.02], 
+      SphereBox[{1, 6, 3}, 0.02], SphereBox[{1, 5, 3}, 0.02], 
+      SphereBox[{2, 5, 3}, 0.02], SphereBox[{2, 5, 4}, 0.02], 
+      SphereBox[{2, 6, 4}, 0.02], SphereBox[{1, 6, 4}, 0.02], 
+      SphereBox[{1, 6, 5}, 0.02], SphereBox[{1, 5, 5}, 0.02], 
+      SphereBox[{2, 5, 5}, 0.02], SphereBox[{2, 5, 6}, 0.02], 
+      SphereBox[{2, 4, 6}, 0.02], SphereBox[{2, 3, 6}, 0.02], 
+      SphereBox[{2, 2, 6}, 0.02], SphereBox[{2, 2, 5}, 0.02], 
+      SphereBox[{2, 2, 4}, 0.02], SphereBox[{2, 2, 3}, 0.02], 
+      SphereBox[{2, 1, 3}, 0.02], SphereBox[{2, 1, 2}, 0.02], 
+      SphereBox[{1, 1, 2}, 0.02], SphereBox[{1, 1, 1}, 0.02], 
+      SphereBox[{1, 2, 1}, 0.02], SphereBox[{1, 2, 2}, 0.02], 
+      SphereBox[{1, 2, 3}, 0.02], SphereBox[{1, 3, 3}, 0.02], 
+      SphereBox[{2, 3, 3}, 0.02], SphereBox[{2, 3, 2}, 0.02], 
+      SphereBox[{1, 3, 2}, 0.02], SphereBox[{1, 4, 2}, 0.02], 
+      SphereBox[{1, 4, 3}, 0.02], SphereBox[{2, 4, 3}, 0.02], 
+      SphereBox[{2, 4, 4}, 0.02], SphereBox[{3, 4, 4}, 0.02], 
+      SphereBox[{3, 4, 5}, 0.02], SphereBox[{2, 4, 5}, 0.02], 
+      SphereBox[{1, 4, 5}, 0.02], SphereBox[{1, 3, 5}, 0.02], 
+      SphereBox[{1, 3, 4}, 0.02], SphereBox[{1, 2, 4}, 0.02], 
+      SphereBox[{1, 1, 4}, 0.02], SphereBox[{1, 1, 3}, 0.02]}, 
+     {Thickness[
+      Large], {Line3DBox[{{4, 4, 4}, {4, 4, 5}}], 
+       Line3DBox[{{4, 4, 5}, {4, 4, 6}}], Line3DBox[{{4, 4, 6}, {5, 4, 6}}], 
+       Line3DBox[{{5, 4, 6}, {5, 3, 6}}], Line3DBox[{{5, 3, 6}, {4, 3, 6}}], 
+       Line3DBox[{{4, 3, 6}, {4, 3, 5}}], Line3DBox[{{4, 3, 5}, {4, 2, 5}}], 
+       Line3DBox[{{4, 2, 5}, {3, 2, 5}}], Line3DBox[{{3, 2, 5}, {3, 3, 5}}], 
+       Line3DBox[{{3, 3, 5}, {3, 3, 4}}], Line3DBox[{{3, 3, 4}, {4, 3, 4}}], 
+       Line3DBox[{{4, 3, 4}, {4, 2, 4}}], Line3DBox[{{4, 2, 4}, {4, 1, 4}}], 
+       Line3DBox[{{4, 1, 4}, {4, 1, 5}}], Line3DBox[{{4, 1, 5}, {3, 1, 5}}], 
+       Line3DBox[{{3, 1, 5}, {3, 1, 6}}], Line3DBox[{{3, 1, 6}, {4, 1, 6}}], 
+       Line3DBox[{{4, 1, 6}, {4, 2, 6}}], Line3DBox[{{4, 2, 6}, {5, 2, 6}}], 
+       Line3DBox[{{5, 2, 6}, {6, 2, 6}}], Line3DBox[{{6, 2, 6}, {6, 3, 6}}], 
+       Line3DBox[{{6, 3, 6}, {6, 4, 6}}], Line3DBox[{{6, 4, 6}, {6, 5, 6}}], 
+       Line3DBox[{{6, 5, 6}, {6, 6, 6}}], Line3DBox[{{6, 6, 6}, {6, 6, 5}}], 
+       Line3DBox[{{6, 6, 5}, {5, 6, 5}}], Line3DBox[{{5, 6, 5}, {4, 6, 5}}], 
+       Line3DBox[{{4, 6, 5}, {4, 5, 5}}], Line3DBox[{{4, 5, 5}, {4, 5, 4}}], 
+       Line3DBox[{{4, 5, 4}, {5, 5, 4}}], Line3DBox[{{5, 5, 4}, {6, 5, 4}}], 
+       Line3DBox[{{6, 5, 4}, {6, 5, 5}}], Line3DBox[{{6, 5, 5}, {5, 5, 5}}], 
+       Line3DBox[{{5, 5, 5}, {5, 4, 5}}], Line3DBox[{{5, 4, 5}, {6, 4, 5}}], 
+       Line3DBox[{{6, 4, 5}, {6, 4, 4}}], Line3DBox[{{6, 4, 4}, {5, 4, 4}}], 
+       Line3DBox[{{5, 4, 4}, {5, 3, 4}}], Line3DBox[{{5, 3, 4}, {5, 3, 3}}], 
+       Line3DBox[{{5, 3, 3}, {6, 3, 3}}], Line3DBox[{{6, 3, 3}, {6, 3, 2}}], 
+       Line3DBox[{{6, 3, 2}, {6, 3, 1}}], Line3DBox[{{6, 3, 1}, {6, 2, 1}}], 
+       Line3DBox[{{6, 2, 1}, {5, 2, 1}}], Line3DBox[{{5, 2, 1}, {5, 1, 1}}], 
+       Line3DBox[{{5, 1, 1}, {5, 1, 2}}], Line3DBox[{{5, 1, 2}, {5, 1, 3}}], 
+       Line3DBox[{{5, 1, 3}, {5, 1, 4}}], Line3DBox[{{5, 1, 4}, {6, 1, 4}}], 
+       Line3DBox[{{6, 1, 4}, {6, 1, 3}}], Line3DBox[{{6, 1, 3}, {6, 2, 3}}], 
+       Line3DBox[{{6, 2, 3}, {5, 2, 3}}], Line3DBox[{{5, 2, 3}, {4, 2, 3}}], 
+       Line3DBox[{{4, 2, 3}, {3, 2, 3}}], Line3DBox[{{3, 2, 3}, {3, 3, 3}}], 
+       Line3DBox[{{3, 3, 3}, {3, 3, 2}}], Line3DBox[{{3, 3, 2}, {3, 2, 2}}], 
+       Line3DBox[{{3, 2, 2}, {2, 2, 2}}], Line3DBox[{{2, 2, 2}, {2, 2, 1}}], 
+       Line3DBox[{{2, 2, 1}, {2, 3, 1}}], Line3DBox[{{2, 3, 1}, {1, 3, 1}}], 
+       Line3DBox[{{1, 3, 1}, {1, 4, 1}}], Line3DBox[{{1, 4, 1}, {2, 4, 1}}], 
+       Line3DBox[{{2, 4, 1}, {2, 5, 1}}], Line3DBox[{{2, 5, 1}, {1, 5, 1}}], 
+       Line3DBox[{{1, 5, 1}, {1, 6, 1}}], Line3DBox[{{1, 6, 1}, {1, 6, 2}}], 
+       Line3DBox[{{1, 6, 2}, {1, 6, 3}}], Line3DBox[{{1, 6, 3}, {1, 5, 3}}], 
+       Line3DBox[{{1, 5, 3}, {2, 5, 3}}], Line3DBox[{{2, 5, 3}, {2, 5, 4}}], 
+       Line3DBox[{{2, 5, 4}, {2, 6, 4}}], Line3DBox[{{2, 6, 4}, {1, 6, 4}}], 
+       Line3DBox[{{1, 6, 4}, {1, 6, 5}}], Line3DBox[{{1, 6, 5}, {1, 5, 5}}], 
+       Line3DBox[{{1, 5, 5}, {2, 5, 5}}], Line3DBox[{{2, 5, 5}, {2, 5, 6}}], 
+       Line3DBox[{{2, 5, 6}, {2, 4, 6}}], Line3DBox[{{2, 4, 6}, {2, 3, 6}}], 
+       Line3DBox[{{2, 3, 6}, {2, 2, 6}}], Line3DBox[{{2, 2, 6}, {2, 2, 5}}], 
+       Line3DBox[{{2, 2, 5}, {2, 2, 4}}], Line3DBox[{{2, 2, 4}, {2, 2, 3}}], 
+       Line3DBox[{{2, 2, 3}, {2, 1, 3}}], Line3DBox[{{2, 1, 3}, {2, 1, 2}}], 
+       Line3DBox[{{2, 1, 2}, {1, 1, 2}}], Line3DBox[{{1, 1, 2}, {1, 1, 1}}], 
+       Line3DBox[{{1, 1, 1}, {1, 2, 1}}], Line3DBox[{{1, 2, 1}, {1, 2, 2}}], 
+       Line3DBox[{{1, 2, 2}, {1, 2, 3}}], Line3DBox[{{1, 2, 3}, {1, 3, 3}}], 
+       Line3DBox[{{1, 3, 3}, {2, 3, 3}}], Line3DBox[{{2, 3, 3}, {2, 3, 2}}], 
+       Line3DBox[{{2, 3, 2}, {1, 3, 2}}], Line3DBox[{{1, 3, 2}, {1, 4, 2}}], 
+       Line3DBox[{{1, 4, 2}, {1, 4, 3}}], Line3DBox[{{1, 4, 3}, {2, 4, 3}}], 
+       Line3DBox[{{2, 4, 3}, {2, 4, 4}}], Line3DBox[{{2, 4, 4}, {3, 4, 4}}], 
+       Line3DBox[{{3, 4, 4}, {3, 4, 5}}], Line3DBox[{{3, 4, 5}, {2, 4, 5}}], 
+       Line3DBox[{{2, 4, 5}, {1, 4, 5}}], Line3DBox[{{1, 4, 5}, {1, 3, 5}}], 
+       Line3DBox[{{1, 3, 5}, {1, 3, 4}}], Line3DBox[{{1, 3, 4}, {1, 2, 4}}], 
+       Line3DBox[{{1, 2, 4}, {1, 1, 4}}], 
+       Line3DBox[{{1, 1, 4}, {1, 1, 3}}]}, 
+      {RGBColor[1, 0, 0], SphereBox[{1, 1, 3}, NCache[Rational[3, 10], 0.3]]}, 
+      {RGBColor[0, 0, 1], SphereBox[{0, 0, 0}, NCache[Rational[3, 10], 0.3]], 
+       SphereBox[{6, 0, 0}, NCache[Rational[3, 10], 0.3]], 
+       SphereBox[{6, 6, 0}, NCache[Rational[3, 10], 0.3]], 
+       SphereBox[{6, 0, 6}, NCache[Rational[3, 10], 0.3]], 
+       SphereBox[{6, 6, 6}, NCache[Rational[3, 10], 0.3]], 
+       SphereBox[{0, 0, 6}, NCache[Rational[3, 10], 0.3]], 
+       SphereBox[{0, 6, 0}, NCache[Rational[3, 10], 0.3]], 
+       SphereBox[{0, 6, 6}, NCache[Rational[3, 10], 0.3]]}}}], ",", 
+   Graphics3DBox[{{SphereBox[{4, 4, 4}, 0.02], SphereBox[{4, 4, 5}, 0.02], 
+      SphereBox[{5, 4, 5}, 0.02], SphereBox[{5, 5, 5}, 0.02], 
+      SphereBox[{6, 5, 5}, 0.02], SphereBox[{6, 6, 5}, 0.02], 
+      SphereBox[{6, 7, 5}, 0.02], SphereBox[{6, 7, 6}, 0.02], 
+      SphereBox[{6, 7, 7}, 0.02], SphereBox[{6, 6, 7}, 0.02], 
+      SphereBox[{6, 6, 6}, 0.02], SphereBox[{6, 5, 6}, 0.02], 
+      SphereBox[{7, 5, 6}, 0.02], SphereBox[{7, 5, 7}, 0.02], 
+      SphereBox[{7, 4, 7}, 0.02], SphereBox[{6, 4, 7}, 0.02], 
+      SphereBox[{6, 3, 7}, 0.02], SphereBox[{5, 3, 7}, 0.02], 
+      SphereBox[{5, 2, 7}, 0.02], SphereBox[{4, 2, 7}, 0.02], 
+      SphereBox[{3, 2, 7}, 0.02], SphereBox[{3, 1, 7}, 0.02], 
+      SphereBox[{2, 1, 7}, 0.02], SphereBox[{2, 1, 6}, 0.02], 
+      SphereBox[{3, 1, 6}, 0.02], SphereBox[{3, 1, 5}, 0.02], 
+      SphereBox[{3, 2, 5}, 0.02], SphereBox[{3, 2, 4}, 0.02], 
+      SphereBox[{3, 3, 4}, 0.02], SphereBox[{3, 4, 4}, 0.02], 
+      SphereBox[{2, 4, 4}, 0.02], SphereBox[{2, 4, 3}, 0.02], 
+      SphereBox[{2, 3, 3}, 0.02], SphereBox[{3, 3, 3}, 0.02], 
+      SphereBox[{3, 2, 3}, 0.02], SphereBox[{3, 1, 3}, 0.02], 
+      SphereBox[{3, 1, 4}, 0.02], SphereBox[{2, 1, 4}, 0.02], 
+      SphereBox[{2, 1, 5}, 0.02], SphereBox[{2, 2, 5}, 0.02], 
+      SphereBox[{2, 2, 4}, 0.02], SphereBox[{2, 3, 4}, 0.02], 
+      SphereBox[{1, 3, 4}, 0.02], SphereBox[{1, 2, 4}, 0.02], 
+      SphereBox[{1, 1, 4}, 0.02], SphereBox[{1, 1, 3}, 0.02], 
+      SphereBox[{1, 2, 3}, 0.02], SphereBox[{1, 3, 3}, 0.02], 
+      SphereBox[{1, 3, 2}, 0.02], SphereBox[{2, 3, 2}, 0.02], 
+      SphereBox[{2, 2, 2}, 0.02], SphereBox[{2, 2, 3}, 0.02], 
+      SphereBox[{2, 1, 3}, 0.02], SphereBox[{2, 1, 2}, 0.02], 
+      SphereBox[{1, 1, 2}, 0.02], SphereBox[{1, 1, 1}, 0.02], 
+      SphereBox[{2, 1, 1}, 0.02], SphereBox[{3, 1, 1}, 0.02], 
+      SphereBox[{3, 2, 1}, 0.02], SphereBox[{3, 3, 1}, 0.02], 
+      SphereBox[{2, 3, 1}, 0.02], SphereBox[{1, 3, 1}, 0.02], 
+      SphereBox[{1, 2, 1}, 0.02], SphereBox[{2, 2, 1}, 0.02]}, 
+     {Thickness[
+      Large], {Line3DBox[{{4, 4, 4}, {4, 4, 5}}], 
+       Line3DBox[{{4, 4, 5}, {5, 4, 5}}], Line3DBox[{{5, 4, 5}, {5, 5, 5}}], 
+       Line3DBox[{{5, 5, 5}, {6, 5, 5}}], Line3DBox[{{6, 5, 5}, {6, 6, 5}}], 
+       Line3DBox[{{6, 6, 5}, {6, 7, 5}}], Line3DBox[{{6, 7, 5}, {6, 7, 6}}], 
+       Line3DBox[{{6, 7, 6}, {6, 7, 7}}], Line3DBox[{{6, 7, 7}, {6, 6, 7}}], 
+       Line3DBox[{{6, 6, 7}, {6, 6, 6}}], Line3DBox[{{6, 6, 6}, {6, 5, 6}}], 
+       Line3DBox[{{6, 5, 6}, {7, 5, 6}}], Line3DBox[{{7, 5, 6}, {7, 5, 7}}], 
+       Line3DBox[{{7, 5, 7}, {7, 4, 7}}], Line3DBox[{{7, 4, 7}, {6, 4, 7}}], 
+       Line3DBox[{{6, 4, 7}, {6, 3, 7}}], Line3DBox[{{6, 3, 7}, {5, 3, 7}}], 
+       Line3DBox[{{5, 3, 7}, {5, 2, 7}}], Line3DBox[{{5, 2, 7}, {4, 2, 7}}], 
+       Line3DBox[{{4, 2, 7}, {3, 2, 7}}], Line3DBox[{{3, 2, 7}, {3, 1, 7}}], 
+       Line3DBox[{{3, 1, 7}, {2, 1, 7}}], Line3DBox[{{2, 1, 7}, {2, 1, 6}}], 
+       Line3DBox[{{2, 1, 6}, {3, 1, 6}}], Line3DBox[{{3, 1, 6}, {3, 1, 5}}], 
+       Line3DBox[{{3, 1, 5}, {3, 2, 5}}], Line3DBox[{{3, 2, 5}, {3, 2, 4}}], 
+       Line3DBox[{{3, 2, 4}, {3, 3, 4}}], Line3DBox[{{3, 3, 4}, {3, 4, 4}}], 
+       Line3DBox[{{3, 4, 4}, {2, 4, 4}}], Line3DBox[{{2, 4, 4}, {2, 4, 3}}], 
+       Line3DBox[{{2, 4, 3}, {2, 3, 3}}], Line3DBox[{{2, 3, 3}, {3, 3, 3}}], 
+       Line3DBox[{{3, 3, 3}, {3, 2, 3}}], Line3DBox[{{3, 2, 3}, {3, 1, 3}}], 
+       Line3DBox[{{3, 1, 3}, {3, 1, 4}}], Line3DBox[{{3, 1, 4}, {2, 1, 4}}], 
+       Line3DBox[{{2, 1, 4}, {2, 1, 5}}], Line3DBox[{{2, 1, 5}, {2, 2, 5}}], 
+       Line3DBox[{{2, 2, 5}, {2, 2, 4}}], Line3DBox[{{2, 2, 4}, {2, 3, 4}}], 
+       Line3DBox[{{2, 3, 4}, {1, 3, 4}}], Line3DBox[{{1, 3, 4}, {1, 2, 4}}], 
+       Line3DBox[{{1, 2, 4}, {1, 1, 4}}], Line3DBox[{{1, 1, 4}, {1, 1, 3}}], 
+       Line3DBox[{{1, 1, 3}, {1, 2, 3}}], Line3DBox[{{1, 2, 3}, {1, 3, 3}}], 
+       Line3DBox[{{1, 3, 3}, {1, 3, 2}}], Line3DBox[{{1, 3, 2}, {2, 3, 2}}], 
+       Line3DBox[{{2, 3, 2}, {2, 2, 2}}], Line3DBox[{{2, 2, 2}, {2, 2, 3}}], 
+       Line3DBox[{{2, 2, 3}, {2, 1, 3}}], Line3DBox[{{2, 1, 3}, {2, 1, 2}}], 
+       Line3DBox[{{2, 1, 2}, {1, 1, 2}}], Line3DBox[{{1, 1, 2}, {1, 1, 1}}], 
+       Line3DBox[{{1, 1, 1}, {2, 1, 1}}], Line3DBox[{{2, 1, 1}, {3, 1, 1}}], 
+       Line3DBox[{{3, 1, 1}, {3, 2, 1}}], Line3DBox[{{3, 2, 1}, {3, 3, 1}}], 
+       Line3DBox[{{3, 3, 1}, {2, 3, 1}}], Line3DBox[{{2, 3, 1}, {1, 3, 1}}], 
+       Line3DBox[{{1, 3, 1}, {1, 2, 1}}], 
+       Line3DBox[{{1, 2, 1}, {2, 2, 1}}]}, 
+      {RGBColor[1, 0, 0], 
+       SphereBox[{2, 2, 1}, NCache[Rational[7, 20], 0.35]]}, 
+      {RGBColor[0, 0, 1], SphereBox[{0, 0, 0}, NCache[Rational[7, 20], 0.35]],
+        SphereBox[{7, 0, 0}, NCache[Rational[7, 20], 0.35]], 
+       SphereBox[{7, 7, 0}, NCache[Rational[7, 20], 0.35]], 
+       SphereBox[{7, 0, 7}, NCache[Rational[7, 20], 0.35]], 
+       SphereBox[{7, 7, 7}, NCache[Rational[7, 20], 0.35]], 
+       SphereBox[{0, 0, 7}, NCache[Rational[7, 20], 0.35]], 
+       SphereBox[{0, 7, 0}, NCache[Rational[7, 20], 0.35]], 
+       SphereBox[{0, 7, 7}, NCache[Rational[7, 20], 0.35]]}}}], ",", 
+   Graphics3DBox[{{SphereBox[{4, 4, 4}, 0.02], SphereBox[{4, 4, 5}, 0.02], 
+      SphereBox[{3, 4, 5}, 0.02], SphereBox[{3, 4, 4}, 0.02], 
+      SphereBox[{3, 4, 3}, 0.02], SphereBox[{3, 3, 3}, 0.02], 
+      SphereBox[{4, 3, 3}, 0.02], SphereBox[{4, 3, 4}, 0.02], 
+      SphereBox[{5, 3, 4}, 0.02], SphereBox[{5, 3, 5}, 0.02], 
+      SphereBox[{5, 2, 5}, 0.02], SphereBox[{5, 1, 5}, 0.02], 
+      SphereBox[{5, 1, 4}, 0.02], SphereBox[{4, 1, 4}, 0.02], 
+      SphereBox[{3, 1, 4}, 0.02], SphereBox[{3, 1, 3}, 0.02], 
+      SphereBox[{3, 2, 3}, 0.02], SphereBox[{2, 2, 3}, 0.02], 
+      SphereBox[{2, 2, 4}, 0.02], SphereBox[{2, 1, 4}, 0.02], 
+      SphereBox[{1, 1, 4}, 0.02], SphereBox[{1, 1, 3}, 0.02], 
+      SphereBox[{1, 2, 3}, 0.02], SphereBox[{1, 3, 3}, 0.02], 
+      SphereBox[{2, 3, 3}, 0.02], SphereBox[{2, 3, 4}, 0.02], 
+      SphereBox[{1, 3, 4}, 0.02], SphereBox[{1, 4, 4}, 0.02], 
+      SphereBox[{1, 5, 4}, 0.02], SphereBox[{1, 5, 5}, 0.02], 
+      SphereBox[{1, 6, 5}, 0.02], SphereBox[{2, 6, 5}, 0.02], 
+      SphereBox[{2, 5, 5}, 0.02], SphereBox[{3, 5, 5}, 0.02], 
+      SphereBox[{3, 6, 5}, 0.02], SphereBox[{3, 6, 4}, 0.02], 
+      SphereBox[{3, 6, 3}, 0.02], SphereBox[{3, 7, 3}, 0.02], 
+      SphereBox[{2, 7, 3}, 0.02], SphereBox[{2, 7, 2}, 0.02], 
+      SphereBox[{3, 7, 2}, 0.02], SphereBox[{3, 6, 2}, 0.02], 
+      SphereBox[{3, 6, 1}, 0.02], SphereBox[{4, 6, 1}, 0.02], 
+      SphereBox[{4, 5, 1}, 0.02], SphereBox[{4, 5, 2}, 0.02], 
+      SphereBox[{5, 5, 2}, 0.02], SphereBox[{6, 5, 2}, 0.02], 
+      SphereBox[{6, 6, 2}, 0.02], SphereBox[{6, 6, 1}, 0.02], 
+      SphereBox[{6, 7, 1}, 0.02], SphereBox[{6, 7, 2}, 0.02], 
+      SphereBox[{5, 7, 2}, 0.02], SphereBox[{5, 7, 1}, 0.02], 
+      SphereBox[{5, 6, 1}, 0.02], SphereBox[{5, 6, 2}, 0.02], 
+      SphereBox[{5, 6, 3}, 0.02], SphereBox[{4, 6, 3}, 0.02], 
+      SphereBox[{4, 6, 2}, 0.02], SphereBox[{4, 7, 2}, 0.02], 
+      SphereBox[{4, 7, 1}, 0.02], SphereBox[{4, 8, 1}, 0.02], 
+      SphereBox[{3, 8, 1}, 0.02], SphereBox[{2, 8, 1}, 0.02], 
+      SphereBox[{2, 7, 1}, 0.02], SphereBox[{3, 7, 1}, 0.02]}, 
+     {Thickness[
+      Large], {Line3DBox[{{4, 4, 4}, {4, 4, 5}}], 
+       Line3DBox[{{4, 4, 5}, {3, 4, 5}}], Line3DBox[{{3, 4, 5}, {3, 4, 4}}], 
+       Line3DBox[{{3, 4, 4}, {3, 4, 3}}], Line3DBox[{{3, 4, 3}, {3, 3, 3}}], 
+       Line3DBox[{{3, 3, 3}, {4, 3, 3}}], Line3DBox[{{4, 3, 3}, {4, 3, 4}}], 
+       Line3DBox[{{4, 3, 4}, {5, 3, 4}}], Line3DBox[{{5, 3, 4}, {5, 3, 5}}], 
+       Line3DBox[{{5, 3, 5}, {5, 2, 5}}], Line3DBox[{{5, 2, 5}, {5, 1, 5}}], 
+       Line3DBox[{{5, 1, 5}, {5, 1, 4}}], Line3DBox[{{5, 1, 4}, {4, 1, 4}}], 
+       Line3DBox[{{4, 1, 4}, {3, 1, 4}}], Line3DBox[{{3, 1, 4}, {3, 1, 3}}], 
+       Line3DBox[{{3, 1, 3}, {3, 2, 3}}], Line3DBox[{{3, 2, 3}, {2, 2, 3}}], 
+       Line3DBox[{{2, 2, 3}, {2, 2, 4}}], Line3DBox[{{2, 2, 4}, {2, 1, 4}}], 
+       Line3DBox[{{2, 1, 4}, {1, 1, 4}}], Line3DBox[{{1, 1, 4}, {1, 1, 3}}], 
+       Line3DBox[{{1, 1, 3}, {1, 2, 3}}], Line3DBox[{{1, 2, 3}, {1, 3, 3}}], 
+       Line3DBox[{{1, 3, 3}, {2, 3, 3}}], Line3DBox[{{2, 3, 3}, {2, 3, 4}}], 
+       Line3DBox[{{2, 3, 4}, {1, 3, 4}}], Line3DBox[{{1, 3, 4}, {1, 4, 4}}], 
+       Line3DBox[{{1, 4, 4}, {1, 5, 4}}], Line3DBox[{{1, 5, 4}, {1, 5, 5}}], 
+       Line3DBox[{{1, 5, 5}, {1, 6, 5}}], Line3DBox[{{1, 6, 5}, {2, 6, 5}}], 
+       Line3DBox[{{2, 6, 5}, {2, 5, 5}}], Line3DBox[{{2, 5, 5}, {3, 5, 5}}], 
+       Line3DBox[{{3, 5, 5}, {3, 6, 5}}], Line3DBox[{{3, 6, 5}, {3, 6, 4}}], 
+       Line3DBox[{{3, 6, 4}, {3, 6, 3}}], Line3DBox[{{3, 6, 3}, {3, 7, 3}}], 
+       Line3DBox[{{3, 7, 3}, {2, 7, 3}}], Line3DBox[{{2, 7, 3}, {2, 7, 2}}], 
+       Line3DBox[{{2, 7, 2}, {3, 7, 2}}], Line3DBox[{{3, 7, 2}, {3, 6, 2}}], 
+       Line3DBox[{{3, 6, 2}, {3, 6, 1}}], Line3DBox[{{3, 6, 1}, {4, 6, 1}}], 
+       Line3DBox[{{4, 6, 1}, {4, 5, 1}}], Line3DBox[{{4, 5, 1}, {4, 5, 2}}], 
+       Line3DBox[{{4, 5, 2}, {5, 5, 2}}], Line3DBox[{{5, 5, 2}, {6, 5, 2}}], 
+       Line3DBox[{{6, 5, 2}, {6, 6, 2}}], Line3DBox[{{6, 6, 2}, {6, 6, 1}}], 
+       Line3DBox[{{6, 6, 1}, {6, 7, 1}}], Line3DBox[{{6, 7, 1}, {6, 7, 2}}], 
+       Line3DBox[{{6, 7, 2}, {5, 7, 2}}], Line3DBox[{{5, 7, 2}, {5, 7, 1}}], 
+       Line3DBox[{{5, 7, 1}, {5, 6, 1}}], Line3DBox[{{5, 6, 1}, {5, 6, 2}}], 
+       Line3DBox[{{5, 6, 2}, {5, 6, 3}}], Line3DBox[{{5, 6, 3}, {4, 6, 3}}], 
+       Line3DBox[{{4, 6, 3}, {4, 6, 2}}], Line3DBox[{{4, 6, 2}, {4, 7, 2}}], 
+       Line3DBox[{{4, 7, 2}, {4, 7, 1}}], Line3DBox[{{4, 7, 1}, {4, 8, 1}}], 
+       Line3DBox[{{4, 8, 1}, {3, 8, 1}}], Line3DBox[{{3, 8, 1}, {2, 8, 1}}], 
+       Line3DBox[{{2, 8, 1}, {2, 7, 1}}], 
+       Line3DBox[{{2, 7, 1}, {3, 7, 1}}]}, 
+      {RGBColor[1, 0, 0], 
+       SphereBox[{3, 7, 1}, NCache[Rational[2, 5], 0.4]]}, 
+      {RGBColor[0, 0, 1], SphereBox[{0, 0, 0}, NCache[Rational[2, 5], 0.4]], 
+       SphereBox[{8, 0, 0}, NCache[Rational[2, 5], 0.4]], 
+       SphereBox[{8, 8, 0}, NCache[Rational[2, 5], 0.4]], 
+       SphereBox[{8, 0, 8}, NCache[Rational[2, 5], 0.4]], 
+       SphereBox[{8, 8, 8}, NCache[Rational[2, 5], 0.4]], 
+       SphereBox[{0, 0, 8}, NCache[Rational[2, 5], 0.4]], 
+       SphereBox[{0, 8, 0}, NCache[Rational[2, 5], 0.4]], 
+       SphereBox[{0, 8, 8}, NCache[Rational[2, 5], 0.4]]}}}], ",", 
+   Graphics3DBox[{{SphereBox[{5, 5, 5}, 0.02], SphereBox[{5, 5, 6}, 0.02], 
+      SphereBox[{6, 5, 6}, 0.02], SphereBox[{6, 6, 6}, 0.02], 
+      SphereBox[{7, 6, 6}, 0.02], SphereBox[{7, 5, 6}, 0.02], 
+      SphereBox[{8, 5, 6}, 0.02], SphereBox[{8, 4, 6}, 0.02], 
+      SphereBox[{8, 3, 6}, 0.02], SphereBox[{8, 3, 7}, 0.02], 
+      SphereBox[{8, 3, 8}, 0.02], SphereBox[{8, 4, 8}, 0.02], 
+      SphereBox[{7, 4, 8}, 0.02], SphereBox[{7, 4, 7}, 0.02], 
+      SphereBox[{7, 4, 6}, 0.02], SphereBox[{6, 4, 6}, 0.02], 
+      SphereBox[{5, 4, 6}, 0.02], SphereBox[{5, 4, 7}, 0.02], 
+      SphereBox[{5, 4, 8}, 0.02], SphereBox[{6, 4, 8}, 0.02], 
+      SphereBox[{6, 4, 7}, 0.02], SphereBox[{6, 5, 7}, 0.02], 
+      SphereBox[{5, 5, 7}, 0.02], SphereBox[{5, 6, 7}, 0.02], 
+      SphereBox[{4, 6, 7}, 0.02], SphereBox[{4, 6, 6}, 0.02], 
+      SphereBox[{4, 5, 6}, 0.02], SphereBox[{4, 4, 6}, 0.02], 
+      SphereBox[{4, 3, 6}, 0.02], SphereBox[{4, 3, 5}, 0.02], 
+      SphereBox[{4, 3, 4}, 0.02], SphereBox[{4, 2, 4}, 0.02], 
+      SphereBox[{4, 2, 5}, 0.02], SphereBox[{4, 1, 5}, 0.02], 
+      SphereBox[{3, 1, 5}, 0.02], SphereBox[{2, 1, 5}, 0.02], 
+      SphereBox[{2, 1, 6}, 0.02], SphereBox[{2, 2, 6}, 0.02], 
+      SphereBox[{2, 2, 7}, 0.02], SphereBox[{2, 2, 8}, 0.02], 
+      SphereBox[{2, 2, 9}, 0.02], SphereBox[{2, 1, 9}, 0.02], 
+      SphereBox[{3, 1, 9}, 0.02], SphereBox[{3, 1, 8}, 0.02], 
+      SphereBox[{2, 1, 8}, 0.02], SphereBox[{2, 1, 7}, 0.02], 
+      SphereBox[{3, 1, 7}, 0.02], SphereBox[{3, 1, 6}, 0.02], 
+      SphereBox[{4, 1, 6}, 0.02], SphereBox[{4, 1, 7}, 0.02], 
+      SphereBox[{4, 1, 8}, 0.02], SphereBox[{5, 1, 8}, 0.02], 
+      SphereBox[{5, 1, 7}, 0.02], SphereBox[{5, 1, 6}, 0.02], 
+      SphereBox[{5, 2, 6}, 0.02], SphereBox[{5, 2, 7}, 0.02], 
+      SphereBox[{4, 2, 7}, 0.02], SphereBox[{4, 3, 7}, 0.02], 
+      SphereBox[{3, 3, 7}, 0.02], SphereBox[{3, 3, 8}, 0.02], 
+      SphereBox[{4, 3, 8}, 0.02], SphereBox[{4, 3, 9}, 0.02], 
+      SphereBox[{5, 3, 9}, 0.02], SphereBox[{6, 3, 9}, 0.02], 
+      SphereBox[{6, 4, 9}, 0.02], SphereBox[{7, 4, 9}, 0.02], 
+      SphereBox[{8, 4, 9}, 0.02], SphereBox[{8, 5, 9}, 0.02], 
+      SphereBox[{8, 5, 8}, 0.02], SphereBox[{8, 5, 7}, 0.02], 
+      SphereBox[{9, 5, 7}, 0.02], SphereBox[{9, 5, 8}, 0.02], 
+      SphereBox[{9, 6, 8}, 0.02], SphereBox[{9, 7, 8}, 0.02], 
+      SphereBox[{9, 7, 9}, 0.02], SphereBox[{9, 6, 9}, 0.02], 
+      SphereBox[{9, 5, 9}, 0.02], SphereBox[{9, 4, 9}, 0.02], 
+      SphereBox[{9, 4, 8}, 0.02], SphereBox[{9, 4, 7}, 0.02], 
+      SphereBox[{8, 4, 7}, 0.02]}, 
+     {Thickness[
+      Large], {Line3DBox[{{5, 5, 5}, {5, 5, 6}}], 
+       Line3DBox[{{5, 5, 6}, {6, 5, 6}}], Line3DBox[{{6, 5, 6}, {6, 6, 6}}], 
+       Line3DBox[{{6, 6, 6}, {7, 6, 6}}], Line3DBox[{{7, 6, 6}, {7, 5, 6}}], 
+       Line3DBox[{{7, 5, 6}, {8, 5, 6}}], Line3DBox[{{8, 5, 6}, {8, 4, 6}}], 
+       Line3DBox[{{8, 4, 6}, {8, 3, 6}}], Line3DBox[{{8, 3, 6}, {8, 3, 7}}], 
+       Line3DBox[{{8, 3, 7}, {8, 3, 8}}], Line3DBox[{{8, 3, 8}, {8, 4, 8}}], 
+       Line3DBox[{{8, 4, 8}, {7, 4, 8}}], Line3DBox[{{7, 4, 8}, {7, 4, 7}}], 
+       Line3DBox[{{7, 4, 7}, {7, 4, 6}}], Line3DBox[{{7, 4, 6}, {6, 4, 6}}], 
+       Line3DBox[{{6, 4, 6}, {5, 4, 6}}], Line3DBox[{{5, 4, 6}, {5, 4, 7}}], 
+       Line3DBox[{{5, 4, 7}, {5, 4, 8}}], Line3DBox[{{5, 4, 8}, {6, 4, 8}}], 
+       Line3DBox[{{6, 4, 8}, {6, 4, 7}}], Line3DBox[{{6, 4, 7}, {6, 5, 7}}], 
+       Line3DBox[{{6, 5, 7}, {5, 5, 7}}], Line3DBox[{{5, 5, 7}, {5, 6, 7}}], 
+       Line3DBox[{{5, 6, 7}, {4, 6, 7}}], Line3DBox[{{4, 6, 7}, {4, 6, 6}}], 
+       Line3DBox[{{4, 6, 6}, {4, 5, 6}}], Line3DBox[{{4, 5, 6}, {4, 4, 6}}], 
+       Line3DBox[{{4, 4, 6}, {4, 3, 6}}], Line3DBox[{{4, 3, 6}, {4, 3, 5}}], 
+       Line3DBox[{{4, 3, 5}, {4, 3, 4}}], Line3DBox[{{4, 3, 4}, {4, 2, 4}}], 
+       Line3DBox[{{4, 2, 4}, {4, 2, 5}}], Line3DBox[{{4, 2, 5}, {4, 1, 5}}], 
+       Line3DBox[{{4, 1, 5}, {3, 1, 5}}], Line3DBox[{{3, 1, 5}, {2, 1, 5}}], 
+       Line3DBox[{{2, 1, 5}, {2, 1, 6}}], Line3DBox[{{2, 1, 6}, {2, 2, 6}}], 
+       Line3DBox[{{2, 2, 6}, {2, 2, 7}}], Line3DBox[{{2, 2, 7}, {2, 2, 8}}], 
+       Line3DBox[{{2, 2, 8}, {2, 2, 9}}], Line3DBox[{{2, 2, 9}, {2, 1, 9}}], 
+       Line3DBox[{{2, 1, 9}, {3, 1, 9}}], Line3DBox[{{3, 1, 9}, {3, 1, 8}}], 
+       Line3DBox[{{3, 1, 8}, {2, 1, 8}}], Line3DBox[{{2, 1, 8}, {2, 1, 7}}], 
+       Line3DBox[{{2, 1, 7}, {3, 1, 7}}], Line3DBox[{{3, 1, 7}, {3, 1, 6}}], 
+       Line3DBox[{{3, 1, 6}, {4, 1, 6}}], Line3DBox[{{4, 1, 6}, {4, 1, 7}}], 
+       Line3DBox[{{4, 1, 7}, {4, 1, 8}}], Line3DBox[{{4, 1, 8}, {5, 1, 8}}], 
+       Line3DBox[{{5, 1, 8}, {5, 1, 7}}], Line3DBox[{{5, 1, 7}, {5, 1, 6}}], 
+       Line3DBox[{{5, 1, 6}, {5, 2, 6}}], Line3DBox[{{5, 2, 6}, {5, 2, 7}}], 
+       Line3DBox[{{5, 2, 7}, {4, 2, 7}}], Line3DBox[{{4, 2, 7}, {4, 3, 7}}], 
+       Line3DBox[{{4, 3, 7}, {3, 3, 7}}], Line3DBox[{{3, 3, 7}, {3, 3, 8}}], 
+       Line3DBox[{{3, 3, 8}, {4, 3, 8}}], Line3DBox[{{4, 3, 8}, {4, 3, 9}}], 
+       Line3DBox[{{4, 3, 9}, {5, 3, 9}}], Line3DBox[{{5, 3, 9}, {6, 3, 9}}], 
+       Line3DBox[{{6, 3, 9}, {6, 4, 9}}], Line3DBox[{{6, 4, 9}, {7, 4, 9}}], 
+       Line3DBox[{{7, 4, 9}, {8, 4, 9}}], Line3DBox[{{8, 4, 9}, {8, 5, 9}}], 
+       Line3DBox[{{8, 5, 9}, {8, 5, 8}}], Line3DBox[{{8, 5, 8}, {8, 5, 7}}], 
+       Line3DBox[{{8, 5, 7}, {9, 5, 7}}], Line3DBox[{{9, 5, 7}, {9, 5, 8}}], 
+       Line3DBox[{{9, 5, 8}, {9, 6, 8}}], Line3DBox[{{9, 6, 8}, {9, 7, 8}}], 
+       Line3DBox[{{9, 7, 8}, {9, 7, 9}}], Line3DBox[{{9, 7, 9}, {9, 6, 9}}], 
+       Line3DBox[{{9, 6, 9}, {9, 5, 9}}], Line3DBox[{{9, 5, 9}, {9, 4, 9}}], 
+       Line3DBox[{{9, 4, 9}, {9, 4, 8}}], Line3DBox[{{9, 4, 8}, {9, 4, 7}}], 
+       Line3DBox[{{9, 4, 7}, {8, 4, 7}}]}, 
+      {RGBColor[1, 0, 0], 
+       SphereBox[{8, 4, 7}, NCache[Rational[9, 20], 0.45]]}, 
+      {RGBColor[0, 0, 1], SphereBox[{0, 0, 0}, NCache[Rational[9, 20], 0.45]],
+        SphereBox[{9, 0, 0}, NCache[Rational[9, 20], 0.45]], 
+       SphereBox[{9, 9, 0}, NCache[Rational[9, 20], 0.45]], 
+       SphereBox[{9, 0, 9}, NCache[Rational[9, 20], 0.45]], 
+       SphereBox[{9, 9, 9}, NCache[Rational[9, 20], 0.45]], 
+       SphereBox[{0, 0, 9}, NCache[Rational[9, 20], 0.45]], 
+       SphereBox[{0, 9, 0}, NCache[Rational[9, 20], 0.45]], 
+       SphereBox[{0, 9, 9}, NCache[Rational[9, 20], 0.45]]}}}], ",", 
+   Graphics3DBox[{{SphereBox[{6, 6, 6}, 0.02], SphereBox[{6, 6, 7}, 0.02], 
+      SphereBox[{6, 7, 7}, 0.02], SphereBox[{5, 7, 7}, 0.02], 
+      SphereBox[{4, 7, 7}, 0.02], SphereBox[{3, 7, 7}, 0.02], 
+      SphereBox[{3, 7, 6}, 0.02], SphereBox[{2, 7, 6}, 0.02], 
+      SphereBox[{2, 8, 6}, 0.02], SphereBox[{2, 9, 6}, 0.02], 
+      SphereBox[{2, 9, 5}, 0.02], SphereBox[{2, 10, 5}, 0.02], 
+      SphereBox[{1, 10, 5}, 0.02], SphereBox[{1, 10, 6}, 0.02], 
+      SphereBox[{1, 10, 7}, 0.02], SphereBox[{1, 10, 8}, 0.02], 
+      SphereBox[{1, 10, 9}, 0.02], SphereBox[{2, 10, 9}, 0.02], 
+      SphereBox[{2, 10, 10}, 0.02], SphereBox[{2, 9, 10}, 0.02], 
+      SphereBox[{2, 9, 9}, 0.02], SphereBox[{2, 8, 9}, 0.02], 
+      SphereBox[{2, 8, 8}, 0.02], SphereBox[{1, 8, 8}, 0.02], 
+      SphereBox[{1, 7, 8}, 0.02], SphereBox[{1, 7, 7}, 0.02], 
+      SphereBox[{1, 8, 7}, 0.02], SphereBox[{2, 8, 7}, 0.02], 
+      SphereBox[{3, 8, 7}, 0.02], SphereBox[{3, 9, 7}, 0.02], 
+      SphereBox[{2, 9, 7}, 0.02], SphereBox[{2, 10, 7}, 0.02], 
+      SphereBox[{2, 10, 8}, 0.02], SphereBox[{2, 9, 8}, 0.02], 
+      SphereBox[{3, 9, 8}, 0.02], SphereBox[{4, 9, 8}, 0.02], 
+      SphereBox[{5, 9, 8}, 0.02], SphereBox[{5, 10, 8}, 0.02], 
+      SphereBox[{5, 10, 9}, 0.02], SphereBox[{4, 10, 9}, 0.02], 
+      SphereBox[{4, 10, 10}, 0.02], SphereBox[{3, 10, 10}, 0.02], 
+      SphereBox[{3, 10, 9}, 0.02], SphereBox[{3, 10, 8}, 0.02], 
+      SphereBox[{4, 10, 8}, 0.02], SphereBox[{4, 10, 7}, 0.02], 
+      SphereBox[{4, 10, 6}, 0.02], SphereBox[{4, 9, 6}, 0.02], 
+      SphereBox[{4, 9, 5}, 0.02], SphereBox[{3, 9, 5}, 0.02], 
+      SphereBox[{3, 8, 5}, 0.02], SphereBox[{4, 8, 5}, 0.02], 
+      SphereBox[{5, 8, 5}, 0.02], SphereBox[{5, 8, 4}, 0.02], 
+      SphereBox[{5, 8, 3}, 0.02], SphereBox[{6, 8, 3}, 0.02], 
+      SphereBox[{6, 8, 2}, 0.02], SphereBox[{7, 8, 2}, 0.02], 
+      SphereBox[{7, 9, 2}, 0.02], SphereBox[{7, 10, 2}, 0.02], 
+      SphereBox[{6, 10, 2}, 0.02], SphereBox[{5, 10, 2}, 0.02], 
+      SphereBox[{5, 10, 1}, 0.02], SphereBox[{4, 10, 1}, 0.02], 
+      SphereBox[{3, 10, 1}, 0.02], SphereBox[{3, 10, 2}, 0.02], 
+      SphereBox[{2, 10, 2}, 0.02], SphereBox[{2, 10, 3}, 0.02], 
+      SphereBox[{1, 10, 3}, 0.02], SphereBox[{1, 9, 3}, 0.02], 
+      SphereBox[{1, 9, 2}, 0.02], SphereBox[{1, 10, 2}, 0.02], 
+      SphereBox[{1, 10, 1}, 0.02], SphereBox[{2, 10, 1}, 0.02], 
+      SphereBox[{2, 9, 1}, 0.02], SphereBox[{2, 8, 1}, 0.02], 
+      SphereBox[{3, 8, 1}, 0.02], SphereBox[{3, 7, 1}, 0.02], 
+      SphereBox[{3, 6, 1}, 0.02], SphereBox[{4, 6, 1}, 0.02], 
+      SphereBox[{5, 6, 1}, 0.02], SphereBox[{5, 7, 1}, 0.02], 
+      SphereBox[{6, 7, 1}, 0.02], SphereBox[{6, 7, 2}, 0.02], 
+      SphereBox[{6, 6, 2}, 0.02], SphereBox[{6, 6, 1}, 0.02], 
+      SphereBox[{6, 5, 1}, 0.02], SphereBox[{6, 5, 2}, 0.02], 
+      SphereBox[{7, 5, 2}, 0.02], SphereBox[{7, 5, 1}, 0.02], 
+      SphereBox[{7, 4, 1}, 0.02], SphereBox[{8, 4, 1}, 0.02], 
+      SphereBox[{8, 5, 1}, 0.02], SphereBox[{8, 5, 2}, 0.02], 
+      SphereBox[{8, 5, 3}, 0.02], SphereBox[{8, 4, 3}, 0.02], 
+      SphereBox[{8, 4, 4}, 0.02], SphereBox[{8, 4, 5}, 0.02], 
+      SphereBox[{9, 4, 5}, 0.02], SphereBox[{9, 4, 6}, 0.02], 
+      SphereBox[{10, 4, 6}, 0.02], SphereBox[{10, 4, 5}, 0.02], 
+      SphereBox[{10, 3, 5}, 0.02], SphereBox[{10, 3, 4}, 0.02], 
+      SphereBox[{10, 2, 4}, 0.02], SphereBox[{9, 2, 4}, 0.02], 
+      SphereBox[{9, 2, 3}, 0.02], SphereBox[{9, 2, 2}, 0.02], 
+      SphereBox[{10, 2, 2}, 0.02], SphereBox[{10, 2, 3}, 0.02], 
+      SphereBox[{10, 1, 3}, 0.02], SphereBox[{9, 1, 3}, 0.02], 
+      SphereBox[{8, 1, 3}, 0.02], SphereBox[{7, 1, 3}, 0.02], 
+      SphereBox[{7, 1, 4}, 0.02], SphereBox[{7, 2, 4}, 0.02], 
+      SphereBox[{8, 2, 4}, 0.02], SphereBox[{8, 2, 5}, 0.02], 
+      SphereBox[{8, 3, 5}, 0.02], SphereBox[{9, 3, 5}, 0.02], 
+      SphereBox[{9, 3, 6}, 0.02], SphereBox[{9, 2, 6}, 0.02], 
+      SphereBox[{9, 2, 5}, 0.02], SphereBox[{10, 2, 5}, 0.02], 
+      SphereBox[{10, 2, 6}, 0.02], SphereBox[{10, 2, 7}, 0.02], 
+      SphereBox[{10, 1, 7}, 0.02], SphereBox[{10, 1, 8}, 0.02], 
+      SphereBox[{9, 1, 8}, 0.02], SphereBox[{9, 1, 7}, 0.02], 
+      SphereBox[{9, 2, 7}, 0.02], SphereBox[{9, 2, 8}, 0.02], 
+      SphereBox[{10, 2, 8}, 0.02], SphereBox[{10, 3, 8}, 0.02], 
+      SphereBox[{9, 3, 8}, 0.02], SphereBox[{8, 3, 8}, 0.02], 
+      SphereBox[{7, 3, 8}, 0.02], SphereBox[{7, 2, 8}, 0.02], 
+      SphereBox[{8, 2, 8}, 0.02], SphereBox[{8, 2, 9}, 0.02], 
+      SphereBox[{8, 3, 9}, 0.02], SphereBox[{9, 3, 9}, 0.02], 
+      SphereBox[{9, 3, 10}, 0.02], SphereBox[{10, 3, 10}, 0.02], 
+      SphereBox[{10, 2, 10}, 0.02], SphereBox[{10, 2, 9}, 0.02], 
+      SphereBox[{9, 2, 9}, 0.02], SphereBox[{9, 2, 10}, 0.02], 
+      SphereBox[{8, 2, 10}, 0.02], SphereBox[{8, 3, 10}, 0.02], 
+      SphereBox[{8, 4, 10}, 0.02], SphereBox[{7, 4, 10}, 0.02], 
+      SphereBox[{6, 4, 10}, 0.02], SphereBox[{5, 4, 10}, 0.02], 
+      SphereBox[{5, 5, 10}, 0.02], SphereBox[{4, 5, 10}, 0.02], 
+      SphereBox[{4, 6, 10}, 0.02], SphereBox[{4, 7, 10}, 0.02], 
+      SphereBox[{5, 7, 10}, 0.02], SphereBox[{5, 6, 10}, 0.02], 
+      SphereBox[{5, 6, 9}, 0.02], SphereBox[{6, 6, 9}, 0.02], 
+      SphereBox[{6, 6, 8}, 0.02], SphereBox[{5, 6, 8}, 0.02], 
+      SphereBox[{5, 5, 8}, 0.02], SphereBox[{5, 5, 9}, 0.02], 
+      SphereBox[{4, 5, 9}, 0.02], SphereBox[{3, 5, 9}, 0.02], 
+      SphereBox[{2, 5, 9}, 0.02], SphereBox[{2, 6, 9}, 0.02], 
+      SphereBox[{2, 6, 8}, 0.02], SphereBox[{1, 6, 8}, 0.02], 
+      SphereBox[{1, 5, 8}, 0.02], SphereBox[{1, 5, 9}, 0.02], 
+      SphereBox[{1, 5, 10}, 0.02], SphereBox[{1, 6, 10}, 0.02], 
+      SphereBox[{2, 6, 10}, 0.02], SphereBox[{2, 7, 10}, 0.02], 
+      SphereBox[{2, 7, 9}, 0.02], SphereBox[{3, 7, 9}, 0.02], 
+      SphereBox[{4, 7, 9}, 0.02], SphereBox[{4, 6, 9}, 0.02], 
+      SphereBox[{4, 6, 8}, 0.02], SphereBox[{4, 5, 8}, 0.02], 
+      SphereBox[{3, 5, 8}, 0.02], SphereBox[{3, 6, 8}, 0.02], 
+      SphereBox[{3, 7, 8}, 0.02], SphereBox[{4, 7, 8}, 0.02], 
+      SphereBox[{5, 7, 8}, 0.02], SphereBox[{6, 7, 8}, 0.02], 
+      SphereBox[{6, 7, 9}, 0.02], SphereBox[{6, 7, 10}, 0.02], 
+      SphereBox[{6, 8, 10}, 0.02], SphereBox[{5, 8, 10}, 0.02], 
+      SphereBox[{4, 8, 10}, 0.02], SphereBox[{4, 9, 10}, 0.02], 
+      SphereBox[{5, 9, 10}, 0.02], SphereBox[{6, 9, 10}, 0.02], 
+      SphereBox[{6, 9, 9}, 0.02], SphereBox[{7, 9, 9}, 0.02], 
+      SphereBox[{7, 9, 10}, 0.02], SphereBox[{8, 9, 10}, 0.02], 
+      SphereBox[{8, 9, 9}, 0.02], SphereBox[{8, 10, 9}, 0.02], 
+      SphereBox[{8, 10, 8}, 0.02], SphereBox[{8, 10, 7}, 0.02], 
+      SphereBox[{8, 9, 7}, 0.02], SphereBox[{9, 9, 7}, 0.02], 
+      SphereBox[{9, 10, 7}, 0.02], SphereBox[{9, 10, 6}, 0.02], 
+      SphereBox[{8, 10, 6}, 0.02], SphereBox[{8, 10, 5}, 0.02], 
+      SphereBox[{8, 10, 4}, 0.02], SphereBox[{7, 10, 4}, 0.02], 
+      SphereBox[{7, 9, 4}, 0.02], SphereBox[{8, 9, 4}, 0.02], 
+      SphereBox[{9, 9, 4}, 0.02], SphereBox[{9, 9, 5}, 0.02], 
+      SphereBox[{9, 8, 5}, 0.02], SphereBox[{10, 8, 5}, 0.02], 
+      SphereBox[{10, 9, 5}, 0.02], SphereBox[{10, 9, 4}, 0.02], 
+      SphereBox[{10, 8, 4}, 0.02], SphereBox[{9, 8, 4}, 0.02], 
+      SphereBox[{9, 8, 3}, 0.02], SphereBox[{9, 8, 2}, 0.02], 
+      SphereBox[{9, 7, 2}, 0.02], SphereBox[{9, 7, 3}, 0.02], 
+      SphereBox[{10, 7, 3}, 0.02], SphereBox[{10, 7, 4}, 0.02], 
+      SphereBox[{10, 7, 5}, 0.02], SphereBox[{10, 6, 5}, 0.02], 
+      SphereBox[{10, 6, 6}, 0.02], SphereBox[{9, 6, 6}, 0.02], 
+      SphereBox[{9, 6, 7}, 0.02], SphereBox[{8, 6, 7}, 0.02], 
+      SphereBox[{8, 7, 7}, 0.02], SphereBox[{8, 8, 7}, 0.02], 
+      SphereBox[{9, 8, 7}, 0.02], SphereBox[{9, 8, 8}, 0.02], 
+      SphereBox[{8, 8, 8}, 0.02], SphereBox[{8, 8, 9}, 0.02], 
+      SphereBox[{8, 7, 9}, 0.02], SphereBox[{9, 7, 9}, 0.02], 
+      SphereBox[{10, 7, 9}, 0.02], SphereBox[{10, 7, 10}, 0.02], 
+      SphereBox[{10, 8, 10}, 0.02], SphereBox[{10, 9, 10}, 0.02], 
+      SphereBox[{9, 9, 10}, 0.02], SphereBox[{9, 10, 10}, 0.02], 
+      SphereBox[{8, 10, 10}, 0.02], SphereBox[{7, 10, 10}, 0.02], 
+      SphereBox[{7, 10, 9}, 0.02], SphereBox[{7, 10, 8}, 0.02], 
+      SphereBox[{7, 10, 7}, 0.02], SphereBox[{7, 10, 6}, 0.02], 
+      SphereBox[{7, 9, 6}, 0.02], SphereBox[{6, 9, 6}, 0.02], 
+      SphereBox[{6, 9, 5}, 0.02], SphereBox[{6, 10, 5}, 0.02], 
+      SphereBox[{6, 10, 6}, 0.02], SphereBox[{6, 10, 7}, 0.02], 
+      SphereBox[{5, 10, 7}, 0.02], SphereBox[{5, 9, 7}, 0.02], 
+      SphereBox[{6, 9, 7}, 0.02], SphereBox[{6, 8, 7}, 0.02], 
+      SphereBox[{6, 8, 6}, 0.02], SphereBox[{5, 8, 6}, 0.02], 
+      SphereBox[{5, 9, 6}, 0.02], SphereBox[{5, 10, 6}, 0.02], 
+      SphereBox[{5, 10, 5}, 0.02], SphereBox[{4, 10, 5}, 0.02], 
+      SphereBox[{4, 10, 4}, 0.02], SphereBox[{4, 10, 3}, 0.02], 
+      SphereBox[{5, 10, 3}, 0.02], SphereBox[{5, 10, 4}, 0.02], 
+      SphereBox[{5, 9, 4}, 0.02], SphereBox[{5, 9, 5}, 0.02]}, 
+     {Thickness[
+      Large], {Line3DBox[{{6, 6, 6}, {6, 6, 7}}], 
+       Line3DBox[{{6, 6, 7}, {6, 7, 7}}], Line3DBox[{{6, 7, 7}, {5, 7, 7}}], 
+       Line3DBox[{{5, 7, 7}, {4, 7, 7}}], Line3DBox[{{4, 7, 7}, {3, 7, 7}}], 
+       Line3DBox[{{3, 7, 7}, {3, 7, 6}}], Line3DBox[{{3, 7, 6}, {2, 7, 6}}], 
+       Line3DBox[{{2, 7, 6}, {2, 8, 6}}], Line3DBox[{{2, 8, 6}, {2, 9, 6}}], 
+       Line3DBox[{{2, 9, 6}, {2, 9, 5}}], Line3DBox[{{2, 9, 5}, {2, 10, 5}}], 
+       Line3DBox[{{2, 10, 5}, {1, 10, 5}}], 
+       Line3DBox[{{1, 10, 5}, {1, 10, 6}}], 
+       Line3DBox[{{1, 10, 6}, {1, 10, 7}}], 
+       Line3DBox[{{1, 10, 7}, {1, 10, 8}}], 
+       Line3DBox[{{1, 10, 8}, {1, 10, 9}}], 
+       Line3DBox[{{1, 10, 9}, {2, 10, 9}}], 
+       Line3DBox[{{2, 10, 9}, {2, 10, 10}}], 
+       Line3DBox[{{2, 10, 10}, {2, 9, 10}}], 
+       Line3DBox[{{2, 9, 10}, {2, 9, 9}}], Line3DBox[{{2, 9, 9}, {2, 8, 9}}], 
+       Line3DBox[{{2, 8, 9}, {2, 8, 8}}], Line3DBox[{{2, 8, 8}, {1, 8, 8}}], 
+       Line3DBox[{{1, 8, 8}, {1, 7, 8}}], Line3DBox[{{1, 7, 8}, {1, 7, 7}}], 
+       Line3DBox[{{1, 7, 7}, {1, 8, 7}}], Line3DBox[{{1, 8, 7}, {2, 8, 7}}], 
+       Line3DBox[{{2, 8, 7}, {3, 8, 7}}], Line3DBox[{{3, 8, 7}, {3, 9, 7}}], 
+       Line3DBox[{{3, 9, 7}, {2, 9, 7}}], Line3DBox[{{2, 9, 7}, {2, 10, 7}}], 
+       Line3DBox[{{2, 10, 7}, {2, 10, 8}}], 
+       Line3DBox[{{2, 10, 8}, {2, 9, 8}}], Line3DBox[{{2, 9, 8}, {3, 9, 8}}], 
+       Line3DBox[{{3, 9, 8}, {4, 9, 8}}], Line3DBox[{{4, 9, 8}, {5, 9, 8}}], 
+       Line3DBox[{{5, 9, 8}, {5, 10, 8}}], 
+       Line3DBox[{{5, 10, 8}, {5, 10, 9}}], 
+       Line3DBox[{{5, 10, 9}, {4, 10, 9}}], 
+       Line3DBox[{{4, 10, 9}, {4, 10, 10}}], 
+       Line3DBox[{{4, 10, 10}, {3, 10, 10}}], 
+       Line3DBox[{{3, 10, 10}, {3, 10, 9}}], 
+       Line3DBox[{{3, 10, 9}, {3, 10, 8}}], 
+       Line3DBox[{{3, 10, 8}, {4, 10, 8}}], 
+       Line3DBox[{{4, 10, 8}, {4, 10, 7}}], 
+       Line3DBox[{{4, 10, 7}, {4, 10, 6}}], 
+       Line3DBox[{{4, 10, 6}, {4, 9, 6}}], Line3DBox[{{4, 9, 6}, {4, 9, 5}}], 
+       Line3DBox[{{4, 9, 5}, {3, 9, 5}}], Line3DBox[{{3, 9, 5}, {3, 8, 5}}], 
+       Line3DBox[{{3, 8, 5}, {4, 8, 5}}], Line3DBox[{{4, 8, 5}, {5, 8, 5}}], 
+       Line3DBox[{{5, 8, 5}, {5, 8, 4}}], Line3DBox[{{5, 8, 4}, {5, 8, 3}}], 
+       Line3DBox[{{5, 8, 3}, {6, 8, 3}}], Line3DBox[{{6, 8, 3}, {6, 8, 2}}], 
+       Line3DBox[{{6, 8, 2}, {7, 8, 2}}], Line3DBox[{{7, 8, 2}, {7, 9, 2}}], 
+       Line3DBox[{{7, 9, 2}, {7, 10, 2}}], 
+       Line3DBox[{{7, 10, 2}, {6, 10, 2}}], 
+       Line3DBox[{{6, 10, 2}, {5, 10, 2}}], 
+       Line3DBox[{{5, 10, 2}, {5, 10, 1}}], 
+       Line3DBox[{{5, 10, 1}, {4, 10, 1}}], 
+       Line3DBox[{{4, 10, 1}, {3, 10, 1}}], 
+       Line3DBox[{{3, 10, 1}, {3, 10, 2}}], 
+       Line3DBox[{{3, 10, 2}, {2, 10, 2}}], 
+       Line3DBox[{{2, 10, 2}, {2, 10, 3}}], 
+       Line3DBox[{{2, 10, 3}, {1, 10, 3}}], 
+       Line3DBox[{{1, 10, 3}, {1, 9, 3}}], Line3DBox[{{1, 9, 3}, {1, 9, 2}}], 
+       Line3DBox[{{1, 9, 2}, {1, 10, 2}}], 
+       Line3DBox[{{1, 10, 2}, {1, 10, 1}}], 
+       Line3DBox[{{1, 10, 1}, {2, 10, 1}}], 
+       Line3DBox[{{2, 10, 1}, {2, 9, 1}}], Line3DBox[{{2, 9, 1}, {2, 8, 1}}], 
+       Line3DBox[{{2, 8, 1}, {3, 8, 1}}], Line3DBox[{{3, 8, 1}, {3, 7, 1}}], 
+       Line3DBox[{{3, 7, 1}, {3, 6, 1}}], Line3DBox[{{3, 6, 1}, {4, 6, 1}}], 
+       Line3DBox[{{4, 6, 1}, {5, 6, 1}}], Line3DBox[{{5, 6, 1}, {5, 7, 1}}], 
+       Line3DBox[{{5, 7, 1}, {6, 7, 1}}], Line3DBox[{{6, 7, 1}, {6, 7, 2}}], 
+       Line3DBox[{{6, 7, 2}, {6, 6, 2}}], Line3DBox[{{6, 6, 2}, {6, 6, 1}}], 
+       Line3DBox[{{6, 6, 1}, {6, 5, 1}}], Line3DBox[{{6, 5, 1}, {6, 5, 2}}], 
+       Line3DBox[{{6, 5, 2}, {7, 5, 2}}], Line3DBox[{{7, 5, 2}, {7, 5, 1}}], 
+       Line3DBox[{{7, 5, 1}, {7, 4, 1}}], Line3DBox[{{7, 4, 1}, {8, 4, 1}}], 
+       Line3DBox[{{8, 4, 1}, {8, 5, 1}}], Line3DBox[{{8, 5, 1}, {8, 5, 2}}], 
+       Line3DBox[{{8, 5, 2}, {8, 5, 3}}], Line3DBox[{{8, 5, 3}, {8, 4, 3}}], 
+       Line3DBox[{{8, 4, 3}, {8, 4, 4}}], Line3DBox[{{8, 4, 4}, {8, 4, 5}}], 
+       Line3DBox[{{8, 4, 5}, {9, 4, 5}}], Line3DBox[{{9, 4, 5}, {9, 4, 6}}], 
+       Line3DBox[{{9, 4, 6}, {10, 4, 6}}], 
+       Line3DBox[{{10, 4, 6}, {10, 4, 5}}], 
+       Line3DBox[{{10, 4, 5}, {10, 3, 5}}], 
+       Line3DBox[{{10, 3, 5}, {10, 3, 4}}], 
+       Line3DBox[{{10, 3, 4}, {10, 2, 4}}], 
+       Line3DBox[{{10, 2, 4}, {9, 2, 4}}], Line3DBox[{{9, 2, 4}, {9, 2, 3}}], 
+       Line3DBox[{{9, 2, 3}, {9, 2, 2}}], Line3DBox[{{9, 2, 2}, {10, 2, 2}}], 
+       Line3DBox[{{10, 2, 2}, {10, 2, 3}}], 
+       Line3DBox[{{10, 2, 3}, {10, 1, 3}}], 
+       Line3DBox[{{10, 1, 3}, {9, 1, 3}}], Line3DBox[{{9, 1, 3}, {8, 1, 3}}], 
+       Line3DBox[{{8, 1, 3}, {7, 1, 3}}], Line3DBox[{{7, 1, 3}, {7, 1, 4}}], 
+       Line3DBox[{{7, 1, 4}, {7, 2, 4}}], Line3DBox[{{7, 2, 4}, {8, 2, 4}}], 
+       Line3DBox[{{8, 2, 4}, {8, 2, 5}}], Line3DBox[{{8, 2, 5}, {8, 3, 5}}], 
+       Line3DBox[{{8, 3, 5}, {9, 3, 5}}], Line3DBox[{{9, 3, 5}, {9, 3, 6}}], 
+       Line3DBox[{{9, 3, 6}, {9, 2, 6}}], Line3DBox[{{9, 2, 6}, {9, 2, 5}}], 
+       Line3DBox[{{9, 2, 5}, {10, 2, 5}}], 
+       Line3DBox[{{10, 2, 5}, {10, 2, 6}}], 
+       Line3DBox[{{10, 2, 6}, {10, 2, 7}}], 
+       Line3DBox[{{10, 2, 7}, {10, 1, 7}}], 
+       Line3DBox[{{10, 1, 7}, {10, 1, 8}}], 
+       Line3DBox[{{10, 1, 8}, {9, 1, 8}}], Line3DBox[{{9, 1, 8}, {9, 1, 7}}], 
+       Line3DBox[{{9, 1, 7}, {9, 2, 7}}], Line3DBox[{{9, 2, 7}, {9, 2, 8}}], 
+       Line3DBox[{{9, 2, 8}, {10, 2, 8}}], 
+       Line3DBox[{{10, 2, 8}, {10, 3, 8}}], 
+       Line3DBox[{{10, 3, 8}, {9, 3, 8}}], Line3DBox[{{9, 3, 8}, {8, 3, 8}}], 
+       Line3DBox[{{8, 3, 8}, {7, 3, 8}}], Line3DBox[{{7, 3, 8}, {7, 2, 8}}], 
+       Line3DBox[{{7, 2, 8}, {8, 2, 8}}], Line3DBox[{{8, 2, 8}, {8, 2, 9}}], 
+       Line3DBox[{{8, 2, 9}, {8, 3, 9}}], Line3DBox[{{8, 3, 9}, {9, 3, 9}}], 
+       Line3DBox[{{9, 3, 9}, {9, 3, 10}}], 
+       Line3DBox[{{9, 3, 10}, {10, 3, 10}}], 
+       Line3DBox[{{10, 3, 10}, {10, 2, 10}}], 
+       Line3DBox[{{10, 2, 10}, {10, 2, 9}}], 
+       Line3DBox[{{10, 2, 9}, {9, 2, 9}}], Line3DBox[{{9, 2, 9}, {9, 2, 10}}],
+        Line3DBox[{{9, 2, 10}, {8, 2, 10}}], 
+       Line3DBox[{{8, 2, 10}, {8, 3, 10}}], 
+       Line3DBox[{{8, 3, 10}, {8, 4, 10}}], 
+       Line3DBox[{{8, 4, 10}, {7, 4, 10}}], 
+       Line3DBox[{{7, 4, 10}, {6, 4, 10}}], 
+       Line3DBox[{{6, 4, 10}, {5, 4, 10}}], 
+       Line3DBox[{{5, 4, 10}, {5, 5, 10}}], 
+       Line3DBox[{{5, 5, 10}, {4, 5, 10}}], 
+       Line3DBox[{{4, 5, 10}, {4, 6, 10}}], 
+       Line3DBox[{{4, 6, 10}, {4, 7, 10}}], 
+       Line3DBox[{{4, 7, 10}, {5, 7, 10}}], 
+       Line3DBox[{{5, 7, 10}, {5, 6, 10}}], 
+       Line3DBox[{{5, 6, 10}, {5, 6, 9}}], Line3DBox[{{5, 6, 9}, {6, 6, 9}}], 
+       Line3DBox[{{6, 6, 9}, {6, 6, 8}}], Line3DBox[{{6, 6, 8}, {5, 6, 8}}], 
+       Line3DBox[{{5, 6, 8}, {5, 5, 8}}], Line3DBox[{{5, 5, 8}, {5, 5, 9}}], 
+       Line3DBox[{{5, 5, 9}, {4, 5, 9}}], Line3DBox[{{4, 5, 9}, {3, 5, 9}}], 
+       Line3DBox[{{3, 5, 9}, {2, 5, 9}}], Line3DBox[{{2, 5, 9}, {2, 6, 9}}], 
+       Line3DBox[{{2, 6, 9}, {2, 6, 8}}], Line3DBox[{{2, 6, 8}, {1, 6, 8}}], 
+       Line3DBox[{{1, 6, 8}, {1, 5, 8}}], Line3DBox[{{1, 5, 8}, {1, 5, 9}}], 
+       Line3DBox[{{1, 5, 9}, {1, 5, 10}}], 
+       Line3DBox[{{1, 5, 10}, {1, 6, 10}}], 
+       Line3DBox[{{1, 6, 10}, {2, 6, 10}}], 
+       Line3DBox[{{2, 6, 10}, {2, 7, 10}}], 
+       Line3DBox[{{2, 7, 10}, {2, 7, 9}}], Line3DBox[{{2, 7, 9}, {3, 7, 9}}], 
+       Line3DBox[{{3, 7, 9}, {4, 7, 9}}], Line3DBox[{{4, 7, 9}, {4, 6, 9}}], 
+       Line3DBox[{{4, 6, 9}, {4, 6, 8}}], Line3DBox[{{4, 6, 8}, {4, 5, 8}}], 
+       Line3DBox[{{4, 5, 8}, {3, 5, 8}}], Line3DBox[{{3, 5, 8}, {3, 6, 8}}], 
+       Line3DBox[{{3, 6, 8}, {3, 7, 8}}], Line3DBox[{{3, 7, 8}, {4, 7, 8}}], 
+       Line3DBox[{{4, 7, 8}, {5, 7, 8}}], Line3DBox[{{5, 7, 8}, {6, 7, 8}}], 
+       Line3DBox[{{6, 7, 8}, {6, 7, 9}}], Line3DBox[{{6, 7, 9}, {6, 7, 10}}], 
+       Line3DBox[{{6, 7, 10}, {6, 8, 10}}], 
+       Line3DBox[{{6, 8, 10}, {5, 8, 10}}], 
+       Line3DBox[{{5, 8, 10}, {4, 8, 10}}], 
+       Line3DBox[{{4, 8, 10}, {4, 9, 10}}], 
+       Line3DBox[{{4, 9, 10}, {5, 9, 10}}], 
+       Line3DBox[{{5, 9, 10}, {6, 9, 10}}], 
+       Line3DBox[{{6, 9, 10}, {6, 9, 9}}], Line3DBox[{{6, 9, 9}, {7, 9, 9}}], 
+       Line3DBox[{{7, 9, 9}, {7, 9, 10}}], 
+       Line3DBox[{{7, 9, 10}, {8, 9, 10}}], 
+       Line3DBox[{{8, 9, 10}, {8, 9, 9}}], Line3DBox[{{8, 9, 9}, {8, 10, 9}}],
+        Line3DBox[{{8, 10, 9}, {8, 10, 8}}], 
+       Line3DBox[{{8, 10, 8}, {8, 10, 7}}], 
+       Line3DBox[{{8, 10, 7}, {8, 9, 7}}], Line3DBox[{{8, 9, 7}, {9, 9, 7}}], 
+       Line3DBox[{{9, 9, 7}, {9, 10, 7}}], 
+       Line3DBox[{{9, 10, 7}, {9, 10, 6}}], 
+       Line3DBox[{{9, 10, 6}, {8, 10, 6}}], 
+       Line3DBox[{{8, 10, 6}, {8, 10, 5}}], 
+       Line3DBox[{{8, 10, 5}, {8, 10, 4}}], 
+       Line3DBox[{{8, 10, 4}, {7, 10, 4}}], 
+       Line3DBox[{{7, 10, 4}, {7, 9, 4}}], Line3DBox[{{7, 9, 4}, {8, 9, 4}}], 
+       Line3DBox[{{8, 9, 4}, {9, 9, 4}}], Line3DBox[{{9, 9, 4}, {9, 9, 5}}], 
+       Line3DBox[{{9, 9, 5}, {9, 8, 5}}], Line3DBox[{{9, 8, 5}, {10, 8, 5}}], 
+       Line3DBox[{{10, 8, 5}, {10, 9, 5}}], 
+       Line3DBox[{{10, 9, 5}, {10, 9, 4}}], 
+       Line3DBox[{{10, 9, 4}, {10, 8, 4}}], 
+       Line3DBox[{{10, 8, 4}, {9, 8, 4}}], Line3DBox[{{9, 8, 4}, {9, 8, 3}}], 
+       Line3DBox[{{9, 8, 3}, {9, 8, 2}}], Line3DBox[{{9, 8, 2}, {9, 7, 2}}], 
+       Line3DBox[{{9, 7, 2}, {9, 7, 3}}], Line3DBox[{{9, 7, 3}, {10, 7, 3}}], 
+       Line3DBox[{{10, 7, 3}, {10, 7, 4}}], 
+       Line3DBox[{{10, 7, 4}, {10, 7, 5}}], 
+       Line3DBox[{{10, 7, 5}, {10, 6, 5}}], 
+       Line3DBox[{{10, 6, 5}, {10, 6, 6}}], 
+       Line3DBox[{{10, 6, 6}, {9, 6, 6}}], Line3DBox[{{9, 6, 6}, {9, 6, 7}}], 
+       Line3DBox[{{9, 6, 7}, {8, 6, 7}}], Line3DBox[{{8, 6, 7}, {8, 7, 7}}], 
+       Line3DBox[{{8, 7, 7}, {8, 8, 7}}], Line3DBox[{{8, 8, 7}, {9, 8, 7}}], 
+       Line3DBox[{{9, 8, 7}, {9, 8, 8}}], Line3DBox[{{9, 8, 8}, {8, 8, 8}}], 
+       Line3DBox[{{8, 8, 8}, {8, 8, 9}}], Line3DBox[{{8, 8, 9}, {8, 7, 9}}], 
+       Line3DBox[{{8, 7, 9}, {9, 7, 9}}], Line3DBox[{{9, 7, 9}, {10, 7, 9}}], 
+       Line3DBox[{{10, 7, 9}, {10, 7, 10}}], 
+       Line3DBox[{{10, 7, 10}, {10, 8, 10}}], 
+       Line3DBox[{{10, 8, 10}, {10, 9, 10}}], 
+       Line3DBox[{{10, 9, 10}, {9, 9, 10}}], 
+       Line3DBox[{{9, 9, 10}, {9, 10, 10}}], 
+       Line3DBox[{{9, 10, 10}, {8, 10, 10}}], 
+       Line3DBox[{{8, 10, 10}, {7, 10, 10}}], 
+       Line3DBox[{{7, 10, 10}, {7, 10, 9}}], 
+       Line3DBox[{{7, 10, 9}, {7, 10, 8}}], 
+       Line3DBox[{{7, 10, 8}, {7, 10, 7}}], 
+       Line3DBox[{{7, 10, 7}, {7, 10, 6}}], 
+       Line3DBox[{{7, 10, 6}, {7, 9, 6}}], Line3DBox[{{7, 9, 6}, {6, 9, 6}}], 
+       Line3DBox[{{6, 9, 6}, {6, 9, 5}}], Line3DBox[{{6, 9, 5}, {6, 10, 5}}], 
+       Line3DBox[{{6, 10, 5}, {6, 10, 6}}], 
+       Line3DBox[{{6, 10, 6}, {6, 10, 7}}], 
+       Line3DBox[{{6, 10, 7}, {5, 10, 7}}], 
+       Line3DBox[{{5, 10, 7}, {5, 9, 7}}], Line3DBox[{{5, 9, 7}, {6, 9, 7}}], 
+       Line3DBox[{{6, 9, 7}, {6, 8, 7}}], Line3DBox[{{6, 8, 7}, {6, 8, 6}}], 
+       Line3DBox[{{6, 8, 6}, {5, 8, 6}}], Line3DBox[{{5, 8, 6}, {5, 9, 6}}], 
+       Line3DBox[{{5, 9, 6}, {5, 10, 6}}], 
+       Line3DBox[{{5, 10, 6}, {5, 10, 5}}], 
+       Line3DBox[{{5, 10, 5}, {4, 10, 5}}], 
+       Line3DBox[{{4, 10, 5}, {4, 10, 4}}], 
+       Line3DBox[{{4, 10, 4}, {4, 10, 3}}], 
+       Line3DBox[{{4, 10, 3}, {5, 10, 3}}], 
+       Line3DBox[{{5, 10, 3}, {5, 10, 4}}], 
+       Line3DBox[{{5, 10, 4}, {5, 9, 4}}], Line3DBox[{{5, 9, 4}, {5, 9, 5}}]}, 
+      {RGBColor[1, 0, 0], 
+       SphereBox[{5, 9, 5}, NCache[Rational[1, 2], 0.5]]}, 
+      {RGBColor[0, 0, 1], SphereBox[{0, 0, 0}, NCache[Rational[1, 2], 0.5]], 
+       SphereBox[{10, 0, 0}, NCache[Rational[1, 2], 0.5]], 
+       SphereBox[{10, 10, 0}, NCache[Rational[1, 2], 0.5]], 
+       SphereBox[{10, 0, 10}, NCache[Rational[1, 2], 0.5]], 
+       SphereBox[{10, 10, 10}, NCache[Rational[1, 2], 0.5]], 
+       SphereBox[{0, 0, 10}, NCache[Rational[1, 2], 0.5]], 
+       SphereBox[{0, 10, 0}, NCache[Rational[1, 2], 0.5]], 
+       SphereBox[{0, 10, 10}, NCache[Rational[1, 2], 0.5]]}}}], ",", 
+   Graphics3DBox[{{SphereBox[{6, 6, 6}, 0.02], SphereBox[{6, 6, 7}, 0.02], 
+      SphereBox[{6, 5, 7}, 0.02], SphereBox[{6, 5, 8}, 0.02], 
+      SphereBox[{7, 5, 8}, 0.02], SphereBox[{7, 5, 9}, 0.02], 
+      SphereBox[{7, 6, 9}, 0.02], SphereBox[{6, 6, 9}, 0.02], 
+      SphereBox[{6, 7, 9}, 0.02], SphereBox[{6, 7, 8}, 0.02], 
+      SphereBox[{7, 7, 8}, 0.02], SphereBox[{7, 6, 8}, 0.02], 
+      SphereBox[{7, 6, 7}, 0.02], SphereBox[{7, 7, 7}, 0.02], 
+      SphereBox[{8, 7, 7}, 0.02], SphereBox[{8, 7, 8}, 0.02], 
+      SphereBox[{8, 6, 8}, 0.02], SphereBox[{9, 6, 8}, 0.02], 
+      SphereBox[{9, 5, 8}, 0.02], SphereBox[{9, 4, 8}, 0.02], 
+      SphereBox[{9, 3, 8}, 0.02], SphereBox[{10, 3, 8}, 0.02], 
+      SphereBox[{10, 3, 9}, 0.02], SphereBox[{9, 3, 9}, 0.02], 
+      SphereBox[{9, 2, 9}, 0.02], SphereBox[{9, 2, 8}, 0.02], 
+      SphereBox[{8, 2, 8}, 0.02], SphereBox[{7, 2, 8}, 0.02], 
+      SphereBox[{7, 2, 7}, 0.02], SphereBox[{7, 3, 7}, 0.02], 
+      SphereBox[{8, 3, 7}, 0.02], SphereBox[{8, 2, 7}, 0.02], 
+      SphereBox[{8, 1, 7}, 0.02], SphereBox[{7, 1, 7}, 0.02], 
+      SphereBox[{6, 1, 7}, 0.02], SphereBox[{6, 1, 8}, 0.02], 
+      SphereBox[{6, 1, 9}, 0.02], SphereBox[{6, 2, 9}, 0.02], 
+      SphereBox[{6, 2, 10}, 0.02], SphereBox[{7, 2, 10}, 0.02], 
+      SphereBox[{7, 3, 10}, 0.02], SphereBox[{6, 3, 10}, 0.02], 
+      SphereBox[{6, 3, 11}, 0.02], SphereBox[{5, 3, 11}, 0.02], 
+      SphereBox[{4, 3, 11}, 0.02], SphereBox[{4, 3, 10}, 0.02], 
+      SphereBox[{5, 3, 10}, 0.02], SphereBox[{5, 4, 10}, 0.02], 
+      SphereBox[{5, 4, 9}, 0.02], SphereBox[{5, 3, 9}, 0.02], 
+      SphereBox[{4, 3, 9}, 0.02], SphereBox[{4, 4, 9}, 0.02], 
+      SphereBox[{4, 4, 8}, 0.02], SphereBox[{3, 4, 8}, 0.02], 
+      SphereBox[{3, 4, 9}, 0.02], SphereBox[{3, 4, 10}, 0.02], 
+      SphereBox[{4, 4, 10}, 0.02], SphereBox[{4, 4, 11}, 0.02], 
+      SphereBox[{4, 5, 11}, 0.02], SphereBox[{5, 5, 11}, 0.02], 
+      SphereBox[{5, 4, 11}, 0.02], SphereBox[{6, 4, 11}, 0.02], 
+      SphereBox[{6, 5, 11}, 0.02], SphereBox[{6, 5, 10}, 0.02], 
+      SphereBox[{5, 5, 10}, 0.02], SphereBox[{5, 6, 10}, 0.02], 
+      SphereBox[{6, 6, 10}, 0.02], SphereBox[{6, 6, 11}, 0.02], 
+      SphereBox[{6, 7, 11}, 0.02], SphereBox[{6, 8, 11}, 0.02], 
+      SphereBox[{6, 8, 10}, 0.02], SphereBox[{6, 7, 10}, 0.02], 
+      SphereBox[{7, 7, 10}, 0.02], SphereBox[{8, 7, 10}, 0.02], 
+      SphereBox[{8, 7, 11}, 0.02], SphereBox[{8, 6, 11}, 0.02], 
+      SphereBox[{8, 6, 10}, 0.02], SphereBox[{7, 6, 10}, 0.02], 
+      SphereBox[{7, 5, 10}, 0.02], SphereBox[{7, 4, 10}, 0.02], 
+      SphereBox[{7, 4, 11}, 0.02], SphereBox[{7, 5, 11}, 0.02], 
+      SphereBox[{7, 6, 11}, 0.02], SphereBox[{7, 7, 11}, 0.02], 
+      SphereBox[{7, 8, 11}, 0.02], SphereBox[{7, 8, 10}, 0.02], 
+      SphereBox[{8, 8, 10}, 0.02], SphereBox[{9, 8, 10}, 0.02], 
+      SphereBox[{9, 7, 10}, 0.02], SphereBox[{9, 7, 11}, 0.02], 
+      SphereBox[{10, 7, 11}, 0.02], SphereBox[{10, 7, 10}, 0.02], 
+      SphereBox[{10, 7, 9}, 0.02], SphereBox[{10, 6, 9}, 0.02], 
+      SphereBox[{9, 6, 9}, 0.02], SphereBox[{9, 5, 9}, 0.02], 
+      SphereBox[{8, 5, 9}, 0.02], SphereBox[{8, 6, 9}, 0.02], 
+      SphereBox[{8, 7, 9}, 0.02], SphereBox[{7, 7, 9}, 0.02], 
+      SphereBox[{7, 8, 9}, 0.02], SphereBox[{6, 8, 9}, 0.02], 
+      SphereBox[{6, 9, 9}, 0.02], SphereBox[{6, 9, 8}, 0.02], 
+      SphereBox[{5, 9, 8}, 0.02], SphereBox[{4, 9, 8}, 0.02], 
+      SphereBox[{4, 9, 7}, 0.02], SphereBox[{4, 9, 6}, 0.02], 
+      SphereBox[{3, 9, 6}, 0.02], SphereBox[{3, 9, 5}, 0.02], 
+      SphereBox[{3, 10, 5}, 0.02], SphereBox[{3, 10, 6}, 0.02], 
+      SphereBox[{3, 11, 6}, 0.02], SphereBox[{2, 11, 6}, 0.02], 
+      SphereBox[{2, 11, 7}, 0.02], SphereBox[{2, 11, 8}, 0.02], 
+      SphereBox[{3, 11, 8}, 0.02], SphereBox[{3, 11, 9}, 0.02], 
+      SphereBox[{3, 11, 10}, 0.02], SphereBox[{3, 10, 10}, 0.02], 
+      SphereBox[{4, 10, 10}, 0.02], SphereBox[{4, 10, 11}, 0.02], 
+      SphereBox[{4, 9, 11}, 0.02], SphereBox[{4, 9, 10}, 0.02], 
+      SphereBox[{4, 8, 10}, 0.02], SphereBox[{4, 8, 9}, 0.02], 
+      SphereBox[{5, 8, 9}, 0.02], SphereBox[{5, 7, 9}, 0.02], 
+      SphereBox[{5, 7, 8}, 0.02], SphereBox[{5, 8, 8}, 0.02], 
+      SphereBox[{6, 8, 8}, 0.02], SphereBox[{6, 8, 7}, 0.02], 
+      SphereBox[{5, 8, 7}, 0.02], SphereBox[{5, 8, 6}, 0.02], 
+      SphereBox[{5, 7, 6}, 0.02], SphereBox[{5, 7, 7}, 0.02], 
+      SphereBox[{5, 6, 7}, 0.02], SphereBox[{5, 5, 7}, 0.02], 
+      SphereBox[{5, 4, 7}, 0.02], SphereBox[{6, 4, 7}, 0.02], 
+      SphereBox[{6, 3, 7}, 0.02], SphereBox[{6, 2, 7}, 0.02], 
+      SphereBox[{6, 2, 8}, 0.02], SphereBox[{5, 2, 8}, 0.02], 
+      SphereBox[{4, 2, 8}, 0.02], SphereBox[{4, 1, 8}, 0.02], 
+      SphereBox[{4, 1, 9}, 0.02], SphereBox[{5, 1, 9}, 0.02], 
+      SphereBox[{5, 2, 9}, 0.02], SphereBox[{5, 2, 10}, 0.02], 
+      SphereBox[{5, 2, 11}, 0.02], SphereBox[{5, 1, 11}, 0.02], 
+      SphereBox[{6, 1, 11}, 0.02], SphereBox[{6, 2, 11}, 0.02], 
+      SphereBox[{7, 2, 11}, 0.02], SphereBox[{7, 1, 11}, 0.02], 
+      SphereBox[{7, 1, 10}, 0.02], SphereBox[{7, 1, 9}, 0.02], 
+      SphereBox[{7, 1, 8}, 0.02], SphereBox[{8, 1, 8}, 0.02], 
+      SphereBox[{9, 1, 8}, 0.02], SphereBox[{9, 1, 7}, 0.02], 
+      SphereBox[{9, 1, 6}, 0.02], SphereBox[{9, 1, 5}, 0.02], 
+      SphereBox[{10, 1, 5}, 0.02], SphereBox[{10, 1, 4}, 0.02], 
+      SphereBox[{9, 1, 4}, 0.02], SphereBox[{9, 1, 3}, 0.02], 
+      SphereBox[{9, 2, 3}, 0.02], SphereBox[{9, 3, 3}, 0.02], 
+      SphereBox[{10, 3, 3}, 0.02], SphereBox[{10, 3, 2}, 0.02], 
+      SphereBox[{11, 3, 2}, 0.02], SphereBox[{11, 3, 3}, 0.02], 
+      SphereBox[{11, 3, 4}, 0.02], SphereBox[{11, 3, 5}, 0.02], 
+      SphereBox[{11, 2, 5}, 0.02], SphereBox[{10, 2, 5}, 0.02], 
+      SphereBox[{9, 2, 5}, 0.02], SphereBox[{8, 2, 5}, 0.02], 
+      SphereBox[{7, 2, 5}, 0.02], SphereBox[{7, 2, 4}, 0.02], 
+      SphereBox[{8, 2, 4}, 0.02], SphereBox[{8, 2, 3}, 0.02], 
+      SphereBox[{8, 1, 3}, 0.02], SphereBox[{8, 1, 2}, 0.02], 
+      SphereBox[{8, 1, 1}, 0.02], SphereBox[{8, 2, 1}, 0.02], 
+      SphereBox[{8, 2, 2}, 0.02], SphereBox[{7, 2, 2}, 0.02], 
+      SphereBox[{7, 2, 3}, 0.02], SphereBox[{6, 2, 3}, 0.02], 
+      SphereBox[{6, 3, 3}, 0.02], SphereBox[{7, 3, 3}, 0.02], 
+      SphereBox[{7, 4, 3}, 0.02], SphereBox[{8, 4, 3}, 0.02], 
+      SphereBox[{8, 4, 2}, 0.02], SphereBox[{8, 5, 2}, 0.02], 
+      SphereBox[{8, 6, 2}, 0.02], SphereBox[{8, 6, 3}, 0.02], 
+      SphereBox[{9, 6, 3}, 0.02], SphereBox[{10, 6, 3}, 0.02], 
+      SphereBox[{10, 6, 4}, 0.02], SphereBox[{10, 7, 4}, 0.02], 
+      SphereBox[{10, 7, 5}, 0.02], SphereBox[{11, 7, 5}, 0.02], 
+      SphereBox[{11, 8, 5}, 0.02], SphereBox[{11, 8, 4}, 0.02], 
+      SphereBox[{11, 9, 4}, 0.02], SphereBox[{10, 9, 4}, 0.02], 
+      SphereBox[{9, 9, 4}, 0.02], SphereBox[{9, 9, 5}, 0.02], 
+      SphereBox[{8, 9, 5}, 0.02], SphereBox[{8, 10, 5}, 0.02], 
+      SphereBox[{7, 10, 5}, 0.02], SphereBox[{7, 11, 5}, 0.02], 
+      SphereBox[{7, 11, 4}, 0.02], SphereBox[{6, 11, 4}, 0.02], 
+      SphereBox[{6, 11, 3}, 0.02], SphereBox[{6, 11, 2}, 0.02], 
+      SphereBox[{6, 10, 2}, 0.02], SphereBox[{6, 9, 2}, 0.02], 
+      SphereBox[{6, 8, 2}, 0.02], SphereBox[{6, 7, 2}, 0.02], 
+      SphereBox[{7, 7, 2}, 0.02], SphereBox[{8, 7, 2}, 0.02], 
+      SphereBox[{8, 7, 3}, 0.02], SphereBox[{8, 8, 3}, 0.02], 
+      SphereBox[{8, 9, 3}, 0.02], SphereBox[{8, 9, 2}, 0.02], 
+      SphereBox[{8, 9, 1}, 0.02], SphereBox[{9, 9, 1}, 0.02], 
+      SphereBox[{10, 9, 1}, 0.02], SphereBox[{10, 8, 1}, 0.02], 
+      SphereBox[{11, 8, 1}, 0.02], SphereBox[{11, 9, 1}, 0.02], 
+      SphereBox[{11, 10, 1}, 0.02], SphereBox[{11, 11, 1}, 0.02], 
+      SphereBox[{11, 11, 2}, 0.02], SphereBox[{11, 10, 2}, 0.02], 
+      SphereBox[{11, 10, 3}, 0.02], SphereBox[{10, 10, 3}, 0.02], 
+      SphereBox[{10, 9, 3}, 0.02], SphereBox[{10, 9, 2}, 0.02], 
+      SphereBox[{10, 8, 2}, 0.02], SphereBox[{9, 8, 2}, 0.02], 
+      SphereBox[{8, 8, 2}, 0.02], SphereBox[{7, 8, 2}, 0.02], 
+      SphereBox[{7, 9, 2}, 0.02], SphereBox[{7, 10, 2}, 0.02], 
+      SphereBox[{7, 10, 3}, 0.02], SphereBox[{6, 10, 3}, 0.02], 
+      SphereBox[{6, 9, 3}, 0.02], SphereBox[{7, 9, 3}, 0.02], 
+      SphereBox[{7, 9, 4}, 0.02], SphereBox[{7, 10, 4}, 0.02], 
+      SphereBox[{6, 10, 4}, 0.02], SphereBox[{5, 10, 4}, 0.02], 
+      SphereBox[{4, 10, 4}, 0.02], SphereBox[{4, 10, 3}, 0.02], 
+      SphereBox[{4, 11, 3}, 0.02], SphereBox[{4, 11, 2}, 0.02], 
+      SphereBox[{4, 11, 1}, 0.02], SphereBox[{4, 10, 1}, 0.02], 
+      SphereBox[{4, 9, 1}, 0.02], SphereBox[{3, 9, 1}, 0.02], 
+      SphereBox[{3, 8, 1}, 0.02], SphereBox[{2, 8, 1}, 0.02], 
+      SphereBox[{1, 8, 1}, 0.02], SphereBox[{1, 9, 1}, 0.02], 
+      SphereBox[{1, 9, 2}, 0.02], SphereBox[{1, 9, 3}, 0.02], 
+      SphereBox[{1, 10, 3}, 0.02], SphereBox[{1, 11, 3}, 0.02], 
+      SphereBox[{1, 11, 2}, 0.02], SphereBox[{2, 11, 2}, 0.02], 
+      SphereBox[{2, 11, 3}, 0.02], SphereBox[{2, 10, 3}, 0.02], 
+      SphereBox[{3, 10, 3}, 0.02], SphereBox[{3, 9, 3}, 0.02], 
+      SphereBox[{3, 8, 3}, 0.02], SphereBox[{4, 8, 3}, 0.02], 
+      SphereBox[{4, 8, 2}, 0.02], SphereBox[{4, 7, 2}, 0.02], 
+      SphereBox[{5, 7, 2}, 0.02], SphereBox[{5, 7, 3}, 0.02], 
+      SphereBox[{5, 7, 4}, 0.02], SphereBox[{5, 6, 4}, 0.02], 
+      SphereBox[{5, 6, 3}, 0.02], SphereBox[{6, 6, 3}, 0.02], 
+      SphereBox[{6, 6, 2}, 0.02], SphereBox[{5, 6, 2}, 0.02], 
+      SphereBox[{5, 5, 2}, 0.02], SphereBox[{5, 5, 3}, 0.02], 
+      SphereBox[{4, 5, 3}, 0.02], SphereBox[{4, 5, 4}, 0.02], 
+      SphereBox[{5, 5, 4}, 0.02], SphereBox[{5, 5, 5}, 0.02], 
+      SphereBox[{5, 4, 5}, 0.02], SphereBox[{6, 4, 5}, 0.02], 
+      SphereBox[{7, 4, 5}, 0.02], SphereBox[{7, 4, 6}, 0.02], 
+      SphereBox[{7, 3, 6}, 0.02], SphereBox[{7, 2, 6}, 0.02], 
+      SphereBox[{7, 1, 6}, 0.02], SphereBox[{8, 1, 6}, 0.02], 
+      SphereBox[{8, 2, 6}, 0.02], SphereBox[{9, 2, 6}, 0.02], 
+      SphereBox[{10, 2, 6}, 0.02], SphereBox[{10, 3, 6}, 0.02], 
+      SphereBox[{9, 3, 6}, 0.02], SphereBox[{9, 3, 7}, 0.02], 
+      SphereBox[{10, 3, 7}, 0.02], SphereBox[{10, 4, 7}, 0.02], 
+      SphereBox[{10, 4, 8}, 0.02], SphereBox[{10, 5, 8}, 0.02], 
+      SphereBox[{11, 5, 8}, 0.02], SphereBox[{11, 4, 8}, 0.02], 
+      SphereBox[{11, 3, 8}, 0.02], SphereBox[{11, 2, 8}, 0.02], 
+      SphereBox[{11, 1, 8}, 0.02], SphereBox[{11, 1, 9}, 0.02], 
+      SphereBox[{10, 1, 9}, 0.02], SphereBox[{9, 1, 9}, 0.02], 
+      SphereBox[{9, 1, 10}, 0.02], SphereBox[{9, 1, 11}, 0.02], 
+      SphereBox[{10, 1, 11}, 0.02], SphereBox[{10, 1, 10}, 0.02], 
+      SphereBox[{11, 1, 10}, 0.02], SphereBox[{11, 2, 10}, 0.02], 
+      SphereBox[{11, 3, 10}, 0.02], SphereBox[{11, 3, 11}, 0.02], 
+      SphereBox[{11, 2, 11}, 0.02], SphereBox[{10, 2, 11}, 0.02], 
+      SphereBox[{9, 2, 11}, 0.02], SphereBox[{9, 3, 11}, 0.02], 
+      SphereBox[{10, 3, 11}, 0.02], SphereBox[{10, 3, 10}, 0.02], 
+      SphereBox[{9, 3, 10}, 0.02], SphereBox[{9, 4, 10}, 0.02], 
+      SphereBox[{9, 5, 10}, 0.02], SphereBox[{9, 6, 10}, 0.02], 
+      SphereBox[{9, 6, 11}, 0.02], SphereBox[{9, 5, 11}, 0.02], 
+      SphereBox[{8, 5, 11}, 0.02], SphereBox[{8, 5, 10}, 0.02], 
+      SphereBox[{8, 4, 10}, 0.02], SphereBox[{8, 3, 10}, 0.02], 
+      SphereBox[{8, 3, 9}, 0.02], SphereBox[{8, 3, 8}, 0.02], 
+      SphereBox[{7, 3, 8}, 0.02], SphereBox[{7, 4, 8}, 0.02], 
+      SphereBox[{7, 4, 7}, 0.02], SphereBox[{7, 5, 7}, 0.02], 
+      SphereBox[{7, 5, 6}, 0.02], SphereBox[{7, 5, 5}, 0.02], 
+      SphereBox[{8, 5, 5}, 0.02], SphereBox[{8, 5, 4}, 0.02], 
+      SphereBox[{8, 6, 4}, 0.02], SphereBox[{8, 6, 5}, 0.02], 
+      SphereBox[{7, 6, 5}, 0.02], SphereBox[{7, 6, 4}, 0.02], 
+      SphereBox[{7, 7, 4}, 0.02], SphereBox[{7, 7, 5}, 0.02], 
+      SphereBox[{6, 7, 5}, 0.02], SphereBox[{6, 7, 6}, 0.02], 
+      SphereBox[{6, 8, 6}, 0.02], SphereBox[{6, 8, 5}, 0.02], 
+      SphereBox[{5, 8, 5}, 0.02], SphereBox[{5, 8, 4}, 0.02], 
+      SphereBox[{4, 8, 4}, 0.02], SphereBox[{4, 9, 4}, 0.02], 
+      SphereBox[{3, 9, 4}, 0.02], SphereBox[{3, 10, 4}, 0.02], 
+      SphereBox[{3, 11, 4}, 0.02], SphereBox[{3, 11, 3}, 0.02], 
+      SphereBox[{3, 11, 2}, 0.02], SphereBox[{3, 10, 2}, 0.02], 
+      SphereBox[{3, 9, 2}, 0.02], SphereBox[{4, 9, 2}, 0.02], 
+      SphereBox[{4, 9, 3}, 0.02], SphereBox[{5, 9, 3}, 0.02], 
+      SphereBox[{5, 9, 2}, 0.02], SphereBox[{5, 8, 2}, 0.02], 
+      SphereBox[{5, 8, 1}, 0.02], SphereBox[{5, 9, 1}, 0.02], 
+      SphereBox[{6, 9, 1}, 0.02], SphereBox[{7, 9, 1}, 0.02], 
+      SphereBox[{7, 10, 1}, 0.02], SphereBox[{6, 10, 1}, 0.02], 
+      SphereBox[{6, 11, 1}, 0.02], SphereBox[{7, 11, 1}, 0.02], 
+      SphereBox[{8, 11, 1}, 0.02], SphereBox[{9, 11, 1}, 0.02], 
+      SphereBox[{9, 10, 1}, 0.02], SphereBox[{10, 10, 1}, 0.02], 
+      SphereBox[{10, 11, 1}, 0.02], SphereBox[{10, 11, 2}, 0.02], 
+      SphereBox[{9, 11, 2}, 0.02], SphereBox[{8, 11, 2}, 0.02], 
+      SphereBox[{8, 10, 2}, 0.02], SphereBox[{9, 10, 2}, 0.02], 
+      SphereBox[{10, 10, 2}, 0.02]}, 
+     {Thickness[
+      Large], {Line3DBox[{{6, 6, 6}, {6, 6, 7}}], 
+       Line3DBox[{{6, 6, 7}, {6, 5, 7}}], Line3DBox[{{6, 5, 7}, {6, 5, 8}}], 
+       Line3DBox[{{6, 5, 8}, {7, 5, 8}}], Line3DBox[{{7, 5, 8}, {7, 5, 9}}], 
+       Line3DBox[{{7, 5, 9}, {7, 6, 9}}], Line3DBox[{{7, 6, 9}, {6, 6, 9}}], 
+       Line3DBox[{{6, 6, 9}, {6, 7, 9}}], Line3DBox[{{6, 7, 9}, {6, 7, 8}}], 
+       Line3DBox[{{6, 7, 8}, {7, 7, 8}}], Line3DBox[{{7, 7, 8}, {7, 6, 8}}], 
+       Line3DBox[{{7, 6, 8}, {7, 6, 7}}], Line3DBox[{{7, 6, 7}, {7, 7, 7}}], 
+       Line3DBox[{{7, 7, 7}, {8, 7, 7}}], Line3DBox[{{8, 7, 7}, {8, 7, 8}}], 
+       Line3DBox[{{8, 7, 8}, {8, 6, 8}}], Line3DBox[{{8, 6, 8}, {9, 6, 8}}], 
+       Line3DBox[{{9, 6, 8}, {9, 5, 8}}], Line3DBox[{{9, 5, 8}, {9, 4, 8}}], 
+       Line3DBox[{{9, 4, 8}, {9, 3, 8}}], Line3DBox[{{9, 3, 8}, {10, 3, 8}}], 
+       Line3DBox[{{10, 3, 8}, {10, 3, 9}}], 
+       Line3DBox[{{10, 3, 9}, {9, 3, 9}}], Line3DBox[{{9, 3, 9}, {9, 2, 9}}], 
+       Line3DBox[{{9, 2, 9}, {9, 2, 8}}], Line3DBox[{{9, 2, 8}, {8, 2, 8}}], 
+       Line3DBox[{{8, 2, 8}, {7, 2, 8}}], Line3DBox[{{7, 2, 8}, {7, 2, 7}}], 
+       Line3DBox[{{7, 2, 7}, {7, 3, 7}}], Line3DBox[{{7, 3, 7}, {8, 3, 7}}], 
+       Line3DBox[{{8, 3, 7}, {8, 2, 7}}], Line3DBox[{{8, 2, 7}, {8, 1, 7}}], 
+       Line3DBox[{{8, 1, 7}, {7, 1, 7}}], Line3DBox[{{7, 1, 7}, {6, 1, 7}}], 
+       Line3DBox[{{6, 1, 7}, {6, 1, 8}}], Line3DBox[{{6, 1, 8}, {6, 1, 9}}], 
+       Line3DBox[{{6, 1, 9}, {6, 2, 9}}], Line3DBox[{{6, 2, 9}, {6, 2, 10}}], 
+       Line3DBox[{{6, 2, 10}, {7, 2, 10}}], 
+       Line3DBox[{{7, 2, 10}, {7, 3, 10}}], 
+       Line3DBox[{{7, 3, 10}, {6, 3, 10}}], 
+       Line3DBox[{{6, 3, 10}, {6, 3, 11}}], 
+       Line3DBox[{{6, 3, 11}, {5, 3, 11}}], 
+       Line3DBox[{{5, 3, 11}, {4, 3, 11}}], 
+       Line3DBox[{{4, 3, 11}, {4, 3, 10}}], 
+       Line3DBox[{{4, 3, 10}, {5, 3, 10}}], 
+       Line3DBox[{{5, 3, 10}, {5, 4, 10}}], 
+       Line3DBox[{{5, 4, 10}, {5, 4, 9}}], Line3DBox[{{5, 4, 9}, {5, 3, 9}}], 
+       Line3DBox[{{5, 3, 9}, {4, 3, 9}}], Line3DBox[{{4, 3, 9}, {4, 4, 9}}], 
+       Line3DBox[{{4, 4, 9}, {4, 4, 8}}], Line3DBox[{{4, 4, 8}, {3, 4, 8}}], 
+       Line3DBox[{{3, 4, 8}, {3, 4, 9}}], Line3DBox[{{3, 4, 9}, {3, 4, 10}}], 
+       Line3DBox[{{3, 4, 10}, {4, 4, 10}}], 
+       Line3DBox[{{4, 4, 10}, {4, 4, 11}}], 
+       Line3DBox[{{4, 4, 11}, {4, 5, 11}}], 
+       Line3DBox[{{4, 5, 11}, {5, 5, 11}}], 
+       Line3DBox[{{5, 5, 11}, {5, 4, 11}}], 
+       Line3DBox[{{5, 4, 11}, {6, 4, 11}}], 
+       Line3DBox[{{6, 4, 11}, {6, 5, 11}}], 
+       Line3DBox[{{6, 5, 11}, {6, 5, 10}}], 
+       Line3DBox[{{6, 5, 10}, {5, 5, 10}}], 
+       Line3DBox[{{5, 5, 10}, {5, 6, 10}}], 
+       Line3DBox[{{5, 6, 10}, {6, 6, 10}}], 
+       Line3DBox[{{6, 6, 10}, {6, 6, 11}}], 
+       Line3DBox[{{6, 6, 11}, {6, 7, 11}}], 
+       Line3DBox[{{6, 7, 11}, {6, 8, 11}}], 
+       Line3DBox[{{6, 8, 11}, {6, 8, 10}}], 
+       Line3DBox[{{6, 8, 10}, {6, 7, 10}}], 
+       Line3DBox[{{6, 7, 10}, {7, 7, 10}}], 
+       Line3DBox[{{7, 7, 10}, {8, 7, 10}}], 
+       Line3DBox[{{8, 7, 10}, {8, 7, 11}}], 
+       Line3DBox[{{8, 7, 11}, {8, 6, 11}}], 
+       Line3DBox[{{8, 6, 11}, {8, 6, 10}}], 
+       Line3DBox[{{8, 6, 10}, {7, 6, 10}}], 
+       Line3DBox[{{7, 6, 10}, {7, 5, 10}}], 
+       Line3DBox[{{7, 5, 10}, {7, 4, 10}}], 
+       Line3DBox[{{7, 4, 10}, {7, 4, 11}}], 
+       Line3DBox[{{7, 4, 11}, {7, 5, 11}}], 
+       Line3DBox[{{7, 5, 11}, {7, 6, 11}}], 
+       Line3DBox[{{7, 6, 11}, {7, 7, 11}}], 
+       Line3DBox[{{7, 7, 11}, {7, 8, 11}}], 
+       Line3DBox[{{7, 8, 11}, {7, 8, 10}}], 
+       Line3DBox[{{7, 8, 10}, {8, 8, 10}}], 
+       Line3DBox[{{8, 8, 10}, {9, 8, 10}}], 
+       Line3DBox[{{9, 8, 10}, {9, 7, 10}}], 
+       Line3DBox[{{9, 7, 10}, {9, 7, 11}}], 
+       Line3DBox[{{9, 7, 11}, {10, 7, 11}}], 
+       Line3DBox[{{10, 7, 11}, {10, 7, 10}}], 
+       Line3DBox[{{10, 7, 10}, {10, 7, 9}}], 
+       Line3DBox[{{10, 7, 9}, {10, 6, 9}}], 
+       Line3DBox[{{10, 6, 9}, {9, 6, 9}}], Line3DBox[{{9, 6, 9}, {9, 5, 9}}], 
+       Line3DBox[{{9, 5, 9}, {8, 5, 9}}], Line3DBox[{{8, 5, 9}, {8, 6, 9}}], 
+       Line3DBox[{{8, 6, 9}, {8, 7, 9}}], Line3DBox[{{8, 7, 9}, {7, 7, 9}}], 
+       Line3DBox[{{7, 7, 9}, {7, 8, 9}}], Line3DBox[{{7, 8, 9}, {6, 8, 9}}], 
+       Line3DBox[{{6, 8, 9}, {6, 9, 9}}], Line3DBox[{{6, 9, 9}, {6, 9, 8}}], 
+       Line3DBox[{{6, 9, 8}, {5, 9, 8}}], Line3DBox[{{5, 9, 8}, {4, 9, 8}}], 
+       Line3DBox[{{4, 9, 8}, {4, 9, 7}}], Line3DBox[{{4, 9, 7}, {4, 9, 6}}], 
+       Line3DBox[{{4, 9, 6}, {3, 9, 6}}], Line3DBox[{{3, 9, 6}, {3, 9, 5}}], 
+       Line3DBox[{{3, 9, 5}, {3, 10, 5}}], 
+       Line3DBox[{{3, 10, 5}, {3, 10, 6}}], 
+       Line3DBox[{{3, 10, 6}, {3, 11, 6}}], 
+       Line3DBox[{{3, 11, 6}, {2, 11, 6}}], 
+       Line3DBox[{{2, 11, 6}, {2, 11, 7}}], 
+       Line3DBox[{{2, 11, 7}, {2, 11, 8}}], 
+       Line3DBox[{{2, 11, 8}, {3, 11, 8}}], 
+       Line3DBox[{{3, 11, 8}, {3, 11, 9}}], 
+       Line3DBox[{{3, 11, 9}, {3, 11, 10}}], 
+       Line3DBox[{{3, 11, 10}, {3, 10, 10}}], 
+       Line3DBox[{{3, 10, 10}, {4, 10, 10}}], 
+       Line3DBox[{{4, 10, 10}, {4, 10, 11}}], 
+       Line3DBox[{{4, 10, 11}, {4, 9, 11}}], 
+       Line3DBox[{{4, 9, 11}, {4, 9, 10}}], 
+       Line3DBox[{{4, 9, 10}, {4, 8, 10}}], 
+       Line3DBox[{{4, 8, 10}, {4, 8, 9}}], Line3DBox[{{4, 8, 9}, {5, 8, 9}}], 
+       Line3DBox[{{5, 8, 9}, {5, 7, 9}}], Line3DBox[{{5, 7, 9}, {5, 7, 8}}], 
+       Line3DBox[{{5, 7, 8}, {5, 8, 8}}], Line3DBox[{{5, 8, 8}, {6, 8, 8}}], 
+       Line3DBox[{{6, 8, 8}, {6, 8, 7}}], Line3DBox[{{6, 8, 7}, {5, 8, 7}}], 
+       Line3DBox[{{5, 8, 7}, {5, 8, 6}}], Line3DBox[{{5, 8, 6}, {5, 7, 6}}], 
+       Line3DBox[{{5, 7, 6}, {5, 7, 7}}], Line3DBox[{{5, 7, 7}, {5, 6, 7}}], 
+       Line3DBox[{{5, 6, 7}, {5, 5, 7}}], Line3DBox[{{5, 5, 7}, {5, 4, 7}}], 
+       Line3DBox[{{5, 4, 7}, {6, 4, 7}}], Line3DBox[{{6, 4, 7}, {6, 3, 7}}], 
+       Line3DBox[{{6, 3, 7}, {6, 2, 7}}], Line3DBox[{{6, 2, 7}, {6, 2, 8}}], 
+       Line3DBox[{{6, 2, 8}, {5, 2, 8}}], Line3DBox[{{5, 2, 8}, {4, 2, 8}}], 
+       Line3DBox[{{4, 2, 8}, {4, 1, 8}}], Line3DBox[{{4, 1, 8}, {4, 1, 9}}], 
+       Line3DBox[{{4, 1, 9}, {5, 1, 9}}], Line3DBox[{{5, 1, 9}, {5, 2, 9}}], 
+       Line3DBox[{{5, 2, 9}, {5, 2, 10}}], 
+       Line3DBox[{{5, 2, 10}, {5, 2, 11}}], 
+       Line3DBox[{{5, 2, 11}, {5, 1, 11}}], 
+       Line3DBox[{{5, 1, 11}, {6, 1, 11}}], 
+       Line3DBox[{{6, 1, 11}, {6, 2, 11}}], 
+       Line3DBox[{{6, 2, 11}, {7, 2, 11}}], 
+       Line3DBox[{{7, 2, 11}, {7, 1, 11}}], 
+       Line3DBox[{{7, 1, 11}, {7, 1, 10}}], 
+       Line3DBox[{{7, 1, 10}, {7, 1, 9}}], Line3DBox[{{7, 1, 9}, {7, 1, 8}}], 
+       Line3DBox[{{7, 1, 8}, {8, 1, 8}}], Line3DBox[{{8, 1, 8}, {9, 1, 8}}], 
+       Line3DBox[{{9, 1, 8}, {9, 1, 7}}], Line3DBox[{{9, 1, 7}, {9, 1, 6}}], 
+       Line3DBox[{{9, 1, 6}, {9, 1, 5}}], Line3DBox[{{9, 1, 5}, {10, 1, 5}}], 
+       Line3DBox[{{10, 1, 5}, {10, 1, 4}}], 
+       Line3DBox[{{10, 1, 4}, {9, 1, 4}}], Line3DBox[{{9, 1, 4}, {9, 1, 3}}], 
+       Line3DBox[{{9, 1, 3}, {9, 2, 3}}], Line3DBox[{{9, 2, 3}, {9, 3, 3}}], 
+       Line3DBox[{{9, 3, 3}, {10, 3, 3}}], 
+       Line3DBox[{{10, 3, 3}, {10, 3, 2}}], 
+       Line3DBox[{{10, 3, 2}, {11, 3, 2}}], 
+       Line3DBox[{{11, 3, 2}, {11, 3, 3}}], 
+       Line3DBox[{{11, 3, 3}, {11, 3, 4}}], 
+       Line3DBox[{{11, 3, 4}, {11, 3, 5}}], 
+       Line3DBox[{{11, 3, 5}, {11, 2, 5}}], 
+       Line3DBox[{{11, 2, 5}, {10, 2, 5}}], 
+       Line3DBox[{{10, 2, 5}, {9, 2, 5}}], Line3DBox[{{9, 2, 5}, {8, 2, 5}}], 
+       Line3DBox[{{8, 2, 5}, {7, 2, 5}}], Line3DBox[{{7, 2, 5}, {7, 2, 4}}], 
+       Line3DBox[{{7, 2, 4}, {8, 2, 4}}], Line3DBox[{{8, 2, 4}, {8, 2, 3}}], 
+       Line3DBox[{{8, 2, 3}, {8, 1, 3}}], Line3DBox[{{8, 1, 3}, {8, 1, 2}}], 
+       Line3DBox[{{8, 1, 2}, {8, 1, 1}}], Line3DBox[{{8, 1, 1}, {8, 2, 1}}], 
+       Line3DBox[{{8, 2, 1}, {8, 2, 2}}], Line3DBox[{{8, 2, 2}, {7, 2, 2}}], 
+       Line3DBox[{{7, 2, 2}, {7, 2, 3}}], Line3DBox[{{7, 2, 3}, {6, 2, 3}}], 
+       Line3DBox[{{6, 2, 3}, {6, 3, 3}}], Line3DBox[{{6, 3, 3}, {7, 3, 3}}], 
+       Line3DBox[{{7, 3, 3}, {7, 4, 3}}], Line3DBox[{{7, 4, 3}, {8, 4, 3}}], 
+       Line3DBox[{{8, 4, 3}, {8, 4, 2}}], Line3DBox[{{8, 4, 2}, {8, 5, 2}}], 
+       Line3DBox[{{8, 5, 2}, {8, 6, 2}}], Line3DBox[{{8, 6, 2}, {8, 6, 3}}], 
+       Line3DBox[{{8, 6, 3}, {9, 6, 3}}], Line3DBox[{{9, 6, 3}, {10, 6, 3}}], 
+       Line3DBox[{{10, 6, 3}, {10, 6, 4}}], 
+       Line3DBox[{{10, 6, 4}, {10, 7, 4}}], 
+       Line3DBox[{{10, 7, 4}, {10, 7, 5}}], 
+       Line3DBox[{{10, 7, 5}, {11, 7, 5}}], 
+       Line3DBox[{{11, 7, 5}, {11, 8, 5}}], 
+       Line3DBox[{{11, 8, 5}, {11, 8, 4}}], 
+       Line3DBox[{{11, 8, 4}, {11, 9, 4}}], 
+       Line3DBox[{{11, 9, 4}, {10, 9, 4}}], 
+       Line3DBox[{{10, 9, 4}, {9, 9, 4}}], Line3DBox[{{9, 9, 4}, {9, 9, 5}}], 
+       Line3DBox[{{9, 9, 5}, {8, 9, 5}}], Line3DBox[{{8, 9, 5}, {8, 10, 5}}], 
+       Line3DBox[{{8, 10, 5}, {7, 10, 5}}], 
+       Line3DBox[{{7, 10, 5}, {7, 11, 5}}], 
+       Line3DBox[{{7, 11, 5}, {7, 11, 4}}], 
+       Line3DBox[{{7, 11, 4}, {6, 11, 4}}], 
+       Line3DBox[{{6, 11, 4}, {6, 11, 3}}], 
+       Line3DBox[{{6, 11, 3}, {6, 11, 2}}], 
+       Line3DBox[{{6, 11, 2}, {6, 10, 2}}], 
+       Line3DBox[{{6, 10, 2}, {6, 9, 2}}], Line3DBox[{{6, 9, 2}, {6, 8, 2}}], 
+       Line3DBox[{{6, 8, 2}, {6, 7, 2}}], Line3DBox[{{6, 7, 2}, {7, 7, 2}}], 
+       Line3DBox[{{7, 7, 2}, {8, 7, 2}}], Line3DBox[{{8, 7, 2}, {8, 7, 3}}], 
+       Line3DBox[{{8, 7, 3}, {8, 8, 3}}], Line3DBox[{{8, 8, 3}, {8, 9, 3}}], 
+       Line3DBox[{{8, 9, 3}, {8, 9, 2}}], Line3DBox[{{8, 9, 2}, {8, 9, 1}}], 
+       Line3DBox[{{8, 9, 1}, {9, 9, 1}}], Line3DBox[{{9, 9, 1}, {10, 9, 1}}], 
+       Line3DBox[{{10, 9, 1}, {10, 8, 1}}], 
+       Line3DBox[{{10, 8, 1}, {11, 8, 1}}], 
+       Line3DBox[{{11, 8, 1}, {11, 9, 1}}], 
+       Line3DBox[{{11, 9, 1}, {11, 10, 1}}], 
+       Line3DBox[{{11, 10, 1}, {11, 11, 1}}], 
+       Line3DBox[{{11, 11, 1}, {11, 11, 2}}], 
+       Line3DBox[{{11, 11, 2}, {11, 10, 2}}], 
+       Line3DBox[{{11, 10, 2}, {11, 10, 3}}], 
+       Line3DBox[{{11, 10, 3}, {10, 10, 3}}], 
+       Line3DBox[{{10, 10, 3}, {10, 9, 3}}], 
+       Line3DBox[{{10, 9, 3}, {10, 9, 2}}], 
+       Line3DBox[{{10, 9, 2}, {10, 8, 2}}], 
+       Line3DBox[{{10, 8, 2}, {9, 8, 2}}], Line3DBox[{{9, 8, 2}, {8, 8, 2}}], 
+       Line3DBox[{{8, 8, 2}, {7, 8, 2}}], Line3DBox[{{7, 8, 2}, {7, 9, 2}}], 
+       Line3DBox[{{7, 9, 2}, {7, 10, 2}}], 
+       Line3DBox[{{7, 10, 2}, {7, 10, 3}}], 
+       Line3DBox[{{7, 10, 3}, {6, 10, 3}}], 
+       Line3DBox[{{6, 10, 3}, {6, 9, 3}}], Line3DBox[{{6, 9, 3}, {7, 9, 3}}], 
+       Line3DBox[{{7, 9, 3}, {7, 9, 4}}], Line3DBox[{{7, 9, 4}, {7, 10, 4}}], 
+       Line3DBox[{{7, 10, 4}, {6, 10, 4}}], 
+       Line3DBox[{{6, 10, 4}, {5, 10, 4}}], 
+       Line3DBox[{{5, 10, 4}, {4, 10, 4}}], 
+       Line3DBox[{{4, 10, 4}, {4, 10, 3}}], 
+       Line3DBox[{{4, 10, 3}, {4, 11, 3}}], 
+       Line3DBox[{{4, 11, 3}, {4, 11, 2}}], 
+       Line3DBox[{{4, 11, 2}, {4, 11, 1}}], 
+       Line3DBox[{{4, 11, 1}, {4, 10, 1}}], 
+       Line3DBox[{{4, 10, 1}, {4, 9, 1}}], Line3DBox[{{4, 9, 1}, {3, 9, 1}}], 
+       Line3DBox[{{3, 9, 1}, {3, 8, 1}}], Line3DBox[{{3, 8, 1}, {2, 8, 1}}], 
+       Line3DBox[{{2, 8, 1}, {1, 8, 1}}], Line3DBox[{{1, 8, 1}, {1, 9, 1}}], 
+       Line3DBox[{{1, 9, 1}, {1, 9, 2}}], Line3DBox[{{1, 9, 2}, {1, 9, 3}}], 
+       Line3DBox[{{1, 9, 3}, {1, 10, 3}}], 
+       Line3DBox[{{1, 10, 3}, {1, 11, 3}}], 
+       Line3DBox[{{1, 11, 3}, {1, 11, 2}}], 
+       Line3DBox[{{1, 11, 2}, {2, 11, 2}}], 
+       Line3DBox[{{2, 11, 2}, {2, 11, 3}}], 
+       Line3DBox[{{2, 11, 3}, {2, 10, 3}}], 
+       Line3DBox[{{2, 10, 3}, {3, 10, 3}}], 
+       Line3DBox[{{3, 10, 3}, {3, 9, 3}}], Line3DBox[{{3, 9, 3}, {3, 8, 3}}], 
+       Line3DBox[{{3, 8, 3}, {4, 8, 3}}], Line3DBox[{{4, 8, 3}, {4, 8, 2}}], 
+       Line3DBox[{{4, 8, 2}, {4, 7, 2}}], Line3DBox[{{4, 7, 2}, {5, 7, 2}}], 
+       Line3DBox[{{5, 7, 2}, {5, 7, 3}}], Line3DBox[{{5, 7, 3}, {5, 7, 4}}], 
+       Line3DBox[{{5, 7, 4}, {5, 6, 4}}], Line3DBox[{{5, 6, 4}, {5, 6, 3}}], 
+       Line3DBox[{{5, 6, 3}, {6, 6, 3}}], Line3DBox[{{6, 6, 3}, {6, 6, 2}}], 
+       Line3DBox[{{6, 6, 2}, {5, 6, 2}}], Line3DBox[{{5, 6, 2}, {5, 5, 2}}], 
+       Line3DBox[{{5, 5, 2}, {5, 5, 3}}], Line3DBox[{{5, 5, 3}, {4, 5, 3}}], 
+       Line3DBox[{{4, 5, 3}, {4, 5, 4}}], Line3DBox[{{4, 5, 4}, {5, 5, 4}}], 
+       Line3DBox[{{5, 5, 4}, {5, 5, 5}}], Line3DBox[{{5, 5, 5}, {5, 4, 5}}], 
+       Line3DBox[{{5, 4, 5}, {6, 4, 5}}], Line3DBox[{{6, 4, 5}, {7, 4, 5}}], 
+       Line3DBox[{{7, 4, 5}, {7, 4, 6}}], Line3DBox[{{7, 4, 6}, {7, 3, 6}}], 
+       Line3DBox[{{7, 3, 6}, {7, 2, 6}}], Line3DBox[{{7, 2, 6}, {7, 1, 6}}], 
+       Line3DBox[{{7, 1, 6}, {8, 1, 6}}], Line3DBox[{{8, 1, 6}, {8, 2, 6}}], 
+       Line3DBox[{{8, 2, 6}, {9, 2, 6}}], Line3DBox[{{9, 2, 6}, {10, 2, 6}}], 
+       Line3DBox[{{10, 2, 6}, {10, 3, 6}}], 
+       Line3DBox[{{10, 3, 6}, {9, 3, 6}}], Line3DBox[{{9, 3, 6}, {9, 3, 7}}], 
+       Line3DBox[{{9, 3, 7}, {10, 3, 7}}], 
+       Line3DBox[{{10, 3, 7}, {10, 4, 7}}], 
+       Line3DBox[{{10, 4, 7}, {10, 4, 8}}], 
+       Line3DBox[{{10, 4, 8}, {10, 5, 8}}], 
+       Line3DBox[{{10, 5, 8}, {11, 5, 8}}], 
+       Line3DBox[{{11, 5, 8}, {11, 4, 8}}], 
+       Line3DBox[{{11, 4, 8}, {11, 3, 8}}], 
+       Line3DBox[{{11, 3, 8}, {11, 2, 8}}], 
+       Line3DBox[{{11, 2, 8}, {11, 1, 8}}], 
+       Line3DBox[{{11, 1, 8}, {11, 1, 9}}], 
+       Line3DBox[{{11, 1, 9}, {10, 1, 9}}], 
+       Line3DBox[{{10, 1, 9}, {9, 1, 9}}], Line3DBox[{{9, 1, 9}, {9, 1, 10}}],
+        Line3DBox[{{9, 1, 10}, {9, 1, 11}}], 
+       Line3DBox[{{9, 1, 11}, {10, 1, 11}}], 
+       Line3DBox[{{10, 1, 11}, {10, 1, 10}}], 
+       Line3DBox[{{10, 1, 10}, {11, 1, 10}}], 
+       Line3DBox[{{11, 1, 10}, {11, 2, 10}}], 
+       Line3DBox[{{11, 2, 10}, {11, 3, 10}}], 
+       Line3DBox[{{11, 3, 10}, {11, 3, 11}}], 
+       Line3DBox[{{11, 3, 11}, {11, 2, 11}}], 
+       Line3DBox[{{11, 2, 11}, {10, 2, 11}}], 
+       Line3DBox[{{10, 2, 11}, {9, 2, 11}}], 
+       Line3DBox[{{9, 2, 11}, {9, 3, 11}}], 
+       Line3DBox[{{9, 3, 11}, {10, 3, 11}}], 
+       Line3DBox[{{10, 3, 11}, {10, 3, 10}}], 
+       Line3DBox[{{10, 3, 10}, {9, 3, 10}}], 
+       Line3DBox[{{9, 3, 10}, {9, 4, 10}}], 
+       Line3DBox[{{9, 4, 10}, {9, 5, 10}}], 
+       Line3DBox[{{9, 5, 10}, {9, 6, 10}}], 
+       Line3DBox[{{9, 6, 10}, {9, 6, 11}}], 
+       Line3DBox[{{9, 6, 11}, {9, 5, 11}}], 
+       Line3DBox[{{9, 5, 11}, {8, 5, 11}}], 
+       Line3DBox[{{8, 5, 11}, {8, 5, 10}}], 
+       Line3DBox[{{8, 5, 10}, {8, 4, 10}}], 
+       Line3DBox[{{8, 4, 10}, {8, 3, 10}}], 
+       Line3DBox[{{8, 3, 10}, {8, 3, 9}}], Line3DBox[{{8, 3, 9}, {8, 3, 8}}], 
+       Line3DBox[{{8, 3, 8}, {7, 3, 8}}], Line3DBox[{{7, 3, 8}, {7, 4, 8}}], 
+       Line3DBox[{{7, 4, 8}, {7, 4, 7}}], Line3DBox[{{7, 4, 7}, {7, 5, 7}}], 
+       Line3DBox[{{7, 5, 7}, {7, 5, 6}}], Line3DBox[{{7, 5, 6}, {7, 5, 5}}], 
+       Line3DBox[{{7, 5, 5}, {8, 5, 5}}], Line3DBox[{{8, 5, 5}, {8, 5, 4}}], 
+       Line3DBox[{{8, 5, 4}, {8, 6, 4}}], Line3DBox[{{8, 6, 4}, {8, 6, 5}}], 
+       Line3DBox[{{8, 6, 5}, {7, 6, 5}}], Line3DBox[{{7, 6, 5}, {7, 6, 4}}], 
+       Line3DBox[{{7, 6, 4}, {7, 7, 4}}], Line3DBox[{{7, 7, 4}, {7, 7, 5}}], 
+       Line3DBox[{{7, 7, 5}, {6, 7, 5}}], Line3DBox[{{6, 7, 5}, {6, 7, 6}}], 
+       Line3DBox[{{6, 7, 6}, {6, 8, 6}}], Line3DBox[{{6, 8, 6}, {6, 8, 5}}], 
+       Line3DBox[{{6, 8, 5}, {5, 8, 5}}], Line3DBox[{{5, 8, 5}, {5, 8, 4}}], 
+       Line3DBox[{{5, 8, 4}, {4, 8, 4}}], Line3DBox[{{4, 8, 4}, {4, 9, 4}}], 
+       Line3DBox[{{4, 9, 4}, {3, 9, 4}}], Line3DBox[{{3, 9, 4}, {3, 10, 4}}], 
+       Line3DBox[{{3, 10, 4}, {3, 11, 4}}], 
+       Line3DBox[{{3, 11, 4}, {3, 11, 3}}], 
+       Line3DBox[{{3, 11, 3}, {3, 11, 2}}], 
+       Line3DBox[{{3, 11, 2}, {3, 10, 2}}], 
+       Line3DBox[{{3, 10, 2}, {3, 9, 2}}], Line3DBox[{{3, 9, 2}, {4, 9, 2}}], 
+       Line3DBox[{{4, 9, 2}, {4, 9, 3}}], Line3DBox[{{4, 9, 3}, {5, 9, 3}}], 
+       Line3DBox[{{5, 9, 3}, {5, 9, 2}}], Line3DBox[{{5, 9, 2}, {5, 8, 2}}], 
+       Line3DBox[{{5, 8, 2}, {5, 8, 1}}], Line3DBox[{{5, 8, 1}, {5, 9, 1}}], 
+       Line3DBox[{{5, 9, 1}, {6, 9, 1}}], Line3DBox[{{6, 9, 1}, {7, 9, 1}}], 
+       Line3DBox[{{7, 9, 1}, {7, 10, 1}}], 
+       Line3DBox[{{7, 10, 1}, {6, 10, 1}}], 
+       Line3DBox[{{6, 10, 1}, {6, 11, 1}}], 
+       Line3DBox[{{6, 11, 1}, {7, 11, 1}}], 
+       Line3DBox[{{7, 11, 1}, {8, 11, 1}}], 
+       Line3DBox[{{8, 11, 1}, {9, 11, 1}}], 
+       Line3DBox[{{9, 11, 1}, {9, 10, 1}}], 
+       Line3DBox[{{9, 10, 1}, {10, 10, 1}}], 
+       Line3DBox[{{10, 10, 1}, {10, 11, 1}}], 
+       Line3DBox[{{10, 11, 1}, {10, 11, 2}}], 
+       Line3DBox[{{10, 11, 2}, {9, 11, 2}}], 
+       Line3DBox[{{9, 11, 2}, {8, 11, 2}}], 
+       Line3DBox[{{8, 11, 2}, {8, 10, 2}}], 
+       Line3DBox[{{8, 10, 2}, {9, 10, 2}}], 
+       Line3DBox[{{9, 10, 2}, {10, 10, 2}}]}, 
+      {RGBColor[1, 0, 0], 
+       SphereBox[{10, 10, 2}, NCache[Rational[11, 20], 0.55]]}, 
+      {RGBColor[0, 0, 1], 
+       SphereBox[{0, 0, 0}, NCache[Rational[11, 20], 0.55]], 
+       SphereBox[{11, 0, 0}, NCache[Rational[11, 20], 0.55]], 
+       SphereBox[{11, 11, 0}, NCache[Rational[11, 20], 0.55]], 
+       SphereBox[{11, 0, 11}, NCache[Rational[11, 20], 0.55]], 
+       SphereBox[{11, 11, 11}, NCache[Rational[11, 20], 0.55]], 
+       SphereBox[{0, 0, 11}, NCache[Rational[11, 20], 0.55]], 
+       SphereBox[{0, 11, 0}, NCache[Rational[11, 20], 0.55]], 
+       SphereBox[{0, 11, 11}, NCache[Rational[11, 20], 0.55]]}}}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.680774327935767*^9, 3.680774351047636*^9}, 
+   3.680779227871279*^9, 3.680779263638818*^9}]
 }, Open  ]]
 },
-WindowSize->{1058, 811},
-WindowMargins->{{45, Automatic}, {Automatic, 0}},
+WindowSize->{1069, 855},
+WindowMargins->{{Automatic, 160}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
 2014)",
 StyleDefinitions->"Default.nb"
@@ -431,30 +2443,56 @@ StyleDefinitions->"Default.nb"
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "Info3680752898-7238675"->{
+  Cell[10137, 284, 921, 17, 58, "Print",
+   CellTags->"Info3680752898-7238675"]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"Info3680752898-7238675", 131807, 2446}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 342, 10, 28, "Input"],
 Cell[CellGroupData[{
 Cell[925, 34, 398, 12, 28, "Input"],
-Cell[1326, 48, 400, 12, 28, "Output"]
+Cell[1326, 48, 422, 12, 28, "Output"]
 }, Open  ]],
-Cell[1741, 63, 2344, 61, 114, "Input"],
-Cell[4088, 126, 1636, 34, 148, "Input"],
-Cell[5727, 162, 1253, 29, 80, "Input"],
-Cell[6983, 193, 354, 10, 28, "Input"],
-Cell[7340, 205, 604, 17, 28, "Input"],
+Cell[1763, 63, 686, 18, 63, "Input"],
 Cell[CellGroupData[{
-Cell[7969, 226, 731, 18, 46, "Input"],
-Cell[8703, 246, 1306, 34, 242, "Output"]
+Cell[2474, 85, 129, 2, 28, "Input"],
+Cell[2606, 89, 94, 1, 28, "Output"]
+}, Open  ]],
+Cell[2715, 93, 2344, 61, 114, "Input"],
+Cell[5062, 156, 1636, 34, 148, "Input"],
+Cell[6701, 192, 354, 10, 28, "Input"],
+Cell[7058, 204, 2146, 50, 131, "Input"],
+Cell[9207, 256, 785, 20, 28, "Input"],
+Cell[CellGroupData[{
+Cell[10017, 280, 117, 2, 28, "Input"],
+Cell[10137, 284, 921, 17, 58, "Print",
+ CellTags->"Info3680752898-7238675"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10046, 285, 842, 25, 46, "Input"],
-Cell[10891, 312, 7159, 108, 422, "Output"]
+Cell[11095, 306, 1667, 33, 80, "Input"],
+Cell[12765, 341, 26136, 534, 399, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38938, 880, 254, 5, 28, "Input"],
+Cell[39195, 887, 1863, 42, 245, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41095, 934, 805, 19, 46, "Input"],
+Cell[41903, 955, 1421, 35, 242, "Output"]
+}, Open  ]],
+Cell[43339, 993, 121, 2, 28, "Input"],
+Cell[43463, 997, 3423, 83, 131, "Input"],
+Cell[CellGroupData[{
+Cell[46911, 1084, 405, 10, 28, "Input"],
+Cell[47319, 1096, 84153, 1336, 433, "Output"]
 }, Open  ]]
 }
 ]
